@@ -5,8 +5,8 @@ name = "PySide Widgets Project"
 files = [
 "d2xCheckGrid.py",
 "d2xCheckGrid.ui",
-"mainwindow.py",
-"mainwindow.ui",
+"main.py",
+"mainWindow.ui",
 "waninCheckGrid.py",
 "waninCheckGrid.ui",
 ]
