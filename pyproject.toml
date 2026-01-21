@@ -3,8 +3,11 @@ name = "PySide Widgets Project"
 
 [tool.pyside6-project]
 files = [
+"assets/icon.png",
 "d2xCheckGrid.py",
 "d2xCheckGrid.ui",
+"resource.qrc",
+"download.json",
 "main.py",
 "mainWindow.ui",
 "waninCheckGrid.py",
