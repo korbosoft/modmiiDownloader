@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Korbo</author>
+ <class>d2xCheckGrid</class>
+ <widget class="QGroupBox" name="d2xCheckGrid">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>263</width>
+    <height>632</height>
+   </rect>
+  </property>
+  <property name="title">
+   <string>who up holding they place</string>
+  </property>
+  <property name="alignment">
+   <set>Qt::AlignmentFlag::AlignCenter</set>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>21</y>
+     <width>263</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="d2xGrid">
+      <item row="6" column="0">
+       <widget class="QLabel" name="db58">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[58]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QCheckBox" name="db80s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="3">
+       <widget class="QCheckBox" name="db58s251">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>♥Recommended cIOS for slot 251, mainly only used for Spongebob's Boating Bash or LAN Adapter support</string>
+        </property>
+        <property name="text">
+         <string>251♥</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="2">
+       <widget class="QCheckBox" name="db80s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="db56">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[56]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="db60">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[60]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="db53x250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QCheckBox" name="db38s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>♥Recommended cIOS for slot 248, mainly only used for Spongebob's Boating Bash or keyboard support for Animal Crossing City Folk</string>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2">
+       <widget class="QCheckBox" name="db70s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0" rowspan="2">
+       <widget class="QLabel" name="dv">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>♥Recommended cIOSs for vWii ONLY</string>
+        </property>
+        <property name="text">
+         <string>vWii</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QCheckBox" name="dvb57s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250[57]♥</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="db57">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[57]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QCheckBox" name="db70s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="db37s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="db37">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[37]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="db53s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="db53">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[53]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QCheckBox" name="db56s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="db70">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[70]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2">
+       <widget class="QCheckBox" name="db60s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="db80">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[80]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QCheckBox" name="db58s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="db55s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QCheckBox" name="db57s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>♥Recommended cIOS for slot 250, d2x base 56 or 57 work with the vast majority of games.</string>
+        </property>
+        <property name="text">
+         <string>250♥</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="2">
+       <widget class="QCheckBox" name="dvb56s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249[56]♥</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="db55">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[55]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="db38">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[38]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QCheckBox" name="dvb38s248">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>248[38]♥</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="db38s248">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>248♥</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QCheckBox" name="db58s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QCheckBox" name="db57s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QCheckBox" name="db56s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>♥Recommended cIOS for slot 249, d2x base 56 or 57 work with the vast majority of games.</string>
+        </property>
+        <property name="text">
+         <string>249♥</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="2">
+       <widget class="QCheckBox" name="dvb58s251">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>251[58]♥</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="db38s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="db37s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QCheckBox" name="db60s249">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QCheckBox" name="db55s250">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="d2xSelect">
+      <property name="text">
+       <string>Select All</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>db37s249</tabstop>
+  <tabstop>db37s250</tabstop>
+  <tabstop>db38s248</tabstop>
+  <tabstop>db38s249</tabstop>
+  <tabstop>db38s250</tabstop>
+  <tabstop>db53s249</tabstop>
+  <tabstop>db53x250</tabstop>
+  <tabstop>db55s249</tabstop>
+  <tabstop>db55s250</tabstop>
+  <tabstop>db56s249</tabstop>
+  <tabstop>db56s250</tabstop>
+  <tabstop>db57s249</tabstop>
+  <tabstop>db57s250</tabstop>
+  <tabstop>db58s249</tabstop>
+  <tabstop>db58s250</tabstop>
+  <tabstop>db58s251</tabstop>
+  <tabstop>db60s249</tabstop>
+  <tabstop>db60s250</tabstop>
+  <tabstop>db70s249</tabstop>
+  <tabstop>db70s250</tabstop>
+  <tabstop>db80s249</tabstop>
+  <tabstop>db80s250</tabstop>
+  <tabstop>dvb38s248</tabstop>
+  <tabstop>dvb56s249</tabstop>
+  <tabstop>dvb57s250</tabstop>
+  <tabstop>dvb58s251</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>dvb56s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>4</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>542</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db80s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>-5</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>65</x>
+     <y>490</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db55s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>6</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db58s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>0</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>161</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db70s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>72</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>dvb58s251</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>597</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db37s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>71</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db38s248</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>2</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>102</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db58s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>70</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db60s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>0</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>165</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>dvb38s248</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>-2</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>71</x>
+     <y>537</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db37s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>5</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>146</x>
+     <y>48</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db53s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>-3</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>100</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db38s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>5</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db70s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>6</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>451</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db55s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>0</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>88</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db60s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>62</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db56s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>8</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>163</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db38s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>-5</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db53x250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>0</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>183</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db80s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>494</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db57s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db56s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>6</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>72</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>dvb57s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>4</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>71</x>
+     <y>594</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db58s251</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>4</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>238</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>db57s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>3</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>296</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

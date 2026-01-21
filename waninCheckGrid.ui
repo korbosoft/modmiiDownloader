@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Korbo</author>
+ <class>waninCheckGrid</class>
+ <widget class="QGroupBox" name="waninCheckGrid">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>260</width>
+    <height>585</height>
+   </rect>
+  </property>
+  <property name="toolTip">
+   <string>Outdated</string>
+  </property>
+  <property name="title">
+   <string>who up holding they place</string>
+  </property>
+  <property name="alignment">
+   <set>Qt::AlignmentFlag::AlignCenter</set>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>30</y>
+     <width>260</width>
+     <height>555</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="waninGrid">
+      <item row="0" column="0">
+       <widget class="QLabel" name="wv21b37">
+        <property name="text">
+         <string>Wanin-v21 [37]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="wv21b56">
+        <property name="text">
+         <string>Wanin-v21 [56]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QCheckBox" name="wv19b38s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="wv21b37s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="0">
+       <widget class="QLabel" name="wv14b38">
+        <property name="text">
+         <string>Wanin-v14 [38]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="2">
+       <widget class="QCheckBox" name="wv17b38s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="wv21b57">
+        <property name="text">
+         <string>Wanin-v21 [57]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2">
+       <widget class="QCheckBox" name="wv20b38s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QCheckBox" name="wv19b37s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="wv21b38s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="wv21b53">
+        <property name="text">
+         <string>Wanin-v21 [53]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="wv21b58">
+        <property name="text">
+         <string>Wanin-v21 [58]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QCheckBox" name="wv21b57s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="0">
+       <widget class="QLabel" name="wv17b38">
+        <property name="text">
+         <string>Wanin-v17b [38]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="wv20b57">
+        <property name="text">
+         <string>Wanin-v20 [57]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="1">
+       <widget class="QCheckBox" name="wv14b38s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="wv21b53s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="wv20b38">
+        <property name="text">
+         <string>Wanin-v20 [38]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="2">
+       <widget class="QCheckBox" name="wv19b">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="wv21b55s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QCheckBox" name="wv21b55s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="2">
+       <widget class="QCheckBox" name="wv14b38s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="wv21b53s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QCheckBox" name="wv20b57s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="1">
+       <widget class="QCheckBox" name="wv19b57s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="wv21b37s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="1">
+       <widget class="QCheckBox" name="wv17b38s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2">
+       <widget class="QCheckBox" name="wv20b56s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QCheckBox" name="wv21b57s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QCheckBox" name="wv20b56s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="0">
+       <widget class="QLabel" name="wv19b57">
+        <property name="text">
+         <string>Wanin-v19 [57]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QCheckBox" name="wv21b58s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="wv21b38">
+        <property name="text">
+         <string>Wanin-v21 [38]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QCheckBox" name="wv21b56v250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="wv21b55">
+        <property name="text">
+         <string>Wanin-v21 [55]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="wv20b56">
+        <property name="text">
+         <string>Wanin-v20 [56]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="2">
+       <widget class="QCheckBox" name="wv19b57s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QCheckBox" name="wv21b58s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="wv19b37">
+        <property name="text">
+         <string>Wanin-v19 [37]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="2">
+       <widget class="QCheckBox" name="wv19b38s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QCheckBox" name="wv21b56s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="wv21b38s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="wv19b38">
+        <property name="text">
+         <string>Wanin-v19 [38]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="2">
+       <widget class="QCheckBox" name="wv20b57s250">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QCheckBox" name="wv20b38s249">
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="d2xSelect">
+      <property name="text">
+       <string>Select All</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

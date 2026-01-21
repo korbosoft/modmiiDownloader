@@ -1,22 +1,14 @@
 # This Python file uses the following encoding: utf-8
-import sys
-
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QGroupBox
 
 # Important:
 # You need to run the following command to generate the ui_form.py file
 #     pyside6-uic form.ui -o ui_form.py, or
 #     pyside2-uic form.ui -o ui_form.py
-from ui_main import Ui_mainWindow
+from ui_d2xCheckGrid import Ui_d2xCheckGrid
 
-class mainWindow(QMainWindow):
+class d2xCheckGrid(QGroupBox):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.ui = Ui_mainWindow()
+        self.ui = Ui_d2xCheckGrid()
         self.ui.setupUi(self)
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    widget = mainWindow()
-    widget.show()
-    sys.exit(app.exec())

@@ -2,4 +2,11 @@
 name = "PySide Widgets Project"
 
 [tool.pyside6-project]
-files = ["mainwindow.py", "form.ui"]
+files = [
+"d2xCheckGrid.py",
+"d2xCheckGrid.ui",
+"mainwindow.py",
+"mainwindow.ui",
+"waninCheckGrid.py",
+"waninCheckGrid.ui",
+]
