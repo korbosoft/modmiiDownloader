@@ -44,7 +44,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -67,7 +67,7 @@
         <number>5</number>
        </property>
        <item row="1" column="1">
-        <widget class="QGroupBox" name="channels">
+        <widget class="DownloadListSection" name="channels">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -80,123 +80,10 @@
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListView" name="channelList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QGroupBox" name="contents">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Content Files</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-         <widget class="QListView" name="contentList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>263</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QGroupBox" name="realsigned">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Non-Fakesigned IOSs\MIOS</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-         <widget class="QListView" name="realsignedList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QGroupBox" name="other">
+        <widget class="DownloadListSection" name="other">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -209,79 +96,10 @@
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListView" name="otherList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>263</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QGroupBox" name="fakesigned">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Fakesigned IOSs</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-         <widget class="QListView" name="fakesignedList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>263</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QGroupBox" name="sysmenus">
+        <widget class="DownloadListSection" name="sysmenus">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -294,34 +112,54 @@
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListView" name="sysmenuList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>263</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="DownloadListSection" name="realsigned">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Non-Fakesigned IOSs\MIOS</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="DownloadListSection" name="fakesigned">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Fakesigned IOSs</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="DownloadListSection" name="contents">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Content Files</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
         </widget>
        </item>
       </layout>
@@ -337,56 +175,12 @@
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>681</height>
+        <height>640</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="wiiHaxLayout">
-       <item row="0" column="1">
-        <widget class="QGroupBox" name="wiiHomebrew">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Wii-Only Homebrew</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-         <widget class="QListView" name="wiiHomebrewList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="isWrapping" stdset="0">
-           <bool>false</bool>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </widget>
-       </item>
        <item row="0" column="0">
-        <widget class="QGroupBox" name="exploits">
+        <widget class="DownloadListSection" name="exploits">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -399,35 +193,10 @@
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListView" name="exploitList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QGroupBox" name="vWiihomebrew">
+       <item row="0" column="1">
+        <widget class="DownloadListSection" name="wiiHomebrew">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -435,40 +204,15 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>vWii-Only Homebrew</string>
+          <string>Wii-Only Homebrew</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListView" name="vWiihomebrewList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>315</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QGroupBox" name="hbc">
+        <widget class="DownloadListSection" name="hbc">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -481,38 +225,10 @@
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListView" name="hbcList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>315</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="isWrapping" stdset="0">
-           <bool>false</bool>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QGroupBox" name="bothHomebrew">
+       <item row="0" column="2" rowspan="2">
+        <widget class="DownloadListSection" name="bothHomebrew">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -525,82 +241,56 @@
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListView" name="bothHomebrewList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>316</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="isWrapping" stdset="0">
-           <bool>false</bool>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-         </widget>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QGroupBox" name="external">
+       <item row="1" column="1">
+        <widget class="DownloadListSection" name="vWiiHomebrew">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="title">
-          <string>Externally linked</string>
+          <string>vWii-Only Homebrew</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QTextBrowser" name="externalText">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>315</height>
-           </rect>
-          </property>
-          <property name="markdown">
-           <string>[BlueBomb \[U\\E\\J\\K]](https://wii.hacks.guide/bluebomb.html)                
-                                                       
-
-[szsHaxx \[U\\E\\J\\K]](https://github.com/MikeIsAStar/szsHaxx)
-
-</string>
-          </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://wii.hacks.guide/bluebomb.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1d99f3;&quot;&gt;BlueBomb [U\E\J\K]&lt;/span&gt;&lt;/a&gt;                                                                        &lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/MikeIsAStar/szsHaxx&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1d99f3;&quot;&gt;szsHaxx [U\E\J\K]&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="openExternalLinks">
-           <bool>true</bool>
-          </property>
-          <property name="openLinks">
-           <bool>false</bool>
-          </property>
-         </widget>
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QLabel" name="warning_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>640</y>
+        <width>290</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>icon legend here
+icon legend here</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="themes">
@@ -701,110 +391,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </widget>
        </item>
        <item row="0" column="2">
-        <widget class="QGroupBox" name="hermes">
+        <widget class="DownloadListSection" name="hermes">
          <property name="title">
           <string>Hermes cIOSs</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListWidget" name="hermesList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>292</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-          <item>
-           <property name="text">
-            <string>Hermes-v5.1 cIOS202 [60]♡</string>
-           </property>
-           <property name="toolTip">
-            <string>♡Semi-Recommended cIOS. It is the ideal cIOS for slot 202 however it is outdated: cIOS202 was used for older versions of some popular emulators.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hermes-v5.1 cIOS222 [38]</string>
-           </property>
-           <property name="toolTip">
-            <string>Since d2x, Hermes cIOSs are generally no longer needed.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hermes-v5.1 cIOS223 [37]</string>
-           </property>
-           <property name="toolTip">
-            <string>Since d2x, Hermes cIOSs are generally no longer needed.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hermes-v5.1 cIOS224 [57]♡</string>
-           </property>
-           <property name="toolTip">
-            <string>♡Semi-Recommended cIOS. It is the ideal cIOS for slot 224 however it is outdated. Since d2x, Hermes cIOSs are generally no longer needed.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hermes-v5 cIOS222 [38]</string>
-           </property>
-           <property name="toolTip">
-            <string>Since d2x, Hermes cIOSs are generally no longer needed.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hermes-v5 cIOS223 [37]</string>
-           </property>
-           <property name="toolTip">
-            <string>Since d2x, Hermes cIOSs are generally no longer needed.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hermes-v5 cIOS224 [57]</string>
-           </property>
-           <property name="toolTip">
-            <string>Since d2x, Hermes cIOSs are generally no longer needed.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hermes-v4 cIOS222 [38]♡</string>
-           </property>
-           <property name="toolTip">
-            <string>♡Semi-Recommended cIOS. It is the ideal cIOS for slot 222 however it is outdated. Since d2x, Hermes cIOSs are generally no longer needed.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hermes-v4 cIOS223 [37+38]♡</string>
-           </property>
-           <property name="toolTip">
-            <string>♡Semi-Recommended cIOS. It is the ideal cIOS for slot 223 and was widely used for compatibility with guitar-hero games however it is outdated. Since d2x, Hermes cIOSs are generally no longer needed.</string>
-           </property>
-          </item>
-         </widget>
         </widget>
        </item>
        <item row="0" column="0" rowspan="2">
@@ -818,104 +411,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QGroupBox" name="cmios">
+        <widget class="DownloadListSection" name="cmios">
          <property name="title">
           <string>cMIOSs</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
-         <widget class="QListWidget" name="cmiosList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>21</y>
-            <width>262</width>
-            <height>292</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-          </property>
-          <property name="uniformItemSizes">
-           <bool>false</bool>
-          </property>
-          <item>
-           <property name="text">
-            <string>Swiss cMIOS r1788 [10]♡</string>
-           </property>
-           <property name="toolTip">
-            <string>Semi-Recommended cMIOS. A cMIOS with Swiss r1788 built-in. Hold Y during any GameCube mode load to start the built-in Swiss.  If Y is not held, then it should behave identically to WiiGator\WiiPower's cMIOS and official MIOS. While this is the ideal cMIOS, because of Nintendont, cMIOSs are generally not needed, unless loading backup Gamecube discs on older compatible Wiis.
-
-                                                                              Based on MIOSv10.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>WiiGator\Power cMIOS-v0.2 [10]</string>
-           </property>
-           <property name="toolTip">
-            <string>Since Nintendont, cMIOSs are generally not needed, unless loading backup Gamecube discs on older compatible Wiis.
-
-                                                                              Based on MIOSv10.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>WiiGator cMIOS-v0.2 [4]</string>
-           </property>
-           <property name="toolTip">
-            <string>Since Nintendont, cMIOSs are generally not needed, unless loading backup Gamecube discs on older compatible Wiis.
-
-                                                                              Based on MIOSv4.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Waninkoko cMIOS-rev5 [4]</string>
-           </property>
-           <property name="toolTip">
-            <string>Since Nintendont, cMIOSs are generally not needed, unless loading backup Gamecube discs on older compatible Wiis.
-
-                                                                              Based on MIOSv4.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>DIOS MIOS Lite (DML) v2.11</string>
-           </property>
-           <property name="toolTip">
-            <string>Since Nintendont, DML is generally not used anymore.
-
-                                                                              DML (Dios Mios Lite) is a tool which allows you to run Gamecube games from an SD Card.
-
-                                                                              Note: for DML to work with SNEEK+DI the WAD must be installed to real NAND and accessed via an emulated NAND.
-
-                                                                              Games must be in discex format, use discex or ModMii's Game Bulk Extractor.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>DIOS MIOS v2.11</string>
-           </property>
-           <property name="toolTip">
-            <string>Since Nintendont, DIOS MIOS is generally not used anymore.
-
-                                                                              DIOS MIOS is a tool which allows you to run Gamecube games from a USB.
-
-                                                                              Games must be in discex format, use discex or ModMii's Game Bulk Extractor.</string>
-           </property>
-          </item>
-         </widget>
         </widget>
        </item>
       </layout>
@@ -1066,6 +568,12 @@ Settings</string>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+          </property>
+          <property name="showDropIndicator" stdset="0">
+           <bool>false</bool>
+          </property>
           <property name="alternatingRowColors">
            <bool>true</bool>
           </property>
@@ -1106,6 +614,12 @@ Settings</string>
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+          </property>
+          <property name="showDropIndicator" stdset="0">
+           <bool>false</bool>
           </property>
           <property name="alternatingRowColors">
            <bool>true</bool>
@@ -1185,23 +699,15 @@ Settings</string>
    <header>waninCheckGrid</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>DownloadListSection</class>
+   <extends>QGroupBox</extends>
+   <header>DownloadWidgets</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>tabWidget</tabstop>
-  <tabstop>sysmenuList</tabstop>
-  <tabstop>realsignedList</tabstop>
-  <tabstop>fakesignedList</tabstop>
-  <tabstop>contentList</tabstop>
-  <tabstop>channelList</tabstop>
-  <tabstop>otherList</tabstop>
-  <tabstop>exploitList</tabstop>
-  <tabstop>wiiHomebrewList</tabstop>
-  <tabstop>bothHomebrewList</tabstop>
-  <tabstop>hbcList</tabstop>
-  <tabstop>vWiihomebrewList</tabstop>
-  <tabstop>externalText</tabstop>
-  <tabstop>hermesList</tabstop>
-  <tabstop>cmiosList</tabstop>
   <tabstop>wiiRecommended</tabstop>
   <tabstop>vwiiRecommended</tabstop>
   <tabstop>d2xSettings</tabstop>

@@ -1,15 +1,17 @@
 [project]
-name = "PySide Widgets Project"
+name = "ModMii Downloader UI"
 
 [tool.pyside6-project]
 files = [
+"DownloadListSection.ui",
+"DownloadWidgets.py",
 "assets/icon.png",
 "d2xCheckGrid.py",
 "d2xCheckGrid.ui",
-"resource.qrc",
-"download.json",
+"downloader.json",
 "main.py",
 "mainWindow.ui",
+"resource.qrc",
 "waninCheckGrid.py",
 "waninCheckGrid.ui",
 ]

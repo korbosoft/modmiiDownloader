@@ -55,7 +55,7 @@
          <bool>false</bool>
         </property>
         <property name="toolTip">
-         <string>♥Recommended cIOS for slot 251, mainly only used for Spongebob's Boating Bash or LAN Adapter support</string>
+         <string>Recommended cIOS for slot 251, mainly only used for Spongebob's Boating Bash or LAN Adapter support.</string>
         </property>
         <property name="text">
          <string>251♥</string>
@@ -93,7 +93,7 @@
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QCheckBox" name="db53x250">
+       <widget class="QCheckBox" name="db53s250">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -131,7 +131,7 @@
          <bool>false</bool>
         </property>
         <property name="toolTip">
-         <string>♥Recommended cIOSs for vWii ONLY</string>
+         <string>Recommended cIOSs for vWii ONLY</string>
         </property>
         <property name="text">
          <string>vWii</string>
@@ -274,7 +274,7 @@
          <bool>false</bool>
         </property>
         <property name="toolTip">
-         <string>♥Recommended cIOS for slot 250, d2x base 56 or 57 work with the vast majority of games.</string>
+         <string>Recommended cIOS for slot 250, d2x base 56 or 57 work with the vast majority of games.</string>
         </property>
         <property name="text">
          <string>250♥</string>
@@ -326,6 +326,9 @@
         <property name="enabled">
          <bool>false</bool>
         </property>
+        <property name="toolTip">
+         <string>Recommended cIOS for slot 248, mainly only used for Spongebob's Boating Bash or keyboard support for Animal Crossing City Folk.</string>
+        </property>
         <property name="text">
          <string>248♥</string>
         </property>
@@ -357,7 +360,7 @@
          <bool>false</bool>
         </property>
         <property name="toolTip">
-         <string>♥Recommended cIOS for slot 249, d2x base 56 or 57 work with the vast majority of games.</string>
+         <string>Recommended cIOS for slot 249, d2x base 56 or 57 work with the vast majority of games.</string>
         </property>
         <property name="text">
          <string>249♥</string>
@@ -433,7 +436,7 @@
   <tabstop>db38s249</tabstop>
   <tabstop>db38s250</tabstop>
   <tabstop>db53s249</tabstop>
-  <tabstop>db53x250</tabstop>
+  <tabstop>db53s250</tabstop>
   <tabstop>db55s249</tabstop>
   <tabstop>db55s250</tabstop>
   <tabstop>db56s249</tabstop>
@@ -763,7 +766,7 @@
   <connection>
    <sender>d2xSelect</sender>
    <signal>clicked()</signal>
-   <receiver>db53x250</receiver>
+   <receiver>db53s250</receiver>
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">

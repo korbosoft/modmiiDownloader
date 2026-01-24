@@ -1,0 +1,926 @@
+{
+	"downloadList": {
+		"nus": {
+			"sysmenus": {
+				"item": [
+					{
+						"id": "SM41U",
+						"title": "4.1U",
+						"toolTip": null,
+						"tags": ["usa"]
+					},
+					{
+						"id": "SM42U",
+						"title": "4.2U",
+						"toolTip": null,
+						"tags": ["usa"]
+					},
+					{
+						"id": "SM43U",
+						"title": "4.3U",
+						"toolTip": null,
+						"tags": ["usa"]
+					},
+					{
+						"id": "SM41E",
+						"title": "4.1E",
+						"toolTip": null,
+						"tags": ["eur"]
+					},
+					{
+						"id": "SM42E",
+						"title": "4.2E",
+						"toolTip": null,
+						"tags": ["eur"]
+					},
+					{
+						"id": "SM43E",
+						"title": "4.3E",
+						"toolTip": null,
+						"tags": ["eur"]
+					},
+					{
+						"id": "SM41J",
+						"title": "4.1J",
+						"toolTip": null,
+						"tags": ["jpn"]
+					},
+					{
+						"id": "SM42J",
+						"title": "4.2J",
+						"toolTip": null,
+						"tags": ["jpn"]
+					},
+					{
+						"id": "SM43J",
+						"title": "4.3J",
+						"toolTip": null,
+						"tags": ["jpn"]
+					},
+					{
+						"id": "SM41K",
+						"title": "4.1K",
+						"toolTip": null,
+						"tags": ["kor"]
+					},
+					{
+						"id": "SM42K",
+						"title": "4.2K",
+						"toolTip": null,
+						"tags": ["kor"]
+					},
+					{
+						"id": "SM43K",
+						"title": "4.3K",
+						"toolTip": null,
+						"tags": ["kor"]
+					},
+					{
+						"id": "SMvU",
+						"title": "vWii 4.3U (5.2.0)",
+						"toolTip": null,
+						"tags": ["usa", "vwii"]
+					},
+					{
+						"id": "SMvE",
+						"title": "vWii 4.3E (5.2.0)",
+						"toolTip": null,
+						"tags": ["eur", "vwii"]
+					},
+					{
+						"id": "SMvJ",
+						"title": "vWii 4.3J (5.2.0)",
+						"toolTip": null,
+						"tags": ["jpn", "vwii"]
+					}
+				]
+			},
+			"realsigned": {
+				"item": [
+					{
+						"id": "IOS9",
+						"title": "IOS9 v1034",
+						"toolTip": "IOS9 is used by System Menu 1.0 and early games like Zelda: Twilight Princess, Wii Sports, Wii Play, WarioWare: Smooth Moves.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS12",
+						"title": "IOS12 v526",
+						"toolTip": "IOS12 is an IOS that was previously thought to be the oldest, used by titles such as Elebits.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS13",
+						"title": "IOS13 v1032",
+						"toolTip": "IOS13 is used by Photo Channel 1.0.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS14",
+						"title": "IOS14 v1032",
+						"toolTip": "IOS14 is used by Pokémon Battle Revolution (Japanese version only).",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS15",
+						"title": "IOS15 v1032",
+						"toolTip": "IOS15 was previously used by some official channels; it has not been stubbed because the Internet Channel, which could not be updated through standard updates, previously used it.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS17",
+						"title": "IOS17 v1032",
+						"toolTip": "IOS17 is used by early titles such as Bust-A-Move Bash and Super Paper Mario.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS21",
+						"title": "IOS21 v1039",
+						"toolTip": "IOS21 is used by third party games (No More Heroes). many other games such as Wii Sports were also re-released under this IOS.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS22",
+						"title": "IOS22 v1294",
+						"toolTip": "IOS22 is used by a few games like High School Musical: Sing It! and Boogie.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS28",
+						"title": "IOS28 v1807",
+						"toolTip": "IOS28 is only used by Metroid Prime 3: Corruption. The first IOS released in modular parts.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS30",
+						"title": "IOS30 v2576",
+						"toolTip": "IOS30 is used by System Menu 3.0-3.3. Officially this IOS is stubbed.",
+						"tags": []
+					},
+					{
+						"id": "IOS31",
+						"title": "IOS31 v3608",
+						"toolTip": "IOS31 is used by News & Weather channels. RC24 (WiiLink predecessor) used to require a patched version of IOS31 so it could download custom News & Weather data.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS33",
+						"title": "IOS33 v3608",
+						"toolTip": "IOS33 is an IOS version based on IOS31 and used in games like Super Mario Galaxy.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS34",
+						"title": "IOS34 v3608",
+						"toolTip": "IOS34 is used by Internet Channel v257.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS35",
+						"title": "IOS35 v3608",
+						"toolTip": "IOS35 is a copy of IOS31 used by games like Call of Duty, Wii Music, etc.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS36",
+						"title": "IOS36 v3351",
+						"toolTip": "IOS36 v3351 was the first IOS patched to restore the trucha bug, enabling custom IOS installation. Today it is recommended not to patch IOS36.",
+						"tags": []
+					},
+					{
+						"id": "IOS36v3608",
+						"title": "IOS36 v3608",
+						"toolTip": "IOS36 v3608 is used by titles such as Super Smash Bros. Brawl and Mario Kart Wii.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS37",
+						"title": "IOS37 v5663",
+						"toolTip": "IOS37 is used by several WiiWare games and older Guitar Hero/Rock Band games.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS38",
+						"title": "IOS38 v4124",
+						"toolTip": "IOS38 is used by Animal Crossing: City Folk and the Nintendo Wii Speak Channel.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS41",
+						"title": "IOS41 v3607",
+						"toolTip": "IOS41 is a Korea-specific IOS used by preinstalled channels. It is identical to IOS45.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS43",
+						"title": "IOS43 v3607",
+						"toolTip": "IOS43 is only used by some Korean games.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS45",
+						"title": "IOS45 v3607",
+						"toolTip": "IOS45 is only used by some Korean games. It is identical to IOS41.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS46",
+						"title": "IOS46 v3607",
+						"toolTip": "IOS46 is an IOS used by some Korean games like Mario Kart Wii and Need for Speed Undercover.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS48v4124",
+						"title": "IOS48 v4124",
+						"toolTip": "IOS48 is used by Animal Crossing: City Folk (Korean version only).",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS53",
+						"title": "IOS53 v5663",
+						"toolTip": "IOS53 is used by titles such as New Super Mario Bros. Wii and Wii Fit Plus.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS55",
+						"title": "IOS55 v5663",
+						"toolTip": "IOS55 is used by titles such as Wii Sports Resort and The Conduit.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS56",
+						"title": "IOS56 v5662",
+						"toolTip": "IOS56 added SDHC support and is identical to IOS61. Used by Wii Speak 2.0 and the latest Shopping Channel.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS57",
+						"title": "IOS57 v5919",
+						"toolTip": "IOS57 is used by many of the newer games released near the end of the production of Wii discs in 2020, although it was originally released in 2009.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS58",
+						"title": "IOS58 v6176",
+						"toolTip": "IOS58 offers improved USB2 speeds and is preferred by many apps including the Homebrew Channel.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS59",
+						"title": "IOS59 v9249",
+						"toolTip": "IOS59 is a Japan exclusive IOS. ModMii Wizards will only direct Japanese consoles to install it.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS60",
+						"title": "IOS60 v6174",
+						"toolTip": "IOS60 is used by System Menu 4.0 & 4.1. First to support SDHC. Officially this IOS is stubbed.",
+						"tags": []
+					},
+					{
+						"id": "IOS61",
+						"title": "IOS61 v5662",
+						"toolTip": "IOS61 was used by the Wii Shop Channel from the System Menu 4.0-4.2 updates. Also used by Photo Channel 1.1b. It is identical to IOS56.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS62",
+						"title": "IOS62 v6430",
+						"toolTip": "IOS62 is used by the Wii U Transfer Tool.",
+						"tags": ["active"]
+					},
+					{
+						"id": "IOS70",
+						"title": "IOS70 v6687",
+						"toolTip": "IOS70 is used by System Menu 4.2. Officially this IOS is stubbed.",
+						"tags": []
+					},
+					{
+						"id": "IOS80",
+						"title": "IOS80 v6944",
+						"toolTip": "IOS80 is used by System Menu 4.3.",
+						"tags": []
+					},
+					{
+						"id": "M10",
+						"title": "MIOS v10",
+						"toolTip": "MIOS is a special version of IOS that runs when the Wii enters GameCube mode.",
+						"tags": ["active"]
+					},
+					{
+						"id": "vIOS",
+						"title": "vWii IOSs [x29]",
+						"toolTip": "Download 29 IOSs for vWii:\nvIOS9, 12, 13, 14, 15, 17, 21, 22, 28, 31, 33, 34, 35, 36, 37, 38, 41, 43, 45, 46, 48, 53, 55, 56, 57, 58, 59, 62 & 80.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+						"tags": ["vwii"]
+					}
+				]
+			},
+			"fakesigned": {
+				"item": [
+					{
+						"id": "IOS11P60",
+						"title": "IOS11[60]",
+						"toolTip": "IOS11 is used by System Menu 2.0 & 2.1; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+						"tags": ["protection"]
+					},
+					{
+						"id": "IOS20P60",
+						"title": "IOS20[60]",
+						"toolTip": "IOS20 is used by System Menu 2.2; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+						"tags": ["protection"]
+					},
+					{
+						"id": "IOS30P60",
+						"title": "IOS30[60]",
+						"toolTip": "IOS30 is used by System Menu 3.0-3.3; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+						"tags": ["protection"]
+					},
+					{
+						"id": "IOS40P60",
+						"title": "IOS40[60]",
+						"toolTip": "IOS40 is used by System Menu 3.3 for all Korean consoles; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+						"tags": ["protection"]
+					},
+					{
+						"id": "IOS50P",
+						"title": "IOS50[60]",
+						"toolTip": "IOS50 is used by System Menu 3.4; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+						"tags": ["protection"]
+					},
+					{
+						"id": "IOS52P",
+						"title": "IOS52[60]",
+						"toolTip": "IOS52 is used by System Menu 3.5 and exclusive to Korea; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+						"tags": ["protection"]
+					},
+					{
+						"id": "IOS60P",
+						"title": "IOS60[60]",
+						"toolTip": "IOS70 is used by System Menu 4.2; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+						"tags": ["protection"]
+					},
+					{
+						"id": "IOS70K",
+						"title": "IOS70[60]",
+						"toolTip": "IOS70 is used by System Menu 4.2; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+						"tags": ["protection"]
+					},
+					{
+						"id": "IOS80K",
+						"title": "IOS80[60]",
+						"toolTip": "IOS80 is used by System Menu 4.3; this IOS is based on IOS60 to maximize compatibility and protection.",
+						"tags": ["active", "protection"]
+					},
+					{
+						"id": "IOS236",
+						"title": "IOS236[36]",
+						"toolTip": "IOS236 is a patched version of IOS36. It is no longer needed.",
+						"tags": []
+					},
+					{
+						"id": "vIOS61",
+						"title": "vIOS61[56]",
+						"toolTip": "vIOS61 (aka cIOS61[56]-v5918-vWii) is a not normally found on vWii. It is a custom copy of vIOS56 with only it's slot changed to 61 to support Photo Channel 1.1.",
+						"tags": ["vwii"]
+					},
+					{
+						"id": "vIOS80",
+						"title": "vIOS80[80]",
+						"toolTip": "vIOS80 is used by vWii System Menu 4.3.",
+						"tags": ["vwii"]
+					}
+				]
+			},
+			"content": {
+				"item": [
+					{
+						"id": "A0e",
+						"title": "0e.app [IOS80 v6943]",
+						"toolTip": "Used to construct NEEK for Wii.",
+						"tags": []
+					},
+					{
+						"id": "A01_60",
+						"title": "01.app [IOS60 v6174]",
+						"toolTip": "Used to construct older versions of NEEK+DI (before v186) and NEEK2O+DI (before v70) for Wii.",
+						"tags": []
+					},
+					{
+						"id": "A0d",
+						"title": "0d.app [vIOS80 v7200]",
+						"toolTip": "Used to construct NEEK for vWii.",
+						"tags": []
+					},
+					{
+						"id": "A0c",
+						"title": "0c.app [MIOS v10]",
+						"toolTip": "Used to construct DIOS MIOS for Wii.",
+						"tags": []
+					}
+				]
+			},
+			"channels": {
+				"item": [
+					{
+						"id": "MII",
+						"title": "Mii [RF]",
+						"toolTip": "Can be installed to Wii and/or vWii.",
+						"tags": ["usa", "eur", "jpn", "kor"]
+					},
+					{
+						"id": "IU",
+						"title": "Internet [U]",
+						"toolTip": null,
+						"tags": ["usa"]
+					},
+					{
+						"id": "IE",
+						"title": "Internet [E]",
+						"toolTip": null,
+						"tags": ["eur"]
+					},
+					{
+						"id": "IJ",
+						"title": "Internet [J]",
+						"toolTip": null,
+						"tags": ["jpn"]
+					},
+					{
+						"id": "P0",
+						"title": "Photo 1.0 [RF]",
+						"toolTip": "Photo Channel v1.1 is generally an improvement over v1.0; however, v1.1 replaced MP3 support with AAC support. Users that want MP3 support may prefer v1.0.",
+						"tags": ["usa", "eur", "jpn", "kor"]
+					},
+					{
+						"id": "P",
+						"title": "Photo 1.1 [U/E/J]",
+						"toolTip": "Download also includes a second WAD (Photo-Channel-1.1-dummy-HAZA) which is required for Photo Channel v1.1 to work.",
+						"tags": ["usa", "eur", "jpn"]
+					},
+					{
+						"id": "PHOTOK",
+						"title": "Photo 1.1 [K]",
+						"toolTip": "Download also includes a second WAD (Photo-Channel-1.1-dummy-HAZA) which is required for Photo Channel v1.1 to work.",
+						"tags": ["kor"]
+					},
+					{
+						"id": "WU",
+						"title": "Weather [U]",
+						"toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["usa"]
+					},
+					{
+						"id": "WE",
+						"title": "Weather [E]",
+						"toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["eur"]
+					},
+					{
+						"id": "WJ",
+						"title": "Weather [J]",
+						"toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["jpn"]
+					},
+					{
+						"id": "NU",
+						"title": "News [U]",
+						"toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["usa"]
+					},
+					{
+						"id": "NE",
+						"title": "News [E]",
+						"toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["eur"]
+					},
+					{
+						"id": "NJ",
+						"title": "News [J]",
+						"toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["jpn"]
+					},
+					{
+						"id": "S",
+						"title": "Shop [U/E/J]",
+						"toolTip": "The Wii Shop Channel can only re-download content you have already purchased.",
+						"tags": ["usa", "eur", "jpn"]
+					},
+					{
+						"id": "SK",
+						"title": "Shop [K]",
+						"toolTip": "The Wii Shop Channel can only re-download content you have already purchased.",
+						"tags": ["kor"]
+					},
+					{
+						"id": "WSU",
+						"title": "Speak [U]",
+						"toolTip": "Requires WiiLink and Wiimmfi to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["usa"]
+					},
+					{
+						"id": "WSE",
+						"title": "Speak [E]",
+						"toolTip": "Requires WiiLink and Wiimmfi to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["eur"]
+					},
+					{
+						"id": "WSJ",
+						"title": "Speak [J]",
+						"toolTip": "Requires WiiLink and Wiimmfi to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["jpn"]
+					},
+					{
+						"id": "WSK",
+						"title": "Speak [K]",
+						"toolTip": "Requires WiiLink and Wiimmfi to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
+						"tags": ["kor"]
+					}
+				]
+			},
+			"other": {
+				"item": [
+					{
+						"id": "RSU",
+						"title": "Region Select [U]",
+						"toolTip": null,
+						"tags": []
+					},
+					{
+						"id": "RSE",
+						"title": "Region Select [E]",
+						"toolTip": null,
+						"tags": []
+					},
+					{
+						"id": "RSJ",
+						"title": "Region Select [J]",
+						"toolTip": null,
+						"tags": []
+					},
+					{
+						"id": "RSK",
+						"title": "Region Select [K]",
+						"toolTip": null,
+						"tags": []
+					},
+					{
+						"id": "EULAU",
+						"title": "EULA [U]",
+						"toolTip": "End User License Agreement is a hidden channel that is launched by the System Menu when the 'User Agreements' option is selected, as well as by the Wii Shop Channel if the EULA has not been accepted. Because the EULA uses HTTP, a custom page can be shown there, which is exploited by str2hax and WiiLink.\n\nWhile only found on the Wii, this should also get installed to vWii if enabling Priiloader's Permanent vWii System Settings (vWii) system menu hack.",
+						"tags": ["vwii"]
+					},
+					{
+						"id": "EULAE",
+						"title": "EULA [E]",
+						"toolTip": "End User License Agreement is a hidden channel that is launched by the System Menu when the 'User Agreements' option is selected, as well as by the Wii Shop Channel if the EULA has not been accepted. Because the EULA uses HTTP, a custom page can be shown there, which is exploited by str2hax and WiiLink.\n\nWhile only found on the Wii, this should also get installed to vWii if enabling Priiloader's Permanent vWii System Settings (vWii) system menu hack.",
+						"tags": ["vwii"]
+					},
+					{
+						"id": "EULAJ",
+						"title": "EULA [J]",
+						"toolTip": "End User License Agreement is a hidden channel that is launched by the System Menu when the 'User Agreements' option is selected, as well as by the Wii Shop Channel if the EULA has not been accepted. Because the EULA uses HTTP, a custom page can be shown there, which is exploited by str2hax and WiiLink.\n\nWhile only found on the Wii, this should also get installed to vWii if enabling Priiloader's Permanent vWii System Settings (vWii) system menu hack.",
+						"tags": ["vwii"]
+					},
+					{
+						"id": "EULAK",
+						"title": "EULA [K]",
+						"toolTip": "End User License Agreement is a hidden channel that is launched by the System Menu when the 'User Agreements' option is selected, as well as by the Wii Shop Channel if the EULA has not been accepted. Because the EULA uses HTTP, a custom page can be shown there, which is exploited by str2hax and WiiLink.\n\nWhile only found on the Wii, this should also get installed to vWii if enabling Priiloader's Permanent vWii System Settings (vWii) system menu hack.",
+						"tags": ["vwii"]
+					},
+					{
+						"id": "BC",
+						"title": "BC v6 [RF]",
+						"toolTip": "BC (short for Backwards Compatibility) is run when a GameCube game is launched from the Disc Channel. It is a bootloader similar to boot1 that is responsible for lowering clock speed, verifying and loading boot2, which detects the lowered clock speed and loads MIOS to run the GC game.\n\nBC was never meaningfully updated other than to fix some exploits, the BC WAD is useful mainly to construct emulated NANDs.",
+						"tags": []
+					},
+					{
+						"id": "cBC",
+						"title": "NMM [cBC]",
+						"toolTip": "NMM (No More Memory-Cards) is a Custom BC that redirects all GameCube Memory Card access to the SD card. This allow saving/loading GameCube game saves without a GC Memory Card.",
+						"tags": []
+					},
+					{
+						"id": "BCnand",
+						"title": "vBC [x2]",
+						"toolTip": "2x vWii downloads.\n\nBC-NAND & BC-WFS are Region Free ancast images for the vWii installed as title 1-512 & 1-513. They replace the NAND Boot Program when launching any title that includes one, and is responsible for lowering the Espresso clock speed for Wii compatibility. BC-WFS is probably only used for Dragon Quest X.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
+						"tags": ["vwii"]
+					},
+					{
+						"id": "vRSU",
+						"title": "vRegion [x3]",
+						"toolTip": "3x vWii downloads. vWii Region Select for U, E and J.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
+						"tags": ["vwii"]
+					}
+				]
+			}
+		},
+		"wiiHaxx": {
+			"exploits": {
+				"item": [
+					{
+						"id": "BB1",
+						"title": "Bannerbomb v1 [3.0-4.1]",
+						"toolTip": "<=2GB SD Card required; larger SDHC and SDXC also work if on System Menu 4.0 or 4.1; can launch both dols and elfs; works on Wii only",
+						"tags": []
+					},
+					{
+						"id": "BB2",
+						"title": "Bannerbomb v2 [4.2]",
+						"toolTip": "SD Card required; SDHC and SDXC also work; can launch both dols and elfs; works on Wii only",
+						"tags": []
+					},
+					{
+						"id": "Wilbrand",
+						"title": "Wilbrand",
+						"toolTip": "MailBox Bomb similar to Letterbomb; technically also works on lower System Menus (see https://wilbrand.donut.eu.org) but ModMii uses Bannerbomb for that.\n\nSD Card required; SDHC and SDXC also work if on System Menu 4.0 or higher; Can launch both dols and elfs; works on Wii only",
+						"tags": []
+					},
+					{
+						"id": "smash",
+						"title": "Smash Stack",
+						"toolTip": "Requires Super Smash Brothers Brawl and a <=2GB SD card (SDHC and SDXC do not work); can launch elfs but not dols; works on Wii and vWii",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "Bathaxx",
+						"title": "Bathaxx [U/E/J]",
+						"toolTip": "Requires LEGO Batman, a <=2GB SD card (SDHC and SDXC do not work) and a nunchuck; can launch elfs but not dols; works on Wii and vWii",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "TOS",
+						"title": "Eri HaKawai [U/E/J]",
+						"toolTip": "Requires Tales of Symphonia: Dawn of the New World, a <=2GB SD card (SDHC and SDXC do not work) and a nunchuck; can launch elfs but not dols; works on Wii and vWii",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "pwns",
+						"title": "Indiana Pwns [U/E/J]",
+						"toolTip": "Requires LEGO Indiana Jones, a <=2GB SD card (SDHC and SDXC do not work) and a nunchuck; can launch elfs but not dols; works on Wii and vWii",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "ROTJ",
+						"title": "Return of the Jodi [U/E/J]",
+						"toolTip": "Requires LEGO Star Wars, a <=2GB SD card (SDHC and SDXC do not work) and a nunchuck; can launch elfs but not dols; works on Wii and vWii",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "YUGI",
+						"title": "YU-GI-OWNED! [U/E/J]",
+						"toolTip": "Requires Yu-Gi-Oh! 5D, a <=2GB SD card (SDHC and SDXC do not work) and a nunchuck or classic controller; can launch elfs but not dols; works on Wii and vWii",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "Twi",
+						"title": "Twilight Hack 1 [<3.4 U/E/J]",
+						"toolTip": "Version 0.1beta1 is compatible with System Menus up to 3.3, 0.1beta2 is compatible with System Menu 3.4.\n\nRequires The Legend of Zelda: Twilight Princess, a <=2GB SD card (SDHC and SDXC do not work) and a nunchuck; can launch both dols and elfs; works on Wii only",
+						"tags": []
+					},
+					{
+						"id": "Twi2",
+						"title": "Twilight Hack 2 [3.4 U/E/J]",
+						"toolTip": "Version 0.1beta1 is compatible with System Menus up to 3.3, 0.1beta2 is compatible with System Menu 3.4.\n\nRequires The Legend of Zelda: Twilight Princess, a <=2GB SD card (SDHC and SDXC do not work) and a nunchuck; can launch both dols and elfs; works on Wii only",
+						"tags": []
+					},
+					{
+						"id": "BlueMii",
+						"title": "BlueMii⇧",
+						"toolTip": "A BlueBomb-based exploit for the Wii or Wii Mini requiring a separate already-hacked Wii / WiiU (vWii) / Wii Mini or a copy of Dolphin with working Bluetooth passthrough.",
+						"tags": ["auto-updates"]
+					},
+					{
+						"id": "BlueBomb",
+						"title": "BlueBomb",
+						"toolTip": "An exploit for the Wii or Wii Mini requiring a bluetooth adapter and a linux machine (or Raspberry Pi, or Raspberry Pi Pico W 1/2, or ESP32 with BR/EDR [Classic] support) and is therefore not directly supported by ModMii; however, Linux can still be run on a Windows PC using software like VirtualBox or by flashing a Linux Live environment to a USB flash drive.\n\nDownload is not available directly via ModMii.",
+						"tags": ["disabled"],
+						"url": "https://wii.hacks.guide/bluebomb.html"
+					},
+					{
+						"id": "SZS",
+						"title": "szsHaxx",
+						"toolTip": "Requires Mario Kart Wii disc, a <=2GB SD card (SDHC and SDXC do not work), deleting savegame without being able to back it up; works on Wii only\n\nDownload is not available directly via ModMii due to restrictive requirements.",
+						"tags": ["disabled"],
+						"url": "https://github.com/MikeIsAStar/szsHaxx"
+					}
+				]
+			},
+			"wiiHomebrew": {
+				"item": [
+					{
+						"id": "bootmiisd",
+						"title": "Bootmii SD Files",
+						"toolTip": "A bootmii folder that when saved to SD can be used to launch Bootmii; Bootmii can also be retrieved from the HackMii Installer.",
+						"tags": []
+					},
+					{
+						"id": "ARC",
+						"title": "ARC ModMii Edition⇧",
+						"toolTip": "Any Region Changer (ARC) ModMii Edition is a mod of ARC for the Wii. If it detects a region mismatch, you only have to select the 'Auto Fix Settings' to correct it. It is one of many tools used to complete a region change.",
+						"tags": ["auto-updates"]
+					},
+					{
+						"id": "KK",
+						"title": "KoreanKii",
+						"toolTip": "Wii app to add or remove the Korean key from the SEEPROM. Used when region changing to and from Korean System Menu Versions.\n\nWARNING: You will 003 brick if you install the Korean Key UNLESS you are on a Korean System Menu version and/or have IOS60 installed as your System Menu IOS.",
+						"tags": []
+					},
+					{
+						"id": "nswitch",
+						"title": "nSwitch Channel",
+						"toolTip": "Simple neek/realnand switcher app embedded in a channel (neek2o_ModMii_BK2O_nSwitch_v4.2.wad).\n\nTechnically also works on vWii if neek is set up properly.",
+						"tags": []
+					},
+					{
+						"id": "S2U",
+						"title": "Switch2Uneek",
+						"toolTip": "An app to switch to and from UNEEK and back; download also includes a channel/WAD.",
+						"tags": []
+					},
+					{
+						"id": "Casper",
+						"title": "Casper",
+						"toolTip": "A tool to run MINI apps like Bootmii or SNEEK on your Wii without having to make permanent mods to it.",
+						"tags": []
+					},
+					{
+						"id": "IOS236Installer",
+						"title": "IOS236 Installer",
+						"toolTip": "Deprecated softmod tool that installs a patched IOS36 in IOS slot 236. Requires HBC version 1.0.7 or higher.",
+						"tags": []
+					},
+					{
+						"id": "SIP",
+						"title": "Simple IOS Patcher",
+						"toolTip": "Deprecated softmod tool that can install patched IOS36, 60, 70 and 80 to various slots. Requires HBC version 1.0.7 or higher.",
+						"tags": []
+					}
+				]
+			},
+			"vWiiHomebrew": {
+				"item": [
+					{
+						"id": "v43DB",
+						"title": "ww-43db-patcher⇧",
+						"toolTip": "Patches the WiiWare 4:3 aspect ratio database (43DB) within vWii's System Menu U8 archive to remove WiiConnect24-related channel entries (Everybody Votes Channel, Check Mii Out Channel) to enable a 16:9 aspect ratio.\n\nRedundant if any vWii theme built using ModMii has been installed (even the Default theme).",
+						"tags": ["auto-updates", "vwii"]
+					},
+					{
+						"id": "vWii80Installer",
+						"title": "Patched IOS80 Installer⇧",
+						"toolTip": "Patched IOS80 Installer for vWii installs a patched vWii IOS80. Made redundant by the Fakesigned vIOS80[80] WAD from Download page 1.",
+						"tags": ["auto-updates", "vwii"]
+					}
+				]
+			},
+			"hbc": {
+				"item": [
+					{
+						"id": "OHBC113",
+						"title": "HBC v1.1.3 WAD [OHBC]",
+						"toolTip": "Open Homebrew Channel v1.1.3 WAD by fail0verflow with title ID OHBC. This is the same channel intalled by vWii Compat Installer v1.6. Technically it works on both Wii & vWii but is only recommended for vWii.",
+						"tags": ["vwii", "vwii-supported"]
+					},
+					{
+						"id": "OHBC114",
+						"title": "HBC v1.1.4-1 WAD [OHBC]",
+						"toolTip": "Open Homebrew Channel v1.1.4-1 WAD modified by FIX94 with title ID OHBC. Technically it works on both Wii & vWii.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "OHBC",
+						"title": "HBC v1.1.5 WAD [LULZ]",
+						"toolTip": "Open Homebrew Channel v1.1.5 WAD with title ID LULZ; this is the same as fail0verflow's v1.1.3 but with it's Title ID changed to LULZ. Technically it works on both Wii & vWii but is only recommended for Wii.",
+						"tags": ["vwii-supported"]
+					}
+				]
+			},
+			"bothHomebrew": {
+				"item": [
+					{
+						"id": "abc123",
+						"title": "abc123",
+						"toolTip": "abc123",
+						"tags": ["abc123"]
+					}
+				]
+			}
+		},
+		"cios": {
+			"hermes": {
+				"item": [
+					{
+						"id": "c202_60_v51R",
+						"title": "Hermes-v5.1 cIOS202 [60]",
+						"toolTip": "Semi-Recommended cIOS. It is the ideal cIOS for slot 202 however it is outdated: cIOS202 was used for older versions of some popular emulators.",
+						"tags": ["semi-recommended"]
+					},
+					{
+						"id": "c222_38_v51R",
+						"title": "Hermes-v5.1 cIOS222 [38]",
+						"toolTip": "Since d2x, Hermes cIOSs are generally no longer needed.",
+						"tags": []
+					},
+					{
+						"id": "c223_37_v51R",
+						"title": "Hermes-v5.1 cIOS223 [37]",
+						"toolTip": "Since d2x, Hermes cIOSs are generally no longer needed.",
+						"tags": []
+					},
+					{
+						"id": "c224_57_v51R",
+						"title": "Hermes-v5.1 cIOS224 [57]",
+						"toolTip": "Semi-Recommended cIOS. It is the ideal cIOS for slot 224 however it is outdated. Since d2x, Hermes cIOSs are generally no longer needed.",
+						"tags": ["semi-recommended"]
+					},
+					{
+						"id": "c222_38_v5",
+						"title": "Hermes-v5 cIOS222 [38]",
+						"toolTip": "Since d2x, Hermes cIOSs are generally no longer needed.",
+						"tags": []
+					},
+					{
+						"id": "c223_37_v5",
+						"title": "Hermes-v5 cIOS223 [37]",
+						"toolTip": "Since d2x, Hermes cIOSs are generally no longer needed.",
+						"tags": []
+					},
+					{
+						"id": "c224_57_v5",
+						"title": "Hermes-v5 cIOS224 [57]",
+						"toolTip": "Since d2x, Hermes cIOSs are generally no longer needed.",
+						"tags": []
+					},
+					{
+						"id": "c222_38_v4",
+						"title": "Hermes-v4 cIOS222 [38]",
+						"toolTip": "Semi-Recommended cIOS. It is the ideal cIOS for slot 222 however it is outdated. Since d2x, Hermes cIOSs are generally no longer needed.",
+						"tags": ["semi-recommended"]
+					},
+					{
+						"id": "c223_37_38_v4",
+						"title": "Hermes-v4 cIOS223 [37+38]",
+						"toolTip": "Semi-Recommended cIOS. It is the ideal cIOS for slot 223 and was widely used for compatibility with guitar-hero games however it is outdated. Since d2x, Hermes cIOSs are generally no longer needed.",
+						"tags": ["semi-recommended"]
+					}
+				]
+			},
+			"cmios": {
+				"item": [
+					{
+						"id": "Swiss_cMIOS",
+						"title": "Swiss cMIOS r1788 [10]",
+						"toolTip": "Semi-Recommended cMIOS. A cMIOS with Swiss r1788 built-in. Hold Y during any GameCube mode load to start the built-in Swiss.  If Y is not held then it should behave identically to WiiGator/WiiPower's cMIOS and official MIOS. While this is the ideal cMIOS, because of Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv10.",
+						"tags": ["semi-recommended"]
+					},
+					{
+						"id": "cMIOS_WiiPower",
+						"title": "WiiGator/Power cMIOS-v0.2 [10]",
+						"toolTip": "Since Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv10",
+						"tags": []
+					},
+					{
+						"id": "cmios_WiiGator",
+						"title": "WiiGator cMIOS-v0.2 [4]",
+						"toolTip": "Since Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv4.",
+						"tags": []
+					},
+					{
+						"id": "cmios_Wanin",
+						"title": "Waninkoko cMIOS-rev5 [4]",
+						"toolTip": "Since Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv4.",
+						"tags": []
+					},
+					{
+						"id": "DML",
+						"title": "DIOS MIOS Lite (DML) v2.11",
+						"toolTip": "Since Nintendont, DML is generally not used anymore.\n\nDML (Dios Mios Lite) is a tool which allows you to run Gamecube games from an SD Card.\n\nNote: for DML to work with SNEEK+DI the WAD must be installed to real NAND and accessed via an emulated NAND.\n\nGames must be in discex format, use discex or ModMii's Game Bulk Extractor.",
+						"tags": []
+					},
+					{
+						"id": "DiosMios",
+						"title": "DIOS MIOS v2.11",
+						"toolTip": "Since Nintendont, DIOS MIOS is generally not used anymore.\n\nDIOS MIOS is a tool which allows you to run Gamecube games from a USB.\n\nGames must be in discex format, use discex or ModMii's Game Bulk Extractor.",
+						"tags": []
+					}
+				]
+			}
+		}
+	},
+	"paths": {
+		"wiiMap": [
+			"Support/d2x-beta/ciosmaps.xml",
+			"Support/d2xModules/ciosmaps.xml",
+			"ciosmaps.xml"
+		],
+		"vWiiMap": [
+			"Support/d2x-beta/ciosmaps_vWii.xml",
+			"Support/d2xModules/ciosmaps_vWii.xml",
+			"ciosmaps_vWii.xml"
+		],
+		"output": [
+			"temp/tempcheck.bat",
+			"tempcheck.bat"
+		]
+	}
+}

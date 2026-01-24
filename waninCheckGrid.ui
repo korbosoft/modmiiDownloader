@@ -159,7 +159,7 @@
        </widget>
       </item>
       <item row="10" column="2">
-       <widget class="QCheckBox" name="wv19b">
+       <widget class="QCheckBox" name="wv19b37s250">
         <property name="text">
          <string>250</string>
         </property>
@@ -360,5 +360,486 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv14b38s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>563</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv17b38s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>563</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>165</x>
+     <y>493</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv19b57s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>570</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>455</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv19b38s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>568</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>165</x>
+     <y>421</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv19b37s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>583</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>147</x>
+     <y>391</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv20b57s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>578</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>150</x>
+     <y>352</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv20b56s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>168</x>
+     <y>558</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>168</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b58s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>143</x>
+     <y>570</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b57s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>564</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b56s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>172</x>
+     <y>572</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>187</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b55s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>574</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b53s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>143</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b38s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>136</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b37s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>568</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv14b38s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>570</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>217</x>
+     <y>522</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv17b38s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>570</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>480</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv19b57s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>573</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>451</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv19b38s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>235</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>237</x>
+     <y>431</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv19b37s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>570</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>388</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv20b57s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>251</x>
+     <y>569</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>243</x>
+     <y>352</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv20b56s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>255</x>
+     <y>565</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>243</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv20b38s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>255</x>
+     <y>573</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>251</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b58s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>573</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b57s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>67</x>
+     <y>569</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b56v250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>569</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b55s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>42</x>
+     <y>573</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>225</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b53s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>28</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>112</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b38s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>16</x>
+     <y>572</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv21b37s250</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>5</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>d2xSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>wv20b38s249</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>568</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>142</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
