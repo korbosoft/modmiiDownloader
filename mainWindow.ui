@@ -22,7 +22,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resource.qrc">
-    <normaloff>:/base/icon</normaloff>:/base/icon</iconset>
+    <normaloff>:/base/mainIcon</normaloff>:/base/mainIcon</iconset>
   </property>
   <property name="iconSize">
    <size>
@@ -44,7 +44,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>

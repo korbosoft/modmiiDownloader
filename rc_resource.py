@@ -6,6 +6,164 @@
 from PySide6 import QtCore
 
 qt_resource_data = b"\
+\x00\x00\x026\
+<\
+?xml version=\x221.\
+0\x22 encoding=\x22UTF\
+-8\x22?><svg width=\
+\x2224px\x22 height=\x222\
+4px\x22 stroke-widt\
+h=\x221.5\x22 viewBox=\
+\x220 0 24 24\x22 fill\
+=\x22none\x22 xmlns=\x22h\
+ttp://www.w3.org\
+/2000/svg\x22 color\
+=\x22#000000\x22><path\
+ d=\x22M12 13V22M12\
+ 22L15.5 18.5M12\
+ 22L8.5 18.5\x22 st\
+roke=\x22#000000\x22 s\
+troke-width=\x221.5\
+\x22 stroke-linecap\
+=\x22round\x22 stroke-\
+linejoin=\x22round\x22\
+></path><path d=\
+\x22M20 17.6073C21.\
+4937 17.0221 23 \
+15.6889 23 13C23\
+ 9 19.6667 8 18 \
+8C18 6 18 2 12 2\
+C6 2 6 6 6 8C4.3\
+3333 8 1 9 1 13C\
+1 15.6889 2.5062\
+8 17.0221 4 17.6\
+073\x22 stroke=\x22#00\
+0000\x22 stroke-wid\
+th=\x221.5\x22 stroke-\
+linecap=\x22round\x22 \
+stroke-linejoin=\
+\x22round\x22></path><\
+/svg>\
+\x00\x00\x02\x99\
+<\
+?xml version=\x221.\
+0\x22 encoding=\x22UTF\
+-8\x22?><svg width=\
+\x2224px\x22 height=\x222\
+4px\x22 stroke-widt\
+h=\x221.5\x22 viewBox=\
+\x220 0 24 24\x22 fill\
+=\x22none\x22 xmlns=\x22h\
+ttp://www.w3.org\
+/2000/svg\x22 color\
+=\x22#000000\x22><path\
+ d=\x22M22 8.86222C\
+22 10.4087 21.40\
+62 11.8941 20.34\
+58 12.9929C17.90\
+49 15.523 15.537\
+4 18.1613 13.005\
+3 20.5997C12.424\
+9 21.1505 11.504\
+2 21.1304 10.948\
+8 20.5547L3.6537\
+6 12.9929C1.4487\
+5 10.7072 1.4487\
+5 7.01723 3.6537\
+6 4.73157C5.8804\
+4 2.42345 9.5079\
+4 2.42345 11.734\
+6 4.73157L11.999\
+8 5.00642L12.264\
+8 4.73173C13.332\
+4 3.6245 14.7864\
+ 3 16.3053 3C17.\
+8242 3 19.2781 3\
+.62444 20.3458 4\
+.73157C21.4063 5\
+.83045 22 7.3157\
+7 22 8.86222Z\x22 s\
+troke=\x22#000000\x22 \
+stroke-width=\x221.\
+5\x22 stroke-linejo\
+in=\x22round\x22></pat\
+h></svg>\
+\x00\x00\x02\xc6\
+<\
+?xml version=\x221.\
+0\x22 encoding=\x22UTF\
+-8\x22?><svg width=\
+\x2224px\x22 height=\x222\
+4px\x22 viewBox=\x220 \
+0 24 24\x22 fill=\x22n\
+one\x22 xmlns=\x22http\
+://www.w3.org/20\
+00/svg\x22 color=\x22#\
+000000\x22 stroke-w\
+idth=\x221.5\x22><path\
+ fill-rule=\x22even\
+odd\x22 clip-rule=\x22\
+evenodd\x22 d=\x22M11.\
+9999 3.94228C13.\
+1757 2.85872 14.\
+7069 2.25 16.305\
+3 2.25C18.0313 2\
+.25 19.679 2.959\
+77 20.8854 4.210\
+74C22.0832 5.451\
+81 22.75 7.1248 \
+22.75 8.86222C22\
+.75 10.5997 22.0\
+831 12.2728 20.8\
+854 13.5137C20.0\
+89 14.3393 19.29\
+38 15.1836 18.49\
+45 16.0323C16.87\
+1 17.7562 15.230\
+1 19.4985 13.525\
+6 21.14L13.5216 \
+21.1438C12.6426 \
+21.9779 11.2505 \
+21.9476 10.409 2\
+1.0754L3.11399 1\
+3.5136C0.62867 1\
+0.9374 0.62867 6\
+.78707 3.11399 4\
+.21085C5.54605 1\
+.68984 9.46239 1\
+.60032 11.9999 3\
+.94228Z\x22 fill=\x22#\
+000000\x22></path><\
+/svg>\
+\x00\x00\x01\xae\
+<\
+?xml version=\x221.\
+0\x22 encoding=\x22UTF\
+-8\x22?><svg width=\
+\x2224px\x22 height=\x222\
+4px\x22 stroke-widt\
+h=\x221.5\x22 viewBox=\
+\x220 0 24 24\x22 fill\
+=\x22none\x22 xmlns=\x22h\
+ttp://www.w3.org\
+/2000/svg\x22 color\
+=\x22#000000\x22><path\
+ d=\x22M6 20L18 20\x22\
+ stroke=\x22#000000\
+\x22 stroke-width=\x22\
+1.5\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22></path><path\
+ d=\x22M12 4V16M12 \
+16L15.5 12.5M12 \
+16L8.5 12.5\x22 str\
+oke=\x22#000000\x22 st\
+roke-width=\x221.5\x22\
+ stroke-linecap=\
+\x22round\x22 stroke-l\
+inejoin=\x22round\x22>\
+</path></svg>\
 \x00\x00O\xe7\
 \x89\
 PNG\x0d\x0a\x1a\x0a\x00\x00\x00\x0dIHDR\x00\
@@ -1294,19 +1452,44 @@ qt_resource_name = b"\
 \x00\x06\x88\x95\
 \x00b\
 \x00a\x00s\x00e\
-\x00\x04\
-\x00\x06\xfa^\
-\x00i\
-\x00c\x00o\x00n\
+\x00\x0a\
+\x06\xc9\xf1\x05\
+\x00s\
+\x00v\x00g\x00_\x00u\x00p\x00d\x00a\x00t\x00e\
+\x00\x13\
+\x00\xe0\x93\x14\
+\x00s\
+\x00v\x00g\x00_\x00s\x00e\x00m\x00i\x00R\x00e\x00c\x00o\x00m\x00m\x00e\x00n\x00d\
+\x00e\x00d\
+\x00\x0f\
+\x0a\xec\xd5T\
+\x00s\
+\x00v\x00g\x00_\x00r\x00e\x00c\x00o\x00m\x00m\x00e\x00n\x00d\x00e\x00d\
+\x00\x0c\
+\x09\xbc\x9e\x14\
+\x00s\
+\x00v\x00g\x00_\x00d\x00o\x00w\x00n\x00l\x00o\x00a\x00d\
+\x00\x08\
+\x08\x02\xf8>\
+\x00m\
+\x00a\x00i\x00n\x00I\x00c\x00o\x00n\
 "
 
 qt_resource_struct = b"\
 \x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x01\
 \x00\x00\x00\x00\x00\x00\x00\x00\
-\x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x02\
+\x00\x00\x00\x00\x00\x02\x00\x00\x00\x05\x00\x00\x00\x02\
 \x00\x00\x00\x00\x00\x00\x00\x00\
+\x00\x00\x00(\x00\x00\x00\x00\x00\x01\x00\x00\x02:\
+\x00\x00\x01\x9b\xf0\xaab\x02\
 \x00\x00\x00\x0e\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\
+\x00\x00\x01\x9b\xf6\x9d\x06\xf6\
+\x00\x00\x00\x96\x00\x00\x00\x00\x00\x01\x00\x00\x09S\
 \x00\x00\x01\x9b\xabd\xfc\x98\
+\x00\x00\x00x\x00\x00\x00\x00\x00\x01\x00\x00\x07\xa1\
+\x00\x00\x01\x9b\xf6|\x0c\xe3\
+\x00\x00\x00T\x00\x00\x00\x00\x00\x01\x00\x00\x04\xd7\
+\x00\x00\x01\x9b\xf0\xaa^\xfa\
 "
 
 def qInitResources():

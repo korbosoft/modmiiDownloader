@@ -12,3 +12,6 @@ class waninCheckGrid(QGroupBox):
         super().__init__(parent)
         self.ui = Ui_waninCheckGrid()
         self.ui.setupUi(self)
+
+    def resizeEvent(self, event):
+        self.ui.layout.setGeometry(self.geometry())

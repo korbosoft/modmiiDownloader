@@ -685,7 +685,7 @@
 					},
 					{
 						"id": "BlueMii",
-						"title": "BlueMii⇧",
+						"title": "BlueMii",
 						"toolTip": "A BlueBomb-based exploit for the Wii or Wii Mini requiring a separate already-hacked Wii / WiiU (vWii) / Wii Mini or a copy of Dolphin with working Bluetooth passthrough.",
 						"tags": ["auto-updates"]
 					},
@@ -715,7 +715,7 @@
 					},
 					{
 						"id": "ARC",
-						"title": "ARC ModMii Edition⇧",
+						"title": "ARC ModMii Edition",
 						"toolTip": "Any Region Changer (ARC) ModMii Edition is a mod of ARC for the Wii. If it detects a region mismatch, you only have to select the 'Auto Fix Settings' to correct it. It is one of many tools used to complete a region change.",
 						"tags": ["auto-updates"]
 					},
@@ -761,13 +761,13 @@
 				"item": [
 					{
 						"id": "v43DB",
-						"title": "ww-43db-patcher⇧",
+						"title": "ww-43db-patcher",
 						"toolTip": "Patches the WiiWare 4:3 aspect ratio database (43DB) within vWii's System Menu U8 archive to remove WiiConnect24-related channel entries (Everybody Votes Channel, Check Mii Out Channel) to enable a 16:9 aspect ratio.\n\nRedundant if any vWii theme built using ModMii has been installed (even the Default theme).",
 						"tags": ["auto-updates", "vwii"]
 					},
 					{
 						"id": "vWii80Installer",
-						"title": "Patched IOS80 Installer⇧",
+						"title": "Patched IOS80 Installer",
 						"toolTip": "Patched IOS80 Installer for vWii installs a patched vWii IOS80. Made redundant by the Fakesigned vIOS80[80] WAD from Download page 1.",
 						"tags": ["auto-updates", "vwii"]
 					}
@@ -922,5 +922,23 @@
 			"temp/tempcheck.bat",
 			"tempcheck.bat"
 		]
-	}
+	},
+	"recommendedCios": [
+		{
+			"base": 38,
+			"slot": 248
+		},
+		{
+			"base": 56,
+			"slot": 249
+		},
+		{
+			"base": 57,
+			"slot": 250
+		},
+		{
+			"base": 58,
+			"slot": 251
+		}
+	]
 }

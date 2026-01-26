@@ -21,14 +21,32 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>21</y>
+     <y>1</y>
      <width>263</width>
-     <height>611</height>
+     <height>631</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="layout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+    </property>
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>24</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
     <item>
-     <layout class="QGridLayout" name="d2xGrid">
+     <layout class="QGridLayout" name="grid">
+      <property name="sizeConstraint">
+       <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
+      </property>
       <item row="6" column="0">
        <widget class="QLabel" name="db58">
         <property name="enabled">
@@ -58,7 +76,7 @@
          <string>Recommended cIOS for slot 251, mainly only used for Spongebob's Boating Bash or LAN Adapter support.</string>
         </property>
         <property name="text">
-         <string>251♥</string>
+         <string>251</string>
         </property>
        </widget>
       </item>
@@ -144,7 +162,8 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>250[57]♥</string>
+         <string>250
+[57]</string>
         </property>
        </widget>
       </item>
@@ -277,7 +296,7 @@
          <string>Recommended cIOS for slot 250, d2x base 56 or 57 work with the vast majority of games.</string>
         </property>
         <property name="text">
-         <string>250♥</string>
+         <string>250</string>
         </property>
        </widget>
       </item>
@@ -287,7 +306,8 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>249[56]♥</string>
+         <string>249
+[56]</string>
         </property>
        </widget>
       </item>
@@ -317,7 +337,8 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>248[38]♥</string>
+         <string>248
+[38]</string>
         </property>
        </widget>
       </item>
@@ -330,7 +351,7 @@
          <string>Recommended cIOS for slot 248, mainly only used for Spongebob's Boating Bash or keyboard support for Animal Crossing City Folk.</string>
         </property>
         <property name="text">
-         <string>248♥</string>
+         <string>248</string>
         </property>
        </widget>
       </item>
@@ -363,7 +384,7 @@
          <string>Recommended cIOS for slot 249, d2x base 56 or 57 work with the vast majority of games.</string>
         </property>
         <property name="text">
-         <string>249♥</string>
+         <string>249</string>
         </property>
        </widget>
       </item>
@@ -373,7 +394,8 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>251[58]♥</string>
+         <string>251
+[58]</string>
         </property>
        </widget>
       </item>
@@ -418,6 +440,22 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <spacer name="spacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+     </spacer>
     </item>
     <item>
      <widget class="QPushButton" name="d2xSelect">

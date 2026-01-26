@@ -1,20 +1,34 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtWidgets import QApplication, QListView, QGroupBox
+from PySide6.QtWidgets import QAbstractItemView, QApplication, QGroupBox, QListView
 
-from PySide6.QtGui import QStandardItem, QStandardItemModel, QBrush
+from PySide6.QtGui import QStandardItem, QStandardItemModel
 
-import webbrowser
+from PySide6.QtCore import QMetaObject
+
+from webbrowser import open_new
+
+from resources import icons
 
 class DownloadableItem(QStandardItem):
-    def setAttrs(self, toolTip, id, tags, url=None):
-        self.setToolTip(toolTip)
-        self.specialAttrs['id'] = id
-        self.specialAttrs['tags'] = tags
-        self.specialAttrs['url'] = url;
+
+    def setAttrs(self, json):
+        self.setToolTip(json['toolTip'])
+        self.specialAttrs['id'] = json['id']
+        self.specialAttrs['tags'] = json['tags']
+        if 'url' in json:
+            self.specialAttrs['url'] = json['url'];
         if 'disabled' in self.specialAttrs['tags']:
             self.setEnabled(False)
+        if 'recommended' in self.specialAttrs['tags']:
+            self.setIcon(icons['recommended_16'])
+        elif 'semi-recommended' in self.specialAttrs['tags']:
+            self.setIcon(icons['semiRecommended_16'])
+        elif 'auto-updates' in self.specialAttrs['tags']:
+            self.setIcon(icons['update_16'])
+        else:
+            self.setIcon(icons['blank_16'])
         if self.specialAttrs['url'] is not None:
-            self.setForeground(QBrush(QApplication.palette().link()))
+            self.setForeground(QApplication.palette().link())
             font = self.font()
             font.setUnderline(True)
             self.setFont(font)
@@ -29,10 +43,9 @@ class DownloadableItem(QStandardItem):
 
 class DownloadList(QListView):
     def listClicked(self, index):
-        print(self.getSelected())
         if self.model().itemFromIndex(index).specialAttrs['url'] is not None:
-            self.model().itemFromIndex(index).setForeground(QBrush(QApplication.palette().linkVisited()))
-            webbrowser.open_new(self.model().itemFromIndex(index).specialAttrs['url'])
+            self.model().itemFromIndex(index).setForeground(QApplication.palette().linkVisited())
+            open_new(self.model().itemFromIndex(index).specialAttrs['url'])
 
     def getSelected(self):
         return [self.model().itemFromIndex(index).specialAttrs['id'] for index in self.selectedIndexes()]
@@ -43,15 +56,20 @@ class DownloadList(QListView):
         self.setModel(model)
         self.clicked.connect(self.listClicked)
 
-from ui_DownloadListSection import Ui_DownloadListSection
-
 class DownloadListSection(QGroupBox):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.ui = Ui_DownloadListSection()
-        self.ui.setupUi(self)
+        self.setObjectName('DownloadListSection')
+        self.list = DownloadList(self)
+        self.list.setObjectName('list')
+        self.list.move(3, 22)
+        self.list.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.list.setProperty('showDropIndicator', False)
+        self.list.setAlternatingRowColors(True)
+        self.list.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
+        self.list.setUniformItemSizes(True)
 
+        QMetaObject.connectSlotsByName(self)
     def resizeEvent(self, event):
-        print(self.width())
-        self.ui.list.resize(self.width() - 5, self.height() - 24)
+        self.list.resize(self.width() - 5, self.height() - 24)
 

@@ -35,7 +35,7 @@ class Ui_mainWindow(object):
         sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
         mainWindow.setSizePolicy(sizePolicy)
         icon = QIcon()
-        icon.addFile(u":/base/icon", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/base/mainIcon", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         mainWindow.setWindowIcon(icon)
         mainWindow.setIconSize(QSize(32, 32))
         mainWindow.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
@@ -324,7 +324,7 @@ class Ui_mainWindow(object):
 
         self.retranslateUi(mainWindow)
 
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(mainWindow)

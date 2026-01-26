@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/base">
-        <file alias="icon">assets/icon.png</file>
+        <file alias="mainIcon">assets/icon.png</file>
+        <file alias="svg_semiRecommended">assets/heart.svg</file>
+        <file alias="svg_recommended">assets/heart-solid.svg</file>
+        <file alias="svg_download">assets/download.svg</file>
+        <file alias="svg_update">assets/update.svg</file>
     </qresource>
 </RCC>
