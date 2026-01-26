@@ -83,3 +83,6 @@ CMakeLists.txt.user*
 
 ciosmaps*
 d2xmodules/
+
+ui_*.py
+rc_*.py
