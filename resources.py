@@ -14,7 +14,6 @@ icons = {}
 sizes = [16, 24, 32, 48, 64]
 
 def setupIcons():
-	print('FIXME: actually implement')
 	iterator = QDirIterator(':', QDirIterator.Subdirectories)
 	while iterator.hasNext():
 		path = iterator.next()
@@ -23,7 +22,6 @@ def setupIcons():
 			if not file.open(QIODevice.ReadOnly | QIODevice.Text):
 				print(f'Cannot open file: {file.errorString()}')
 			else:
-				print(path)
 				svg = QTextStream(file).readAll().replace('#000000', QApplication.palette().text().color().name()).encode('utf-8')
 				file.close()
 				for i in sizes:

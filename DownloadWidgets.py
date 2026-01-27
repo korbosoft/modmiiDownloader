@@ -47,9 +47,6 @@ class DownloadList(QListView):
             self.model().itemFromIndex(index).setForeground(QApplication.palette().linkVisited())
             open_new(self.model().itemFromIndex(index).specialAttrs['url'])
 
-    def getSelected(self):
-        return [self.model().itemFromIndex(index).specialAttrs['id'] for index in self.selectedIndexes()]
-
     def __init__(self, parent=None):
         super().__init__(parent)
         model = QStandardItemModel()
@@ -70,6 +67,8 @@ class DownloadListSection(QGroupBox):
         self.list.setUniformItemSizes(True)
 
         QMetaObject.connectSlotsByName(self)
+    def getSelected(self):
+        return [self.list.model().itemFromIndex(index).specialAttrs['id'] for index in self.list.selectedIndexes()]
     def resizeEvent(self, event):
         self.list.resize(self.width() - 5, self.height() - 24)
 

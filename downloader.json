@@ -269,7 +269,7 @@
 						"id": "IOS59",
 						"title": "IOS59 v9249",
 						"toolTip": "IOS59 is a Japan exclusive IOS. ModMii Wizards will only direct Japanese consoles to install it.",
-						"tags": ["active"]
+						"tags": ["jap", "active"]
 					},
 					{
 						"id": "IOS60",
@@ -308,7 +308,7 @@
 						"tags": ["active"]
 					},
 					{
-						"id": "vIOS",
+						"id": "vIOS9",
 						"title": "vWii IOSs [x29]",
 						"toolTip": "Download 29 IOSs for vWii:\nvIOS9, 12, 13, 14, 15, 17, 21, 22, 28, 31, 33, 34, 35, 36, 37, 38, 41, 43, 45, 46, 48, 53, 55, 56, 57, 58, 59, 62 & 80.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
 						"tags": ["vwii"]
@@ -425,7 +425,7 @@
 						"id": "MII",
 						"title": "Mii [RF]",
 						"toolTip": "Can be installed to Wii and/or vWii.",
-						"tags": ["usa", "eur", "jpn", "kor"]
+						"tags": ["region-free"]
 					},
 					{
 						"id": "IU",
@@ -449,7 +449,7 @@
 						"id": "P0",
 						"title": "Photo 1.0 [RF]",
 						"toolTip": "Photo Channel v1.1 is generally an improvement over v1.0; however, v1.1 replaced MP3 support with AAC support. Users that want MP3 support may prefer v1.0.",
-						"tags": ["usa", "eur", "jpn", "kor"]
+						"tags": ["region-free"]
 					},
 					{
 						"id": "P",
@@ -543,73 +543,91 @@
 						"id": "RSU",
 						"title": "Region Select [U]",
 						"toolTip": null,
-						"tags": []
+						"tags": ["usa"]
 					},
 					{
 						"id": "RSE",
 						"title": "Region Select [E]",
 						"toolTip": null,
-						"tags": []
+						"tags": ["eur"]
 					},
 					{
 						"id": "RSJ",
 						"title": "Region Select [J]",
 						"toolTip": null,
-						"tags": []
+						"tags": ["jap"]
 					},
 					{
 						"id": "RSK",
 						"title": "Region Select [K]",
 						"toolTip": null,
-						"tags": []
+						"tags": ["kor"]
 					},
 					{
 						"id": "EULAU",
 						"title": "EULA [U]",
 						"toolTip": "End User License Agreement is a hidden channel that is launched by the System Menu when the 'User Agreements' option is selected, as well as by the Wii Shop Channel if the EULA has not been accepted. Because the EULA uses HTTP, a custom page can be shown there, which is exploited by str2hax and WiiLink.\n\nWhile only found on the Wii, this should also get installed to vWii if enabling Priiloader's Permanent vWii System Settings (vWii) system menu hack.",
-						"tags": ["vwii"]
+						"tags": ["usa", "vwii-supported"]
 					},
 					{
 						"id": "EULAE",
 						"title": "EULA [E]",
 						"toolTip": "End User License Agreement is a hidden channel that is launched by the System Menu when the 'User Agreements' option is selected, as well as by the Wii Shop Channel if the EULA has not been accepted. Because the EULA uses HTTP, a custom page can be shown there, which is exploited by str2hax and WiiLink.\n\nWhile only found on the Wii, this should also get installed to vWii if enabling Priiloader's Permanent vWii System Settings (vWii) system menu hack.",
-						"tags": ["vwii"]
+						"tags": ["eur", "vwii-supported"]
 					},
 					{
 						"id": "EULAJ",
 						"title": "EULA [J]",
 						"toolTip": "End User License Agreement is a hidden channel that is launched by the System Menu when the 'User Agreements' option is selected, as well as by the Wii Shop Channel if the EULA has not been accepted. Because the EULA uses HTTP, a custom page can be shown there, which is exploited by str2hax and WiiLink.\n\nWhile only found on the Wii, this should also get installed to vWii if enabling Priiloader's Permanent vWii System Settings (vWii) system menu hack.",
-						"tags": ["vwii"]
+						"tags": ["jap", "vwii-supported"]
 					},
 					{
 						"id": "EULAK",
 						"title": "EULA [K]",
 						"toolTip": "End User License Agreement is a hidden channel that is launched by the System Menu when the 'User Agreements' option is selected, as well as by the Wii Shop Channel if the EULA has not been accepted. Because the EULA uses HTTP, a custom page can be shown there, which is exploited by str2hax and WiiLink.\n\nWhile only found on the Wii, this should also get installed to vWii if enabling Priiloader's Permanent vWii System Settings (vWii) system menu hack.",
-						"tags": ["vwii"]
+						"tags": ["kor", "vwii-supported"]
 					},
 					{
 						"id": "BC",
 						"title": "BC v6 [RF]",
 						"toolTip": "BC (short for Backwards Compatibility) is run when a GameCube game is launched from the Disc Channel. It is a bootloader similar to boot1 that is responsible for lowering clock speed, verifying and loading boot2, which detects the lowered clock speed and loads MIOS to run the GC game.\n\nBC was never meaningfully updated other than to fix some exploits, the BC WAD is useful mainly to construct emulated NANDs.",
-						"tags": []
+						"tags": ["region-free"]
 					},
 					{
 						"id": "cBC",
 						"title": "NMM [cBC]",
 						"toolTip": "NMM (No More Memory-Cards) is a Custom BC that redirects all GameCube Memory Card access to the SD card. This allow saving/loading GameCube game saves without a GC Memory Card.",
-						"tags": []
+						"tags": ["region-free"]
 					},
 					{
 						"id": "BCnand",
-						"title": "vBC [x2]",
-						"toolTip": "2x vWii downloads.\n\nBC-NAND & BC-WFS are Region Free ancast images for the vWii installed as title 1-512 & 1-513. They replace the NAND Boot Program when launching any title that includes one, and is responsible for lowering the Espresso clock speed for Wii compatibility. BC-WFS is probably only used for Dragon Quest X.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
+						"title": "BC-NAND [RF]",
+						"toolTip": "BC-NAND & BC-WFS are Region Free ancast images for the vWii installed as title 1-512 & 1-513. They replace the NAND Boot Program when launching any title that includes one, and is responsible for lowering the Espresso clock speed for Wii compatibility. BC-WFS is probably only used for Dragon Quest X.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
+						"tags": ["vwii"]
+					},
+					{
+						"id": "BCwfs",
+						"title": "BC-WFS [RF]",
+						"toolTip": "BC-NAND & BC-WFS are Region Free ancast images for the vWii installed as title 1-512 & 1-513. They replace the NAND Boot Program when launching any title that includes one, and is responsible for lowering the Espresso clock speed for Wii compatibility. BC-WFS is probably only used for Dragon Quest X.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
 						"tags": ["vwii"]
 					},
 					{
 						"id": "vRSU",
-						"title": "vRegion [x3]",
-						"toolTip": "3x vWii downloads. vWii Region Select for U, E and J.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
-						"tags": ["vwii"]
+						"title": "vRegion [U]",
+						"toolTip": "vWii Region Select.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
+						"tags": ["usa", "vwii"]
+					},
+					{
+						"id": "vRSE",
+						"title": "vRegion [E]",
+						"toolTip": "vWii Region Select.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
+						"tags": ["eur", "vwii"]
+					},
+					{
+						"id": "vRSJ",
+						"title": "vRegion [J]",
+						"toolTip": "vWii Region Select.\n\nThese WADs are useful mainly to construct vWii emulated NANDs.",
+						"tags": ["jap", "vwii"]
 					}
 				]
 			}
@@ -798,10 +816,196 @@
 			"bothHomebrew": {
 				"item": [
 					{
-						"id": "abc123",
-						"title": "abc123",
-						"toolTip": "abc123",
-						"tags": ["abc123"]
+						"id": "HBB",
+						"title": "Homebrew Browser",
+						"toolTip": "Download homebrew apps (selection is the same as the Open Shop Channel) using your (v)Wii.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "HM",
+						"title": "HackMii Installer v1.2",
+						"toolTip": "Used to install the Homebrew Channel v1.1.2 and BootMii 1.5.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "HMold",
+						"title": "HackMii Installer v1.0",
+						"toolTip": "Used to install the Homebrew Channel v1.1.0 and BootMii 1.4.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "Pri",
+						"title": "Priiloader",
+						"toolTip": "Priiloader adds a level of brick protection to your (v)Wii.\nIt loads before the System Menu, can enable system menu hacks and be set to autoboot the HBC, BootMii, or whatever homebrew you want!\nChecking this box will also download the Load Priiloader app.\n\nNote Priiloader can also update itself.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "DumpMii",
+						"title": "nanddumper@IOS",
+						"toolTip": "An alternative tool to create a Bootmii compatible nand.bin and keys.bin backup saved to an SD Card or USB Hard Drive.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "yawm",
+						"title": "YAWM ModMii Edition",
+						"toolTip": "Yet Another WAD Manager ModMii Edition allows you to (un)install WADs and launch apps.\nIt has built in protection to prevent actions that would cause brick, the ability to install a new System Menu without losing Priiloader, and more!",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "mmm",
+						"title": "Multi-Mod Manager",
+						"toolTip": "MMM is a multi-purpose tool for (v)Wii that can install WADs, launch apps, etc, but does not support Motion Plus wiimotes.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "SCR",
+						"title": "System Channel Restorer",
+						"toolTip": "Easily re-install missing/removed system apps, e.g. Mii Channel, Photo Channel, etc.\n\nTechnically also works on Wii Mini.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "ci",
+						"title": "csm-installer",
+						"toolTip": "A (v)Wii App that installs System Menu themes from CSM files created by ModMii, ThemeMii or MyMenu.\nAlso supports APP files to restore original themes. Drag a mym file onto ModMii to convert it to csm.\n\nWARNING: Make sure you have Priiloader, Bootmii and NAND backup before experimenting with themes!",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "MyM",
+						"title": "MyMenuifyMod",
+						"toolTip": "WARNING: Do not use MyMenuifyMod v2.0 or older on vWii! Use the latest version or csm-installer instead.\n\nInstalls System Menu themes from CSM files created by ModMii, ThemeMii or MyMenu.\nAlso supports APP files to restore original themes.\nDrag a mym file onto ModMii to convert it to csm.\n\nWARNING: Make sure you have Priiloader, Bootmii and NAND backup before experimenting with themes!",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "WIIX",
+						"title": "File explorer for the (v)Wii with several other features.",
+						"toolTip": "WiiXplorer",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "locked",
+						"title": "Locked HBC Folder",
+						"toolTip": "A password protected apps_locked folder you can move (v)Wii homebrew apps to restrict access to them.\n\nDefault Password: UDLRAB",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "CleanRip",
+						"title": "CleanRip",
+						"toolTip": "A tool to backup your Gamecube/Wii Discs via IOS58.\nCreate 1:1 backups of your GC/Wii discs for archival purposes without any requirements for custom IOS (cIOS).\nSupports USB 2.0 / NTFS* / FAT32 & Front SD. Devices formatted as WBFS is not supported.\n\n* Warning: ripping games to NTFS is unstable, it is highly recommended to rip games to a FAT32 formatted HDD, then transfer them to your NTFS drive using a computer.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "ftpii",
+						"title": "ftpii",
+						"toolTip": "FTP Server for the (v)Wii; use it with FileZilla to manage files on your (v)Wii using your PC.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "usbgx",
+						"title": "USB Loader GX",
+						"toolTip": "A popular USB-Loader with lots of extra features.\n\nNote this app can also update itself.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "USBX",
+						"title": "USB-Loader Channel/dol",
+						"toolTip": "Multi Forwarder Channel WAD for Wii & vWii.\nforwards to GX, WiiFlow, CFG, and more!\nThe bundled dol file can be installed to Priiloader to autoboot the channel.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "FLOW",
+						"title": "WiiFlow Lite",
+						"toolTip": "A popular USB-Loader known for attractive visual effects.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "FLOWF",
+						"title": "WiiFlow Channel/dol",
+						"toolTip": "WiiFlow forwarder channel for Wii & vWii which can be installed using a WAD Manager. The bundled dol file can be installed to Priiloader to autoboot the channel.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "usbfolder",
+						"title": "CFG USB Loader",
+						"toolTip": "Configurable USB Loader is a popular USB-Loader that is highly customizable.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "nintendont",
+						"title": "Nintendont",
+						"toolTip": "Gamecube backup loader; Also works as a Gamecube plugin with other USB-Loaders.",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "PL",
+						"title": "postLoader",
+						"toolTip": "All in one alternative to the System Menu, HBC and/or USB-Loaders.\nCan launch Wii games, GameCube games, VC/Wiiware titles from real or emulated NAND, and can also boot fceugx, vbagx, snes9xgx, and genplusgx games.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "PLC",
+						"title": "postLoader Channel",
+						"toolTip": "postLoader forwarder channel for Wii & vWii which can be installed using a WAD Manager.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "neogamma",
+						"title": "Neogamma",
+						"toolTip": "Backup Disc Loader also able to load from SD and USB.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "WiiMC",
+						"title": "WiiMC-SS",
+						"toolTip": "Wii Media Center SuperrSonic Edition",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "fceugx",
+						"title": "FCEUGX",
+						"toolTip": "NES Emulator",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "snes9xgx",
+						"title": "SNES9xGX",
+						"toolTip": "SNES Emulator",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "vbagx",
+						"title": "Visual Boy Advance GX",
+						"toolTip": "GBA/GBC/GB Emulator",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "WII64",
+						"title": "Wii64",
+						"toolTip": "N64 Emulator",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "Not64",
+						"title": "Not64",
+						"toolTip": "N64 Emulator",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "WIISX",
+						"title": "WiiSXRX",
+						"toolTip": "PS1 Emulator",
+						"tags": ["auto-updates", "vwii-supported"]
+					},
+					{
+						"id": "CheatZip",
+						"title": "Cheat Codes",
+						"toolTip": "txtcodes folder filled with cheat codes.",
+						"tags": ["vwii-supported"]
+					},
+					{
+						"id": "AccioHacks",
+						"title": "AccioHacks",
+						"toolTip": "Cheat Code Manager\n\nto convert txtcodes to an AccioHacks compatible format toggle this download at the same time as 'Cheat Codes' (above), or load the ModMii Download Queue called CheatCodes_For_AccioHacks.",
+						"tags": ["vwii-supported"]
 					}
 				]
 			}
@@ -905,6 +1109,28 @@
 					}
 				]
 			}
+		},
+		"wiiuHaxx": {
+			"pc": {
+				"item": [
+					{
+						"id": "abc123",
+						"title": "abc123",
+						"toolTip": "abc123",
+						"tags": ["abc123"]
+					}
+				]
+			},
+			"wiiuHomebrew": {
+				"item": [
+					{
+						"id": "abc123",
+						"title": "abc123",
+						"toolTip": "abc123",
+						"tags": ["abc123"]
+					}
+				]
+			}
 		}
 	},
 	"paths": {
@@ -923,7 +1149,7 @@
 			"tempcheck.bat"
 		]
 	},
-	"recommendedCios": [
+	"recommendedWiiCios": [
 		{
 			"base": 38,
 			"slot": 248

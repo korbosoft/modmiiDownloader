@@ -3,11 +3,13 @@ import sys, json
 
 from PySide6.QtWidgets import QApplication, QCheckBox, QLabel, QMainWindow, QWidget
 
-from PySide6.QtCore import QRegularExpression, Slot, QFile
+from PySide6.QtCore import QRegularExpression, Slot
+
+from itertools import chain
 
 from xml.etree import ElementTree
 
-from DownloadWidgets import DownloadableItem, DownloadList
+from DownloadWidgets import DownloadableItem, DownloadList, DownloadListSection
 
 # Important:
 # You need to run the following command to generate the ui_form.py file
@@ -95,15 +97,17 @@ class mainWindow(QMainWindow):
                 for widget in self.ui.d2x.findChildren(QCheckBox, QRegularExpression(f'^dvb{base}')):
                     widget.setEnabled(enabled)
 
-        for item in self.json['recommendedCios']:
+        for item in self.json['recommendedWiiCios']:
             self.ui.d2x.findChild(QCheckBox, f'db{item['base']}s{item['slot']}').setIcon(resources.icons['recommended_24'])
 
     def createQueue(self):
-        print('FIXME: actually do this')
+        queue = list(chain(*[item.getSelected() for item in chain(self.findChildren(DownloadListSection))]))
+        print(queue)
 
     def setupAll(self):
         resources.setupIcons()
         # Page 1
+        self.ui.tabWidget.setTabIcon(0, resources.icons['nus_24'])
         self.setupList('nus', 'sysmenus', self.ui.sysmenus.findChild(DownloadList))
         self.setupList('nus', 'realsigned', self.ui.realsigned.findChild(DownloadList))
         self.setupList('nus', 'fakesigned', self.ui.fakesigned.findChild(DownloadList))
@@ -111,16 +115,35 @@ class mainWindow(QMainWindow):
         self.setupList('nus', 'channels', self.ui.channels.findChild(DownloadList))
         self.setupList('nus', 'other', self.ui.other.findChild(DownloadList))
         # Page 2
+        self.ui.tabWidget.setTabIcon(1, resources.icons['program_24'])
         self.setupList('wiiHaxx', 'exploits', self.ui.exploits.findChild(DownloadList))
         self.setupList('wiiHaxx', 'wiiHomebrew', self.ui.wiiHomebrew.findChild(DownloadList))
         self.setupList('wiiHaxx', 'vWiiHomebrew', self.ui.vWiiHomebrew.findChild(DownloadList))
         self.setupList('wiiHaxx', 'bothHomebrew', self.ui.bothHomebrew.findChild(DownloadList))
         self.setupList('wiiHaxx', 'hbc', self.ui.hbc.findChild(DownloadList))
+        self.ui.oscDownload.setIcon(resources.icons['update_24'])
+        # Page 3
+        self.ui.tabWidget.setTabIcon(2, resources.icons['theme_24'])
 
         # Page 4
+        self.ui.tabWidget.setTabIcon(3, resources.icons['ios_24'])
         self.setupD2x()
         self.setupList('cios', 'hermes', self.ui.hermes.findChild(DownloadList))
         self.setupList('cios', 'cmios', self.ui.cmios.findChild(DownloadList))
+        self.ui.wiiRecommended.setIcon(resources.icons['recommended_24'])
+        self.ui.vwiiRecommended.setIcon(resources.icons['recommended_24'])
+
+        # Page 5
+        self.setupList('wiiuHaxx', 'pc', self.ui.pc.findChild(DownloadList))
+        self.setupList('wiiuHaxx', 'wiiuHomebrew', self.ui.wiiuHomebrew.findChild(DownloadList))
+        self.ui.tabWidget.setTabIcon(4, resources.icons['program_24'])
+
+        self.ui.download.setIcon(resources.icons['download_24'])
+        self.ui.download.clicked.connect(self.createQueue)
+
+        self.ui.legendIcon1.setPixmap(resources.icons['recommended_24'].pixmap(24))
+        self.ui.legendIcon2.setPixmap(resources.icons['semiRecommended_24'].pixmap(24))
+        self.ui.legendIcon3.setPixmap(resources.icons['update_24'].pixmap(24))
 
     def __init__(self, parent=None):
         super().__init__(parent)
