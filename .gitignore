@@ -75,6 +75,7 @@ rc_*.py
 # --------
 *.dll
 *.exe
+./ModMiiDownloader
 
 # Directories with generated files
 .moc/
@@ -86,3 +87,4 @@ rc_*.py
 
 ciosmaps*
 d2xmodules/
+*.bat

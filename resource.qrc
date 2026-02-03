@@ -11,5 +11,6 @@
         <file alias="svg_program">assets/program.svg</file>
         <file alias="svg_settings">assets/settings.svg</file>
         <file alias="svg_nus">assets/nus.svg</file>
+        <file alias="svg_semiAutoUpdate">assets/semiauto-update.svg</file>
     </qresource>
 </RCC>

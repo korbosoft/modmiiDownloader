@@ -38,60 +38,29 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
     </property>
-    <property name="tabsClosable">
-     <bool>false</bool>
-    </property>
     <widget class="QWidget" name="nus">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_nus</normaloff>:/base/svg_nus</iconset>
+     </attribute>
      <attribute name="title">
       <string>NUS Files</string>
      </attribute>
-     <widget class="QWidget" name="gridLayoutWidget">
+     <widget class="QWidget" name="nusLayout">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-1</y>
+        <y>0</y>
         <width>800</width>
-        <height>641</height>
+        <height>640</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="nusLayout">
-       <item row="1" column="1">
-        <widget class="DownloadListSection" name="channels">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Channels</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="DownloadListSection" name="other">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Other WADs</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="0">
         <widget class="DownloadListSection" name="sysmenus">
          <property name="sizePolicy">
@@ -156,6 +125,38 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="1">
+        <widget class="DownloadListSection" name="channels">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Channels</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="DownloadListSection" name="other">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Other WADs</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
       </layout>
       <zorder>fakesigned</zorder>
       <zorder>channels</zorder>
@@ -166,51 +167,23 @@
      </widget>
     </widget>
     <widget class="QWidget" name="homebrew">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_program</normaloff>:/base/svg_program</iconset>
+     </attribute>
      <attribute name="title">
       <string>(v)Wii Homebrew &amp;&amp; Exploits</string>
      </attribute>
-     <widget class="QWidget" name="gridLayoutWidget_2">
+     <widget class="QWidget" name="wiiLayout">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>640</height>
+        <height>690</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="wiiLayout">
-       <item row="0" column="1">
-        <widget class="DownloadListSection" name="wiiHomebrew">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Wii-Only Homebrew</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="DownloadListSection" name="hbc">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>Homebrew Channels</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="0">
         <widget class="DownloadListSection" name="exploits">
          <property name="sizePolicy">
@@ -227,8 +200,8 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="DownloadListSection" name="vWiiHomebrew">
+       <item row="0" column="1">
+        <widget class="DownloadListSection" name="wiiHomebrew">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -236,7 +209,7 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>vWii Only Homebrew</string>
+          <string>Wii-Only Homebrew</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -259,37 +232,46 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="0">
+        <widget class="DownloadListSection" name="hbc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Homebrew Channels</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="DownloadListSection" name="vWiiHomebrew">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>vWii Only Homebrew</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
       </layout>
-     </widget>
-     <widget class="QPushButton" name="oscDownload">
-      <property name="geometry">
-       <rect>
-        <x>660</x>
-        <y>640</y>
-        <width>140</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Download all
-OSC Programs</string>
-      </property>
-      <property name="icon">
-       <iconset resource="resource.qrc">
-        <normaloff>:/base/svg_update</normaloff>:/base/svg_update</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>24</width>
-        <height>24</height>
-       </size>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="themes">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_theme</normaloff>:/base/svg_theme</iconset>
+     </attribute>
      <attribute name="title">
       <string>System Menu Themes</string>
      </attribute>
@@ -355,12 +337,32 @@ OSC Programs</string>
        <set>Qt::TextInteractionFlag::NoTextInteraction</set>
       </property>
      </widget>
+     <widget class="ThemeGrid" name="themeGrid" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>630</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="cios">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_ios</normaloff>:/base/svg_ios</iconset>
+     </attribute>
      <attribute name="title">
       <string>cIOSs &amp;&amp; cMIOSs</string>
      </attribute>
-     <widget class="QWidget" name="gridLayoutWidget_3">
+     <widget class="QWidget" name="ciosLayout">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -370,8 +372,18 @@ OSC Programs</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="ciosLayout">
+       <item row="0" column="0" rowspan="2">
+        <widget class="D2xCheckGrid" name="d2x">
+         <property name="title">
+          <string>d2x-d2xversion cIOSs</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="1" rowspan="2">
-        <widget class="waninCheckGrid" name="wanin">
+        <widget class="WaninCheckGrid" name="wanin">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -390,16 +402,6 @@ OSC Programs</string>
         <widget class="DownloadListSection" name="hermes">
          <property name="title">
           <string>Hermes cIOSs</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" rowspan="2">
-        <widget class="d2xCheckGrid" name="d2x">
-         <property name="title">
-          <string>d2x-d2xversion cIOSs</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -491,7 +493,7 @@ Settings</string>
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="vwiiRecommended">
+     <widget class="QPushButton" name="vWiiRecommended">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -517,10 +519,14 @@ Settings</string>
      </widget>
     </widget>
     <widget class="QWidget" name="misc">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_program</normaloff>:/base/svg_program</iconset>
+     </attribute>
      <attribute name="title">
       <string>Wii U Homebrew &amp;&amp; PC Programs </string>
      </attribute>
-     <widget class="QWidget" name="gridLayoutWidget_4">
+     <widget class="QWidget" name="wiiuLayout">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -530,7 +536,7 @@ Settings</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="wiiuLayout">
-       <item row="1" column="1">
+       <item row="0" column="1">
         <widget class="DownloadListSection" name="pc">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -546,7 +552,7 @@ Settings</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
+       <item row="0" column="2">
         <widget class="DownloadListSection" name="wiiuHomebrew">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -619,19 +625,16 @@ Settings</string>
      </size>
     </property>
    </widget>
-   <widget class="QWidget" name="gridLayoutWidget_5">
+   <widget class="QWidget" name="legendLayout">
     <property name="geometry">
      <rect>
       <x>290</x>
       <y>720</y>
-      <width>340</width>
+      <width>400</width>
       <height>50</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="legendLayout">
-     <item row="0" column="4" rowspan="2">
-      <widget class="QLabel" name="legendIcon3"/>
-     </item>
      <item row="0" column="2">
       <widget class="QLabel" name="legendLabel1">
        <property name="text">
@@ -650,27 +653,16 @@ Settings</string>
        <property name="sizeType">
         <enum>QSizePolicy::Policy::MinimumExpanding</enum>
        </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
       </spacer>
      </item>
      <item row="1" column="1">
       <widget class="QLabel" name="legendIcon2"/>
-     </item>
-     <item row="0" column="5" rowspan="2">
-      <widget class="QLabel" name="legendLabel3">
-       <property name="text">
-        <string>Auto-Updating</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="6" rowspan="2">
-      <spacer name="legendSpacer6">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Policy::MinimumExpanding</enum>
-       </property>
-      </spacer>
      </item>
      <item row="1" column="2">
       <widget class="QLabel" name="legendLabel2">
@@ -687,40 +679,87 @@ Settings</string>
        <property name="sizeType">
         <enum>QSizePolicy::Policy::MinimumExpanding</enum>
        </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLabel" name="legendLabel3">
+       <property name="text">
+        <string>Auto-Updating</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLabel" name="legendIcon3"/>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="legendIcon4"/>
+     </item>
+     <item row="1" column="5">
+      <widget class="QLabel" name="legendLabel4">
+       <property name="text">
+        <string>Updated when XFlak Remembers</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6" rowspan="2">
+      <spacer name="legendSpacer6">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
       </spacer>
      </item>
     </layout>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>d2xCheckGrid</class>
+   <class>D2xCheckGrid</class>
    <extends>QGroupBox</extends>
-   <header>d2xCheckGrid</header>
+   <header>ciosWidgets</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>waninCheckGrid</class>
+   <class>WaninCheckGrid</class>
    <extends>QGroupBox</extends>
-   <header>waninCheckGrid</header>
+   <header>ciosWidgets</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>DownloadListSection</class>
    <extends>QGroupBox</extends>
-   <header>DownloadWidgets</header>
+   <header>downloadWidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ThemeGrid</class>
+   <extends>QWidget</extends>
+   <header>ThemeGrid</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>tabWidget</tabstop>
-  <tabstop>download</tabstop>
-  <tabstop>oscDownload</tabstop>
   <tabstop>wiiRecommended</tabstop>
-  <tabstop>vwiiRecommended</tabstop>
+  <tabstop>vWiiRecommended</tabstop>
   <tabstop>d2xSettings</tabstop>
+  <tabstop>download</tabstop>
  </tabstops>
  <resources>
   <include location="resource.qrc"/>

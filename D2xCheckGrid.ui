@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <author>Korbo</author>
- <class>d2xCheckGrid</class>
- <widget class="QGroupBox" name="d2xCheckGrid">
+ <class>D2xCheckGrid</class>
+ <widget class="QGroupBox" name="D2xCheckGrid">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -21,9 +21,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>1</y>
+     <y>0</y>
      <width>263</width>
-     <height>631</height>
+     <height>632</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="layout">
@@ -48,7 +48,7 @@
        <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
       </property>
       <item row="6" column="0">
-       <widget class="QLabel" name="db58">
+       <widget class="QLabel" name="b58">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -58,7 +58,7 @@
        </widget>
       </item>
       <item row="9" column="1">
-       <widget class="QCheckBox" name="db80s249">
+       <widget class="QCheckBox" name="c249_80_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -68,7 +68,7 @@
        </widget>
       </item>
       <item row="6" column="3">
-       <widget class="QCheckBox" name="db58s251">
+       <widget class="QCheckBox" name="c251_58_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -81,7 +81,7 @@
        </widget>
       </item>
       <item row="9" column="2">
-       <widget class="QCheckBox" name="db80s250">
+       <widget class="QCheckBox" name="c250_80_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -91,7 +91,7 @@
        </widget>
       </item>
       <item row="4" column="0">
-       <widget class="QLabel" name="db56">
+       <widget class="QLabel" name="b56">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -101,7 +101,7 @@
        </widget>
       </item>
       <item row="7" column="0">
-       <widget class="QLabel" name="db60">
+       <widget class="QLabel" name="b60">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -111,7 +111,7 @@
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QCheckBox" name="db53s250">
+       <widget class="QCheckBox" name="c250_53_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -121,7 +121,7 @@
        </widget>
       </item>
       <item row="1" column="3">
-       <widget class="QCheckBox" name="db38s250">
+       <widget class="QCheckBox" name="c250_38_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -134,7 +134,7 @@
        </widget>
       </item>
       <item row="8" column="2">
-       <widget class="QCheckBox" name="db70s250">
+       <widget class="QCheckBox" name="c250_70_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -157,7 +157,7 @@
        </widget>
       </item>
       <item row="11" column="1">
-       <widget class="QCheckBox" name="dvb57s250">
+       <widget class="QCheckBox" name="c250_57_d2x_vWii">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -168,7 +168,7 @@
        </widget>
       </item>
       <item row="5" column="0">
-       <widget class="QLabel" name="db57">
+       <widget class="QLabel" name="b57">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -178,7 +178,7 @@
        </widget>
       </item>
       <item row="8" column="1">
-       <widget class="QCheckBox" name="db70s249">
+       <widget class="QCheckBox" name="c249_70_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -188,7 +188,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QCheckBox" name="db37s249">
+       <widget class="QCheckBox" name="c249_37_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -198,7 +198,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="db37">
+       <widget class="QLabel" name="b37">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -208,7 +208,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QCheckBox" name="db53s249">
+       <widget class="QCheckBox" name="c249_53_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -218,7 +218,7 @@
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="db53">
+       <widget class="QLabel" name="b53">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -228,7 +228,7 @@
        </widget>
       </item>
       <item row="4" column="2">
-       <widget class="QCheckBox" name="db56s250">
+       <widget class="QCheckBox" name="c250_56_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -238,7 +238,7 @@
        </widget>
       </item>
       <item row="8" column="0">
-       <widget class="QLabel" name="db70">
+       <widget class="QLabel" name="b70">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -248,7 +248,7 @@
        </widget>
       </item>
       <item row="7" column="2">
-       <widget class="QCheckBox" name="db60s250">
+       <widget class="QCheckBox" name="c250_60_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -258,7 +258,7 @@
        </widget>
       </item>
       <item row="9" column="0">
-       <widget class="QLabel" name="db80">
+       <widget class="QLabel" name="b80">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -268,7 +268,7 @@
        </widget>
       </item>
       <item row="6" column="1">
-       <widget class="QCheckBox" name="db58s249">
+       <widget class="QCheckBox" name="c249_58_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -278,7 +278,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QCheckBox" name="db55s249">
+       <widget class="QCheckBox" name="c249_55_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -288,7 +288,7 @@
        </widget>
       </item>
       <item row="5" column="2">
-       <widget class="QCheckBox" name="db57s250">
+       <widget class="QCheckBox" name="c250_57_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -301,7 +301,7 @@
        </widget>
       </item>
       <item row="10" column="2">
-       <widget class="QCheckBox" name="dvb56s249">
+       <widget class="QCheckBox" name="c249_56_d2x_vWii">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -312,7 +312,7 @@
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QLabel" name="db55">
+       <widget class="QLabel" name="b55">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -322,7 +322,7 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="db38">
+       <widget class="QLabel" name="b38">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -332,7 +332,7 @@
        </widget>
       </item>
       <item row="10" column="1">
-       <widget class="QCheckBox" name="dvb38s248">
+       <widget class="QCheckBox" name="c248_38_d2x_vWii">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -343,7 +343,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QCheckBox" name="db38s248">
+       <widget class="QCheckBox" name="c248_38_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -356,7 +356,7 @@
        </widget>
       </item>
       <item row="6" column="2">
-       <widget class="QCheckBox" name="db58s250">
+       <widget class="QCheckBox" name="c250_58_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -366,7 +366,7 @@
        </widget>
       </item>
       <item row="5" column="1">
-       <widget class="QCheckBox" name="db57s249">
+       <widget class="QCheckBox" name="c249_57_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -376,7 +376,7 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QCheckBox" name="db56s249">
+       <widget class="QCheckBox" name="c249_56_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -389,7 +389,7 @@
        </widget>
       </item>
       <item row="11" column="2">
-       <widget class="QCheckBox" name="dvb58s251">
+       <widget class="QCheckBox" name="c251_58_d2x_vWii">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -400,7 +400,7 @@
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QCheckBox" name="db38s249">
+       <widget class="QCheckBox" name="c249_38_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -410,7 +410,7 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QCheckBox" name="db37s250">
+       <widget class="QCheckBox" name="c250_37_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -420,7 +420,7 @@
        </widget>
       </item>
       <item row="7" column="1">
-       <widget class="QCheckBox" name="db60s249">
+       <widget class="QCheckBox" name="c249_60_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -430,7 +430,7 @@
        </widget>
       </item>
       <item row="3" column="2">
-       <widget class="QCheckBox" name="db55s250">
+       <widget class="QCheckBox" name="c250_55_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -458,7 +458,7 @@
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="d2xSelect">
+     <widget class="QPushButton" name="select">
       <property name="text">
        <string>Select All</string>
       </property>
@@ -468,450 +468,33 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>db37s249</tabstop>
-  <tabstop>db37s250</tabstop>
-  <tabstop>db38s248</tabstop>
-  <tabstop>db38s249</tabstop>
-  <tabstop>db38s250</tabstop>
-  <tabstop>db53s249</tabstop>
-  <tabstop>db53s250</tabstop>
-  <tabstop>db55s249</tabstop>
-  <tabstop>db55s250</tabstop>
-  <tabstop>db56s249</tabstop>
-  <tabstop>db56s250</tabstop>
-  <tabstop>db57s249</tabstop>
-  <tabstop>db57s250</tabstop>
-  <tabstop>db58s249</tabstop>
-  <tabstop>db58s250</tabstop>
-  <tabstop>db58s251</tabstop>
-  <tabstop>db60s249</tabstop>
-  <tabstop>db60s250</tabstop>
-  <tabstop>db70s249</tabstop>
-  <tabstop>db70s250</tabstop>
-  <tabstop>db80s249</tabstop>
-  <tabstop>db80s250</tabstop>
-  <tabstop>dvb38s248</tabstop>
-  <tabstop>dvb56s249</tabstop>
-  <tabstop>dvb57s250</tabstop>
-  <tabstop>dvb58s251</tabstop>
+  <tabstop>c249_37_d2x</tabstop>
+  <tabstop>c250_37_d2x</tabstop>
+  <tabstop>c248_38_d2x</tabstop>
+  <tabstop>c249_38_d2x</tabstop>
+  <tabstop>c250_38_d2x</tabstop>
+  <tabstop>c249_53_d2x</tabstop>
+  <tabstop>c250_53_d2x</tabstop>
+  <tabstop>c249_55_d2x</tabstop>
+  <tabstop>c250_55_d2x</tabstop>
+  <tabstop>c249_56_d2x</tabstop>
+  <tabstop>c250_56_d2x</tabstop>
+  <tabstop>c249_57_d2x</tabstop>
+  <tabstop>c250_57_d2x</tabstop>
+  <tabstop>c249_58_d2x</tabstop>
+  <tabstop>c250_58_d2x</tabstop>
+  <tabstop>c251_58_d2x</tabstop>
+  <tabstop>c249_60_d2x</tabstop>
+  <tabstop>c250_60_d2x</tabstop>
+  <tabstop>c249_70_d2x</tabstop>
+  <tabstop>c250_70_d2x</tabstop>
+  <tabstop>c249_80_d2x</tabstop>
+  <tabstop>c250_80_d2x</tabstop>
+  <tabstop>c248_38_d2x_vWii</tabstop>
+  <tabstop>c249_56_d2x_vWii</tabstop>
+  <tabstop>c250_57_d2x_vWii</tabstop>
+  <tabstop>c251_58_d2x_vWii</tabstop>
  </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>dvb56s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>4</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>167</x>
-     <y>542</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db80s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>252</x>
-     <y>-5</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>65</x>
-     <y>490</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db55s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>6</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>193</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db58s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>0</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>161</x>
-     <y>341</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db70s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>72</x>
-     <y>450</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>dvb58s251</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>166</x>
-     <y>597</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db37s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>247</x>
-     <y>1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>71</x>
-     <y>52</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db38s248</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>2</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>102</x>
-     <y>98</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db58s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>70</x>
-     <y>342</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db60s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>0</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>165</x>
-     <y>394</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>dvb38s248</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>-2</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>71</x>
-     <y>537</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db37s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>249</x>
-     <y>5</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>146</x>
-     <y>48</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db53s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>252</x>
-     <y>-3</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>100</x>
-     <y>148</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db38s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>5</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>230</x>
-     <y>98</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db70s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>6</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>164</x>
-     <y>451</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db55s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>0</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>88</x>
-     <y>196</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db60s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>62</x>
-     <y>394</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db56s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>8</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>163</x>
-     <y>255</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db38s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>-5</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>169</x>
-     <y>102</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db53s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>0</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>183</x>
-     <y>147</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db80s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>13</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>164</x>
-     <y>494</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db57s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>169</x>
-     <y>301</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db56s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>246</x>
-     <y>6</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>72</x>
-     <y>243</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>dvb57s250</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>4</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>71</x>
-     <y>594</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db58s251</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>4</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>238</x>
-     <y>341</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>d2xSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>db57s249</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>279</x>
-     <y>3</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>96</x>
-     <y>296</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

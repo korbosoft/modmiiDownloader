@@ -3,7 +3,10 @@ name = "ModMii Downloader UI"
 
 [tool.pyside6-project]
 files = [
-"DownloadWidgets.py",
+"D2xCheckGrid.ui",
+"ThemeGrid.py",
+"ThemeGrid.ui",
+"WaninCheckGrid.ui",
 "assets/download.svg",
 "assets/exploit.svg",
 "assets/heart-solid.svg",
@@ -12,17 +15,17 @@ files = [
 "assets/ios.svg",
 "assets/nus.svg",
 "assets/program.svg",
+"assets/semiauto-update.svg",
 "assets/settings.svg",
 "assets/shield.svg",
 "assets/theme.svg",
 "assets/update.svg",
-"d2xCheckGrid.py",
-"d2xCheckGrid.ui",
+"ciosWidgets.py",
+"downloadWidgets.py",
 "downloader.json",
 "main.py",
 "mainWindow.ui",
 "resource.qrc",
 "resources.py",
-"waninCheckGrid.py",
-"waninCheckGrid.ui",
+"utils.py",
 ]
