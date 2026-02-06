@@ -403,8 +403,225 @@
                     },
                     {
                         "id": "vIOS9",
-                        "title": "vWii IOSs [x29]",
-                        "toolTip": "Download 29 IOSs for vWii:\nvIOS9, 12, 13, 14, 15, 17, 21, 22, 28, 31, 33, 34, 35, 36, 37, 38, 41, 43, 45, 46, 48, 53, 55, 56, 57, 58, 59, 62 & 80.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "title": "vIOS9 v1290",
+                        "toolTip": "This is a special version of IOS9 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS12",
+                        "title": "vIOS12 v782",
+                        "toolTip": "This is a special version of IOS12 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS13",
+                        "title": "vIOS13 v1288",
+                        "toolTip": "This is a special version of IOS13 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS14",
+                        "title": "vIOS14 v1288",
+                        "toolTip": "This is a special version of IOS14 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS15",
+                        "title": "vIOS15 v1288",
+                        "toolTip": "This is a special version of IOS15 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS17",
+                        "title": "vIOS17 v1288",
+                        "toolTip": "This is a special version of IOS17 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS21",
+                        "title": "vIOS21 v1295",
+                        "toolTip": "This is a special version of IOS21 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS22",
+                        "title": "vIOS22 v1550",
+                        "toolTip": "This is a special version of IOS22 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS28",
+                        "title": "vIOS28 v2063",
+                        "toolTip": "This is a special version of IOS28 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS31",
+                        "title": "vIOS31 v3864",
+                        "toolTip": "This is a special version of IOS31 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS33",
+                        "title": "vIOS33 v3864",
+                        "toolTip": "This is a special version of IOS33 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS34",
+                        "title": "vIOS34 v3864",
+                        "toolTip": "This is a special version of IOS34 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS35",
+                        "title": "vIOS35 v3864",
+                        "toolTip": "This is a special version of IOS35 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS36",
+                        "title": "vIOS36 v3864",
+                        "toolTip": "This is a special version of IOS36 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS37",
+                        "title": "vIOS37 v5919",
+                        "toolTip": "This is a special version of IOS37 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS38",
+                        "title": "vIOS38 v4380",
+                        "toolTip": "This is a special version of IOS38 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS41",
+                        "title": "vIOS41 v3863",
+                        "toolTip": "This is a special version of IOS41 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS43",
+                        "title": "vIOS43 v3863",
+                        "toolTip": "This is a special version of IOS43 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS45",
+                        "title": "vIOS45 v3863",
+                        "toolTip": "This is a special version of IOS45 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS46",
+                        "title": "vIOS46 v3863",
+                        "toolTip": "This is a special version of IOS46 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS48",
+                        "title": "vIOS48 v4380",
+                        "toolTip": "This is a special version of IOS48 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS53",
+                        "title": "vIOS53 v5919",
+                        "toolTip": "This is a special version of IOS53 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS55",
+                        "title": "vIOS55 v5919",
+                        "toolTip": "This is a special version of IOS55 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS56",
+                        "title": "vIOS56 v5918",
+                        "toolTip": "This is a special version of IOS56 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS57",
+                        "title": "vIOS57 v6175",
+                        "toolTip": "This is a special version of IOS57 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS58",
+                        "title": "vIOS58 v6432",
+                        "toolTip": "This is a special version of IOS58 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS59",
+                        "title": "vIOS59 v9249",
+                        "toolTip": "This is a special version of IOS59 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
+                        "tags": [
+                            "jap",
+                            "vwii"
+                        ]
+                    },
+                    {
+                        "id": "vIOS62",
+                        "title": "vIOS62 v6942",
+                        "toolTip": "This is a special version of IOS62 that only works on vWii.\n\nWhile effectively these IOSs are not patched, technically they are fakesigned and re-encrypted to use the Wii retail common key so that they can be installed using WAD Managers available today.\n\n...I know what you're thinking and the answer is yes, shortcuts were taken.",
                         "tags": [
                             "vwii"
                         ]
@@ -1610,12 +1827,162 @@
             "wiiuHomebrew": {
                 "item": [
                     {
-                        "id": "abc123",
-                        "title": "abc123",
-                        "toolTip": "abc123",
+                        "id": "HBASlib",
+                        "title": "HB App Store WiiU Library",
+                        "toolTip": "Download all 150+ WiiU homebrew available via the Homebrew App Store: https://hb-app.store/wiiu\n\nApps can be excluded from this download by configuring ModMii's 'Skipped Apps' Option.",
                         "tags": [
-                            "abc123"
+                            "auto-updates"
                         ]
+                    },
+                    {
+                        "id": "appstore",
+                        "title": "Homebrew App Store",
+                        "toolTip": "Download homebrew apps using your WiiU (selection is the same as hb-app.store).\nCompatible with Aroma, Tiramisu and Legacy Environments.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "Aroma",
+                        "title": "Aroma",
+                        "toolTip": "Aroma is the recommended homebrew environment for the WiiU.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "nanddumper",
+                        "title": "NAND Dumper",
+                        "toolTip": "Create backups of the WiiU's NAND.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "EnvironmentLoader",
+                        "title": "Environment Loader",
+                        "toolTip": "Environment Loader allows you load environments on your WiiU. Examples of WiiU environments are Aroma and Tiramisu.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "CompatTitleInstaller",
+                        "title": "vWii Compat Installer",
+                        "toolTip": "Installs the Homebrew Channel to the vWii Menu from WiiU Mode.\nCompatible with Aroma and Tiramisu Environments.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "wudd",
+                        "title": "Wii U Disc Dumper",
+                        "toolTip": "Wii U Disc Dumper (WUDD); supports dumping to SD (FAT32) and USB (NTFS only).\nCompatible with Aroma and Tiramisu Environments.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "wup_installer_gx2_wuhb",
+                        "title": "WUP Installer GX2",
+                        "toolTip": "WUP Installer GX2 (WUHB); can install public titles such as games, game updates or DLC to your system memory (NAND) or the WiiU formatted USB.\nCompatible with Aroma Environment.\n",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "AccountSwap",
+                        "title": "Wii U Account Swap",
+                        "toolTip": "A tool to manage a user's account.dat, particularly for Network IDs.\nCompatible with Aroma.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "WiiloadPlugin",
+                        "title": "Wiiload Plugin",
+                        "toolTip": "An Aroma plugin intended for developers to load homebrew and plugins via the network.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "Bloopair",
+                        "title": "Bloopair",
+                        "toolTip": "Allows connecting controllers from other consoles like native WiiU Pro Controllers on the WiiU.\nCompatible with Aroma and Tiramisu Environments.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "Inkay",
+                        "title": "Inkay",
+                        "toolTip": "An Aroma plugin that enables the Pretendo Network; a free and open source replacement for Nintendo's servers for both the 3DS and WiiU, allowing online connectivity even after the original servers have been discontinued.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "GiveMiiYouTube",
+                        "title": "GiveMiiYouTube",
+                        "toolTip": "An Aroma plugin that allows the WiiU YouTube app to continue functioning after its discontinuation.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "Screenshot_WUPS",
+                        "title": "Screenshot",
+                        "toolTip": "An Aroma plugin that takes screenshots of the TV and GamePad screen.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "evWii",
+                        "title": "Enhanced vWii",
+                        "toolTip": "An Aroma plugin to enhance the vWii mode.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "WiiVCLaunch",
+                        "title": "Wii VC Launch",
+                        "toolTip": "An Aroma plugin to enhance launching Wii Virtual Console titles.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "SaveMiiModWUTPort",
+                        "title": "SaveMii Mod WUT Port",
+                        "toolTip": "WiiU/vWii Save Manager.\nCompatible with Aroma and Tiramisu Environments.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "WiiUIdent",
+                        "title": "WiiUIdent",
+                        "toolTip": "WiiUIdent; A WiiU Identification homebrew, which display information about console hardware components, software/hardware versions and much more.\nCompatible with Aroma and Tiramisu Environments.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "FTPiiUPlugin",
+                        "title": "FTPiiU Plugin",
+                        "toolTip": "An FTP server plugin for Aroma.",
+                        "tags": [
+                            "auto-updates"
+                        ]
+                    },
+                    {
+                        "id": "Tiramisu",
+                        "title": "Tiramisu",
+                        "toolTip": "Tiramisu is an alternative homebrew environment for the WiiU meant to run Legacy homebrew that was popular before the development of Aroma.",
+                        "tags": []
                     }
                 ]
             }
