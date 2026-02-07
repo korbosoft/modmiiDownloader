@@ -154,6 +154,7 @@ class mainWindow(QMainWindow):
         self.json = j
         self.setupAll()
         self.setStatus()
+        self.statusBar().setSizeGripEnabled(False)
         self.installEventFilter(self)
         for i in self.json['paths']['input']:
             print(f'Attempting to load "{i}"')
