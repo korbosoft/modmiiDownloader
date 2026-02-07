@@ -62,7 +62,6 @@ class D2xCheckGrid(CiosGroupBox):
         toggleCheckBoxes(self, [self.findChild(QCheckBox, f'c{cios['slot']}_{cios['base']}_d2x') for cios in self.recommendedWiiCios])
 
     def toggleVWiiRecommended(self):
-        # for item in self.recommendedvWiiCios:
         toggleCheckBoxes(self, '_vWii$', True)
 
     def loadD2xMaps(self):

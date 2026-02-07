@@ -38,7 +38,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -57,7 +57,7 @@
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>640</height>
+        <height>688</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="nusLayout">
@@ -180,12 +180,12 @@
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>690</height>
+        <height>688</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="wiiLayout">
-       <item row="0" column="0">
-        <widget class="DownloadListSection" name="exploits">
+       <item row="1" column="0">
+        <widget class="DownloadListSection" name="hbc">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -193,7 +193,23 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>Exploits</string>
+          <string>Homebrew Channels</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="DownloadListSection" name="vWiiHomebrew">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>vWii Only Homebrew</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -232,8 +248,8 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="DownloadListSection" name="hbc">
+       <item row="0" column="0">
+        <widget class="DownloadListSection" name="exploits">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -241,23 +257,7 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>Homebrew Channels</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="DownloadListSection" name="vWiiHomebrew">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>vWii Only Homebrew</string>
+          <string>Exploits</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -532,7 +532,7 @@ Settings</string>
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>640</height>
+        <height>688</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="wiiuLayout">

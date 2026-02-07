@@ -1,9 +1,10 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtWidgets import QAbstractItemView, QApplication, QGroupBox, QListView, QCheckBox, QVBoxLayout, QLabel, QSizePolicy, QMessageBox
+from PySide6.QtWidgets import (QApplication, QGroupBox, QListView, QAbstractItemView,
+QCheckBox, QVBoxLayout, QLabel, QSizePolicy, QMessageBox, QPushButton)
 
 from PySide6.QtGui import QStandardItem, QStandardItemModel
 
-from PySide6.QtCore import QMetaObject, Qt, QItemSelectionModel
+from PySide6.QtCore import QMetaObject, Qt, QItemSelectionModel, Slot
 
 from webbrowser import open_new
 
@@ -79,7 +80,6 @@ class DownloadList(QListView):
 
                 if ret != QMessageBox.StandardButton.Yes:
                     self.selectionModel().select(index, QItemSelectionModel.SelectionFlag.Deselect)
-                    # Perform "No" action
 
     def __init__(self, parent=None):
         self.parent = parent
@@ -89,27 +89,38 @@ class DownloadList(QListView):
         self.clicked.connect(self.listClicked)
 
 class DownloadListSection(QGroupBox):
-    def list(self):
-        return self.list
-
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setObjectName('DownloadListSection')
         self.list = DownloadList(self)
         self.list.setObjectName('list')
-        self.list.move(3, 22)
+        self.list.move(5, 22)
         self.list.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.list.setProperty('showDropIndicator', False)
         self.list.setAlternatingRowColors(True)
         self.list.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.list.setUniformItemSizes(True)
-
+        self.select = QPushButton(self)
+        self.select.setText('Select All')
+        self.select.clicked.connect(self.toggleAllItems)
         QMetaObject.connectSlotsByName(self)
+
+    @Slot()
+    def toggleAllItems(self):
+        selected = []
+        for i in range(self.list.model().rowCount()):
+            if self.list.model().item(i).isEnabled():
+                selected.append(self.list.selectionModel().isSelected(self.list.model().item(i).index()))
+            else:
+                selected.append(True)
+        for i in range(self.list.model().rowCount()):
+            if self.list.model().item(i).isEnabled():
+                self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Select if False in selected else QItemSelectionModel.SelectionFlag.Deselect)
 
     def selectChild(self, name):
         for i in range(self.list.model().rowCount()):
             if self.list.model().item(i).specialAttrs['id'] == name:
-                self.list.selectionModel().select(self.list.model().indexFromItem(self.list.model().item(i)), QItemSelectionModel.SelectionFlag.Select)
+                self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Select)
 
     def getSelected(self):
         str = ''
@@ -119,5 +130,8 @@ class DownloadListSection(QGroupBox):
         return str
 
     def resizeEvent(self, event):
-        self.list.resize(self.width() - 5, self.height() - 24)
+        self.list.resize(self.width() - 9, self.height() - 56)
+        self.select.resize(self.width() - 9, 30)
+        self.select.move(5, self.list.height() + 22)
+
 

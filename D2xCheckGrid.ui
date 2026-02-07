@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>263</width>
-    <height>632</height>
+    <width>262</width>
+    <height>638</height>
    </rect>
   </property>
   <property name="title">
@@ -22,8 +22,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>263</width>
-     <height>632</height>
+     <width>262</width>
+     <height>638</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="layout">
@@ -459,6 +459,12 @@
     </item>
     <item>
      <widget class="QPushButton" name="select">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
       <property name="text">
        <string>Select All</string>
       </property>
