@@ -144,6 +144,7 @@ class mainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui.setupUi(self)
+        self.setFixedSize(self.size())
         try:
             with open('Support/subscripts/modmiiDownloader/downloader.json') as f:
                 j = json.load(f)
