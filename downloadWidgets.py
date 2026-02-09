@@ -126,7 +126,7 @@ class DownloadListSection(QGroupBox):
         str = ''
         for i in range(self.list.model().rowCount()):
             if 'disabled' not in self.list.model().item(i).specialAttrs['tags']:
-                str = str + 'set ' + self.list.model().item(i).specialAttrs['id'] + '=' + ('*' if self.list.selectionModel().isSelected(self.list.model().item(i).index()) else '') + '\n'
+                str = str + f'set {self.list.model().item(i).specialAttrs['id']}={'*' if self.list.selectionModel().isSelected(self.list.model().item(i).index()) else ''}\n'
         return str
 
     def resizeEvent(self, event):

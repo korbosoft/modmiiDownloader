@@ -24,7 +24,7 @@ class CiosGroupBox(QGroupBox):
     def getSelected(self):
         str = ''
         for i in self.findChildren(QCheckBox):
-            str = str + 'set ' + i.objectName() + '=' + ('*' if i.isEnabled() and i.isChecked() else '') + '\n'
+            str = str + f'set {i.objectName()}={'*' if i.isEnabled() and i.isChecked() else ''}\n'
         return str
 
     def selectChild(self, name):

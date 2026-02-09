@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import json, os, sys
 
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
 
 from PySide6.QtCore import Slot, QEvent
 
@@ -20,34 +20,23 @@ from ui_mainWindow import Ui_mainWindow
 import resources
 
 class mainWindow(QMainWindow):
-    ui = Ui_mainWindow()
+    enterD2xSettings = False
     queueStr = None
+
+    ui = Ui_mainWindow()
+
     def setupList(self, page, cat, list):
         for i in self.json['downloadList'][page][cat]['item']:
             index = list.model().rowCount()
             list.model().appendRow(DownloadableItem(i['title']))
             list.model().item(index).setAttrs(i)
 
-    @Slot()
-    def doD2xSettings(self):
-        exit = False
-        for i in self.json['paths']['tempcheck']:
-            print(f'Attempting to write to "{i}"')
-            try:
-                with open(i, 'a') as f:
-                    f.write('\nset nextgoto=betaswitch\nset nextpage=4')
-                    print('Success! Exiting now...')
-                    exit = True
-                    break
-            except Exception as e:
-                print(f'{type(e).__name__} occurred trying to load queue at "{i}":\n{e}')
-        if exit: QApplication.quit()
-
     def makeQueue(self):
         queue = \
         ''.join([item.getSelected() for item in chain(self.findChildren(DownloadListSection))]) + \
         ''.join([item.getSelected() for item in chain(self.findChildren(CiosGroupBox))]) + \
-        self.ui.themeGrid.getSelected()
+        self.ui.themeGrid.getSelected() + \
+        f'set effect={self.ui.channelEffect.currentText()}\n'
         return queue
 
     def getQueue(self, str):
@@ -56,8 +45,11 @@ class mainWindow(QMainWindow):
             if '=' in line:
                 key, value, *_ = line.split('=')
                 queue[key] = value
+        if 'effect' in queue:
+            if queue['effect'] != '':
+                self.ui.channelEffect.setCurrentIndex(self.ui.channelEffect.findText(queue['effect']))
 
-        queue = [key for key, value in queue.items() if value == '*']
+        queue = [key for key, value in queue.items() if (value == '*' or key == 'No-Spin' or key == 'Spin' or key == 'Fast-Spin')]
         for key in queue:
             for item in self.findChildren(DownloadListSection):
                 item.selectChild(key)
@@ -71,7 +63,10 @@ class mainWindow(QMainWindow):
             print(f'Attempting to write to "{i}"')
             try:
                 with open(i, 'w') as f:
-                    f.write(self.makeQueue())
+                    string = self.makeQueue()
+                    if self.enterD2xSettings:
+                        string = string + 'set nextgoto=betaswitch\nset nextpage=4'
+                    f.write(string)
                     print('Success! Exiting now...')
                     exit = True
                     break
@@ -80,6 +75,10 @@ class mainWindow(QMainWindow):
         if exit: QApplication.quit()
 
     def closeEvent(self, event):
+        self.setQueue()
+
+    def doD2xSettings(self):
+        self.enterD2xSettings = True
         self.setQueue()
 
     def setupAll(self):
@@ -121,7 +120,7 @@ class mainWindow(QMainWindow):
         self.ui.tabWidget.setTabIcon(4, resources.icons['program_24'])
 
         self.ui.download.setIcon(resources.icons['download_24'])
-        self.ui.download.clicked.connect(QApplication.quit)
+        self.ui.download.clicked.connect(self.close)
 
         self.ui.legendIcon1.setPixmap(resources.icons['recommended_24'].pixmap(24))
         self.ui.legendIcon2.setPixmap(resources.icons['semiRecommended_24'].pixmap(24))
@@ -176,14 +175,14 @@ if __name__ == '__main__':
     widget = mainWindow()
     widget.show()
     try:
-        with open('temp/linuxactive.txt', 'w') as f:
+        with open('temp/wineactive.txt', 'w') as f:
             pass
     except:
-        with open('linuxactive.txt', 'w') as f:
+        with open('wineactive.txt', 'w') as f:
             pass
     ret = app.exec()
     try:
-        os.remove('temp/linuxactive.txt')
+        os.remove('temp/wineactive.txt')
     except:
-        os.remove('linuxactive.txt')
+        os.remove('wineactive.txt')
     sys.exit(ret)
