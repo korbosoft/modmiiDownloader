@@ -60,7 +60,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build Package
-      run: python -m nuitka --show-progress --assume-yes-for-downloads main.py --standalone --enable-plugin=pyside6 -o ModMiiDownloader.exe
+      run: python -m nuitka --show-progress --assume-yes-for-downloads main.py --standalone --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
     - name: Upload Package
       uses: actions/upload-artifact@v4
       with:
@@ -84,7 +84,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build Onefile Package
-      run: python -m nuitka --show-progress --assume-yes-for-downloads main.py --onefile --enable-plugin=pyside6 -o ModMiiDownloader.exe
+      run: python -m nuitka --show-progress --assume-yes-for-downloads main.py --onefile --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
     - name: Upload Onefile Package
       uses: actions/upload-artifact@v4
       with:
