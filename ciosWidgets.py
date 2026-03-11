@@ -70,6 +70,7 @@ class D2xCheckGrid(CiosGroupBox):
             try:
                 print(f'Attempting to load "{i}"')
                 self.wiiMap = ElementTree.parse(i).getroot()
+                break
             except FileNotFoundError:
                 print(f'There seems to be no cIOS map at "{i}"')
             except ElementTree.ParseError as e:
@@ -85,6 +86,7 @@ class D2xCheckGrid(CiosGroupBox):
             try:
                 print(f'Attempting to load "{i}"')
                 self.vWiiMap = ElementTree.parse(i).getroot()
+                break
             except FileNotFoundError:
                 print(f'There seems to be no cIOS map at "{i}"')
             except ElementTree.ParseError as e:
@@ -117,13 +119,14 @@ class D2xCheckGrid(CiosGroupBox):
 
         for base in [37, 38, 53, 55, 56, 57, 58, 60, 70, 80]:
             enabled = self.isIOSBaseAvailable(base, self.wiiMap)
-            for widget in self.findChildren(QWidget, QRegularExpression(f'{base}_d2x$')):
+            self.findChild(QLabel, f'b{base}').setEnabled(enabled)
+            for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x$')):
                 widget.setEnabled(enabled)
         if self.vWiiMap is not None:
             for base in [38, 56, 57, 58]:
                 self.findChild(QLabel, 'dv').setEnabled(True)
                 enabled = self.isIOSBaseAvailable(base, self.vWiiMap)
-                for widget in self.findChildren(QCheckBox, QRegularExpression('_vWii$')):
+                for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x_vWii$')):
                     widget.setEnabled(enabled)
 
         for item in self.recommendedWiiCios:

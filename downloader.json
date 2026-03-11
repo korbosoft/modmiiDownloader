@@ -1341,7 +1341,7 @@
                         ]
                     },
                     {
-                        "id": "ci",
+                        "id": "csminstaller",
                         "title": "csm-installer",
                         "toolTip": "A (v)Wii App that installs System Menu themes from CSM files created by ModMii, ThemeMii or MyMenu.\nAlso supports APP files to restore original themes. Drag a mym file onto ModMii to convert it to csm.\n\nWARNING: Make sure you have Priiloader, BootMii and a NAND backup before experimenting with themes!",
                         "tags": [
