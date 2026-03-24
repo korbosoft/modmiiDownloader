@@ -1,9 +1,9 @@
 # This Python file uses the following encoding: utf-8
 import json, os, sys
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
+from PySide6.QtWidgets import QApplication, QMainWindow
 
-from PySide6.QtCore import Slot, QEvent
+from PySide6.QtCore import QEvent
 
 from itertools import chain
 
