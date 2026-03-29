@@ -39,9 +39,6 @@ Thumbs.db
 *.pro.user*
 *.qbs.user*
 CMakeLists.txt.user*
-ui_*.py
-rc_*.py
-
 
 # xemacs temporary files
 *.flc

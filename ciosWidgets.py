@@ -1,5 +1,5 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtWidgets import QCheckBox, QGroupBox, QLabel, QWidget
+from PySide6.QtWidgets import QCheckBox, QGroupBox, QLabel
 
 from PySide6.QtCore import QRegularExpression
 
