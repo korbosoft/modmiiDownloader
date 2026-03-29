@@ -69,8 +69,8 @@ jobs:
     - name: Build Package
       run: |
         python -m nuitka --show-progress --assume-yes-for-downloads main.py --standalone --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
-        copy ui_* main.dist
-        copy rc_* main.dist
+        copy *.py main.dist
+        copy downloader.json main.dist
     - name: Upload Package
       uses: actions/upload-artifact@v4
       with:
@@ -103,8 +103,8 @@ jobs:
     - name: Build Onefile Package
       run: |
         python -m nuitka --show-progress --assume-yes-for-downloads main.py --onefile --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
-        copy ui_* main.dist
-        copy rc_* main.dist
+        copy *.py main.dist
+        copy downloader.json main.dist
     - name: Upload Onefile Package
       uses: actions/upload-artifact@v4
       with:
