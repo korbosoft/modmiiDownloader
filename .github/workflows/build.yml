@@ -61,13 +61,16 @@ jobs:
         pip install -r requirements.txt
     - name: Compile UI/QRC files
       run: |
-        pyside6-uic mainWindow.ui -o main.dist\ui_mainWindow.py
-        pyside6-uic ThemeGrid.ui -o main.dist\ui_ThemeGrid.py
-        pyside6-uic WaninCheckGrid.ui -o main.dist\ui_WaninCheckGrid.py
-        pyside6-uic D2xCheckGrid.ui -o main.dist\ui_D2xCheckGrid.py
-        pyside6-rcc resource.qrc -o main.dist\rc_resource.py
+        pyside6-uic mainWindow.ui -o ui_mainWindow.py
+        pyside6-uic ThemeGrid.ui -o ui_ThemeGrid.py
+        pyside6-uic WaninCheckGrid.ui -o ui_WaninCheckGrid.py
+        pyside6-uic D2xCheckGrid.ui -o ui_D2xCheckGrid.py
+        pyside6-rcc resource.qrc -o rc_resource.py
     - name: Build Package
-      run: python -m nuitka --show-progress --assume-yes-for-downloads main.py --standalone --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
+      run: |
+        python -m nuitka --show-progress --assume-yes-for-downloads main.py --standalone --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
+        copy ui_* main.dist
+        copy rc_* main.dist
     - name: Upload Package
       uses: actions/upload-artifact@v4
       with:
@@ -90,8 +93,18 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Compile UI/QRC files
+      run: |
+        pyside6-uic mainWindow.ui -o ui_mainWindow.py
+        pyside6-uic ThemeGrid.ui -o ui_ThemeGrid.py
+        pyside6-uic WaninCheckGrid.ui -o ui_WaninCheckGrid.py
+        pyside6-uic D2xCheckGrid.ui -o ui_D2xCheckGrid.py
+        pyside6-rcc resource.qrc -o rc_resource.py
     - name: Build Onefile Package
-      run: python -m nuitka --show-progress --assume-yes-for-downloads main.py --onefile --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
+      run: |
+        python -m nuitka --show-progress --assume-yes-for-downloads main.py --onefile --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
+        copy ui_* main.dist
+        copy rc_* main.dist
     - name: Upload Onefile Package
       uses: actions/upload-artifact@v4
       with:
