@@ -44,10 +44,9 @@ jobs:
   #       name: ModMiiDownloader-Linux-bin
 
   build-windows:
+    runs-on: windows-latest
     permissions:
       contents: write  # Grants access to create/update releases and tags
-
-    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -73,7 +72,7 @@ jobs:
         python -m nuitka --show-progress --assume-yes-for-downloads main.py --standalone --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
         copy *.py main.dist
         copy downloader.json main.dist
-        7z a modmiiDownloader.zip -- main.dist/
+        7z a modmiiDownloader.zip -- main.dist/*
     - name: Create Release
       uses: ncipollo/release-action@v1.21.0
       with:
@@ -85,10 +84,10 @@ jobs:
         tag: "main"
 
   build-windows-onefile:
+    runs-on: windows-latest
     permissions:
       contents: write  # Grants access to create/update releases and tags
 
-    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -114,7 +113,7 @@ jobs:
         python -m nuitka --show-progress --assume-yes-for-downloads main.py --onefile --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
         copy *.py main.dist
         copy downloader.json main.dist
-        7z a modmiiDownloader-onefile.zip -- main.dist/
+        7z a modmiiDownloader-onefile.zip -- main.dist/*
     - name: Create Onefile Release
       uses: ncipollo/release-action@v1.21.0
       with:
