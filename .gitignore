@@ -87,3 +87,4 @@ d2xmodules/
 *.bat
 ui_*.py
 rc_*.py
+wineactive.txt
