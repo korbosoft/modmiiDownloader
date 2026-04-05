@@ -85,3 +85,5 @@ CMakeLists.txt.user*
 ciosmaps*
 d2xmodules/
 *.bat
+ui_*.py
+rc_*.py

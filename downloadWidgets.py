@@ -29,7 +29,7 @@ class VertCheck(QCheckBox):
         self.checkbox = QCheckBox(self)
         self.checkbox.setObjectName('checkbox')
         self.checkbox.setSizePolicy(sizePolicy)
-        self.checkbox.setStyleSheet('QCheckBox {spacing: 0px;} QCheckBox::indicator {subcontrol-position: top center;}')
+        self.checkbox.setStyleSheet('QCheckBox {spacing: 0px} QCheckBox::indicator {subcontrol-position: top center}')
 
         self.layout.addWidget(self.checkbox)
     def setText(self, text):
@@ -43,9 +43,9 @@ class DownloadableItem(QStandardItem):
         self.specialAttrs['page'] = page
         self.specialAttrs['cat'] = cat
         if 'url' in json:
-            self.specialAttrs['url'] = json['url'];
+            self.specialAttrs['url'] = json['url']
         if 'warning' in json:
-            self.specialAttrs['warning'] = json['warning'];
+            self.specialAttrs['warning'] = json['warning']
         if 'disabled' in self.specialAttrs['tags']:
             self.setEnabled(False)
         if 'recommended' in self.specialAttrs['tags']:
@@ -68,8 +68,10 @@ class DownloadableItem(QStandardItem):
         self.setToolTip(item.toolTip())
         self.specialAttrs['id'] = item.specialAttrs['id']
         self.specialAttrs['tags'] = item.specialAttrs['tags']
-        self.specialAttrs['url'] = item.specialAttrs['url'];
-        self.specialAttrs['warning'] = item.specialAttrs['warning'];
+        self.specialAttrs['url'] = item.specialAttrs['url']
+        self.specialAttrs['warning'] = item.specialAttrs['warning']
+        self.specialAttrs['page'] =item.specialAttrs['page']
+        self.specialAttrs['cat'] = item.specialAttrs['cat']
         if not item.isEnabled():
             self.setEnabled(False)
         if 'recommended' in self.specialAttrs['tags']:
