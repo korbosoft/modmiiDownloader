@@ -11,6 +11,8 @@ from downloadWidgets import DownloadableItem, DownloadListSection
 
 from ciosWidgets import CiosGroupBox
 
+from SearchDialog import SearchDialog
+
 # Important:
 # You need to run the following command to generate the ui_form.py file
 #     pyside6-uic form.ui -o ui_form.py, or
@@ -29,7 +31,7 @@ class mainWindow(QMainWindow):
         for i in self.json['downloadList'][page][cat]['item']:
             index = list.model().rowCount()
             list.model().appendRow(DownloadableItem(i['title']))
-            list.model().item(index).setAttrs(i)
+            list.model().item(index).setAttrs(i, page, cat)
 
     def makeQueue(self):
         queue = \
@@ -48,6 +50,9 @@ class mainWindow(QMainWindow):
         if 'effect' in queue:
             if queue['effect'] != '':
                 self.ui.channelEffect.setCurrentIndex(self.ui.channelEffect.findText(queue['effect']))
+        if 'nextpage' in queue:
+            if queue['nextpage'].isdigit():
+                self.ui.tabWidget.setCurrentIndex(int(queue['nextpage']) - 1)
 
         queue = [key for key, value in queue.items() if (value == '*' or key == 'No-Spin' or key == 'Spin' or key == 'Fast-Spin')]
         for key in queue:
@@ -71,7 +76,7 @@ class mainWindow(QMainWindow):
                     exit = True
                     break
             except Exception as e:
-                print(f'{type(e).__name__} occurred trying to load queue at "{i}":\n{e}')
+                print(f'{type(e).__name__} occurred trying to save queue at "{i}":\n{e}')
         if exit: QApplication.quit()
 
     def closeEvent(self, event):
@@ -80,6 +85,10 @@ class mainWindow(QMainWindow):
     def doD2xSettings(self):
         self.enterD2xSettings = True
         self.setQueue()
+
+    def startSearch(self):
+        dialog = SearchDialog()
+        dialog.exec()
 
     def setupAll(self):
         resources.setupIcons()
@@ -121,6 +130,9 @@ class mainWindow(QMainWindow):
 
         self.ui.download.setIcon(resources.icons['download_24'])
         self.ui.download.clicked.connect(self.close)
+
+        self.ui.search.setIcon(resources.icons['download_24'])
+        self.ui.search.clicked.connect(self.startSearch)
 
         self.ui.legendIcon1.setPixmap(resources.icons['recommended_24'].pixmap(24))
         self.ui.legendIcon2.setPixmap(resources.icons['semiRecommended_24'].pixmap(24))
@@ -166,9 +178,6 @@ class mainWindow(QMainWindow):
                 print(f'{type(e).__name__} occurred trying to load queue at "{i}":\n{e}')
         if self.queueStr is not None:
             self.getQueue(self.queueStr)
-        if len(sys.argv) > 1:
-            if int(sys.argv[1]) is not None:
-                self.ui.tabWidget.setCurrentIndex(int(sys.argv[1]) - 1)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

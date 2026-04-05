@@ -7,7 +7,10 @@ from PySide6.QtGui import QImage, QPainter, QIcon, QPixmap
 
 from PySide6.QtCore import QFile, QIODevice, QDirIterator, QTextStream
 
-import rc_resource
+try:
+	import rc_resource
+except ImportError:
+	import resource_rc
 
 icons = {}
 

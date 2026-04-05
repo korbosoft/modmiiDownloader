@@ -302,7 +302,7 @@ class Ui_mainWindow(object):
         self.tabWidget.addTab(self.misc, icon2, "")
         self.warning = QLabel(self.centralwidget)
         self.warning.setObjectName(u"warning")
-        self.warning.setGeometry(QRect(0, 720, 290, 50))
+        self.warning.setGeometry(QRect(0, 720, 180, 50))
         self.warning.setFont(font1)
         self.warning.setTextFormat(Qt.TextFormat.MarkdownText)
         self.warning.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -317,7 +317,7 @@ class Ui_mainWindow(object):
         self.download.setIconSize(QSize(24, 24))
         self.legendLayout = QWidget(self.centralwidget)
         self.legendLayout.setObjectName(u"legendLayout")
-        self.legendLayout.setGeometry(QRect(290, 720, 400, 50))
+        self.legendLayout.setGeometry(QRect(180, 720, 420, 50))
         self.legendLayout1 = QGridLayout(self.legendLayout)
         self.legendLayout1.setObjectName(u"legendLayout1")
         self.legendLayout1.setContentsMargins(0, 0, 0, 0)
@@ -373,6 +373,11 @@ class Ui_mainWindow(object):
 
         self.legendLayout1.addItem(self.legendSpacer6, 0, 6, 2, 1)
 
+        self.search = QPushButton(self.centralwidget)
+        self.search.setObjectName(u"search")
+        self.search.setGeometry(QRect(600, 720, 90, 50))
+        self.search.setIcon(icon6)
+        self.search.setIconSize(QSize(24, 24))
         mainWindow.setCentralWidget(self.centralwidget)
         self.statusBar = QStatusBar(mainWindow)
         self.statusBar.setObjectName(u"statusBar")
@@ -434,5 +439,6 @@ class Ui_mainWindow(object):
         self.legendLabel2.setText(QCoreApplication.translate("mainWindow", u"Semi-Recommended", None))
         self.legendLabel3.setText(QCoreApplication.translate("mainWindow", u"Auto-Updating", None))
         self.legendLabel4.setText(QCoreApplication.translate("mainWindow", u"Updated when XFlak Remembers", None))
+        self.search.setText(QCoreApplication.translate("mainWindow", u"Search", None))
     # retranslateUi
 

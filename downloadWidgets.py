@@ -10,6 +10,8 @@ from webbrowser import open_new
 
 from resources import icons
 
+import typing
+
 class VertCheck(QCheckBox):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -34,12 +36,16 @@ class VertCheck(QCheckBox):
         self.label.setText(text)
 
 class DownloadableItem(QStandardItem):
-    def setAttrs(self, json: dict):
+    def setAttrs(self, json: dict, page: str, cat: str):
         self.setToolTip(json['toolTip'])
         self.specialAttrs['id'] = json['id']
         self.specialAttrs['tags'] = json['tags']
+        self.specialAttrs['page'] = page
+        self.specialAttrs['cat'] = cat
         if 'url' in json:
             self.specialAttrs['url'] = json['url'];
+        if 'warning' in json:
+            self.specialAttrs['warning'] = json['warning'];
         if 'disabled' in self.specialAttrs['tags']:
             self.setEnabled(False)
         if 'recommended' in self.specialAttrs['tags']:
@@ -57,8 +63,30 @@ class DownloadableItem(QStandardItem):
             font = self.font()
             font.setUnderline(True)
             self.setFont(font)
-        if 'warning' in json:
-            self.specialAttrs['warning'] = json['warning'];
+
+    def copyAttrs(self, item: typing.Self):
+        self.setToolTip(item.toolTip())
+        self.specialAttrs['id'] = item.specialAttrs['id']
+        self.specialAttrs['tags'] = item.specialAttrs['tags']
+        self.specialAttrs['url'] = item.specialAttrs['url'];
+        self.specialAttrs['warning'] = item.specialAttrs['warning'];
+        if not item.isEnabled():
+            self.setEnabled(False)
+        if 'recommended' in self.specialAttrs['tags']:
+            self.setIcon(icons['recommended_16'])
+        elif 'semi-recommended' in self.specialAttrs['tags']:
+            self.setIcon(icons['semiRecommended_16'])
+        elif 'auto-updates' in self.specialAttrs['tags']:
+            self.setIcon(icons['update_16'])
+        elif 'semi-auto-updates' in self.specialAttrs['tags']:
+            self.setIcon(icons['semiAutoUpdate_16'])
+        else:
+            self.setIcon(icons['blank_16'])
+        if self.specialAttrs['url'] is not None:
+            self.setForeground(QApplication.palette().link())
+            font = self.font()
+            font.setUnderline(True)
+            self.setFont(font)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -66,7 +94,9 @@ class DownloadableItem(QStandardItem):
             'id': None,
             'tags': [],
             'url': None,
-            'warning': None
+            'warning': None,
+            'page': None,
+            'cat': None
         }
 
 class DownloadList(QListView):
@@ -117,10 +147,20 @@ class DownloadListSection(QGroupBox):
             if self.list.model().item(i).isEnabled():
                 self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Select if False in selected else QItemSelectionModel.SelectionFlag.Deselect)
 
+    def deselectAllItems(self):
+        for i in range(self.list.model().rowCount()):
+            if self.list.model().item(i).isEnabled():
+                self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Deselect)
+
     def selectChild(self, name):
         for i in range(self.list.model().rowCount()):
             if self.list.model().item(i).specialAttrs['id'] == name:
                 self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Select)
+
+    def toggleChild(self, name):
+        for i in range(self.list.model().rowCount()):
+            if self.list.model().item(i).specialAttrs['id'] == name:
+                self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Toggle)
 
     def getSelected(self):
         str = ''
@@ -128,6 +168,14 @@ class DownloadListSection(QGroupBox):
             if 'disabled' not in self.list.model().item(i).specialAttrs['tags']:
                 str = str + f'set {self.list.model().item(i).specialAttrs['id']}={'*' if self.list.selectionModel().isSelected(self.list.model().item(i).index()) else ''}\n'
         return str
+
+    def getSelectedItems(self):
+        list = []
+        for i in range(self.list.model().rowCount()):
+            if 'disabled' not in self.list.model().item(i).specialAttrs['tags']:
+                if self.list.selectionModel().isSelected(self.list.model().item(i).index()):
+                    list.append(self.list.model().item(i))
+        return list
 
     def resizeEvent(self, event):
         self.list.resize(self.width() - 9, self.height() - 56)

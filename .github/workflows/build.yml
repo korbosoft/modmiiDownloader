@@ -9,7 +9,7 @@ on:
     branches: [ "master" ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   # build-linux:
@@ -66,7 +66,7 @@ jobs:
         pyside6-uic ThemeGrid.ui -o ui_ThemeGrid.py
         pyside6-uic WaninCheckGrid.ui -o ui_WaninCheckGrid.py
         pyside6-uic D2xCheckGrid.ui -o ui_D2xCheckGrid.py
-        pyside6-rcc resource.qrc -o rc_resource.py
+        pyside6-rcc resource.qrc -o resource_rc.py
     - name: Build Package
       run: |
         python -m nuitka --show-progress --assume-yes-for-downloads main.py --standalone --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
