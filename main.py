@@ -131,7 +131,7 @@ class mainWindow(QMainWindow):
         self.ui.download.setIcon(resources.icons['download_24'])
         self.ui.download.clicked.connect(self.close)
 
-        self.ui.search.setIcon(resources.icons['download_24'])
+        self.ui.search.setIcon(resources.icons['search_24'])
         self.ui.search.clicked.connect(self.startSearch)
 
         self.ui.legendIcon1.setPixmap(resources.icons['recommended_24'].pixmap(24))

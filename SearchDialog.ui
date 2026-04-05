@@ -29,6 +29,10 @@
    <property name="text">
     <string>Add Selected</string>
    </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/base/svg_plus</normaloff>:/base/svg_plus</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="remove">
    <property name="geometry">
@@ -42,6 +46,10 @@
    <property name="text">
     <string>Remove Selected</string>
    </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/base/svg_minus</normaloff>:/base/svg_minus</iconset>
+   </property>
   </widget>
   <widget class="QLineEdit" name="query">
    <property name="geometry">
@@ -53,13 +61,13 @@
     </rect>
    </property>
    <property name="placeholderText">
-    <string>Search</string>
+    <string>Enter query here...</string>
    </property>
    <property name="clearButtonEnabled">
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="ok">
+  <widget class="QPushButton" name="confirm">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -69,7 +77,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>OK</string>
+    <string>Confirm</string>
    </property>
   </widget>
   <widget class="QPushButton" name="cancel">
@@ -140,7 +148,7 @@
    </property>
    <property name="icon">
     <iconset resource="resource.qrc">
-     <normaloff>:/base/svg_ios</normaloff>:/base/svg_ios</iconset>
+     <normaloff>:/base/svg_search</normaloff>:/base/svg_search</iconset>
    </property>
   </widget>
  </widget>

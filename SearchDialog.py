@@ -7,6 +7,8 @@ from ui_SearchDialog import Ui_SearchDialog
 
 from downloadWidgets import DownloadableItem, DownloadListSection
 
+import resources
+
 class SearchDialog(QDialog):
     ui = Ui_SearchDialog()
     main = None
@@ -38,7 +40,7 @@ class SearchDialog(QDialog):
         for item in items:
             self.ui.queue.list.model().removeRow(item.row())
 
-    def okPressed(self):
+    def confirm(self):
         queueModel = self.ui.queue.list.model()
         for index in range(queueModel.rowCount()):
             item = queueModel.item(index)
@@ -66,6 +68,9 @@ class SearchDialog(QDialog):
         self.setupList('cios', 'cmios', results, query)
         self.setupList('misc', 'pc', results, query)
         self.setupList('misc', 'wiiuHomebrew', results, query)
+        if results.model().rowCount() == 0:
+            results.model().appendRow(DownloadableItem(f'No results for "{query}"'))
+            results.model().item(0).setEnabled(False)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -74,9 +79,12 @@ class SearchDialog(QDialog):
                 self.main = widget
 
         self.ui.setupUi(self)
+        self.ui.search.setIcon(resources.icons['search_16'])
         self.ui.search.clicked.connect(self.search)
+        self.ui.add.setIcon(resources.icons['plus_16'])
         self.ui.add.clicked.connect(self.addSelected)
+        self.ui.remove.setIcon(resources.icons['minus_16'])
         self.ui.remove.clicked.connect(self.removeSelected)
-        self.ui.ok.clicked.connect(self.okPressed)
+        self.ui.confirm.clicked.connect(self.confirm)
         self.ui.cancel.clicked.connect(self.close)
 

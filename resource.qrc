@@ -12,5 +12,9 @@
         <file alias="svg_settings">assets/settings.svg</file>
         <file alias="svg_nus">assets/nus.svg</file>
         <file alias="svg_semiAutoUpdate">assets/semiauto-update.svg</file>
+        <file alias="svg_search">assets/search.svg</file>
+        <file alias="svg_check">assets/check.svg</file>
+        <file alias="svg_minus">assets/minus.svg</file>
+        <file alias="svg_plus">assets/plus.svg</file>
     </qresource>
 </RCC>
