@@ -1,13 +1,13 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtWidgets import QDialog, QApplication, QMainWindow
 
-from PySide6.QtCore import QEvent
-
 from ui_SearchDialog import Ui_SearchDialog
 
 from downloadWidgets import DownloadableItem, DownloadListSection
 
 import resources
+
+from rapidfuzz import fuzz, utils
 
 class SearchDialog(QDialog):
     ui = Ui_SearchDialog()
@@ -16,8 +16,10 @@ class SearchDialog(QDialog):
     def setupList(self, page: str, cat: str, list, query: str):
         for i in self.main.json['downloadList'][page][cat]['item']:
             index = list.model().rowCount()
-            if query.lower() in i['title'].lower():
-                list.model().appendRow(DownloadableItem(i['title']))
+            name = i['name']
+            ratio = fuzz.WRatio(query, name, processor=utils.default_process)
+            if ratio > 70 or query.lower() in name.lower():
+                list.model().appendRow(DownloadableItem(name))
                 list.model().item(index).setAttrs(i, page, cat)
 
     def addSelected(self):
@@ -44,30 +46,14 @@ class SearchDialog(QDialog):
         queueModel = self.ui.queue.list.model()
         for index in range(queueModel.rowCount()):
             item = queueModel.item(index)
-            print(item.specialAttrs['cat'])
-            print(item.specialAttrs['id'])
             self.main.findChild(DownloadListSection, item.specialAttrs['cat']).selectChild(item.specialAttrs['id'])
         self.close()
 
-    def search(self):
+    def search(self, query):
         results = self.ui.results.list
         results.model().removeRows(0, results.model().rowCount())
-        query = self.ui.query.text()
-        self.setupList('nus', 'sysmenus', results, query)
-        self.setupList('nus', 'realsigned', results, query)
-        self.setupList('nus', 'fakesigned', results, query)
-        self.setupList('nus', 'content', results, query)
-        self.setupList('nus', 'channels', results, query)
-        self.setupList('nus', 'other', results, query)
-        self.setupList('wiiHaxx', 'exploits', results, query)
-        self.setupList('wiiHaxx', 'wiiHomebrew', results, query)
-        self.setupList('wiiHaxx', 'vWiiHomebrew', results, query)
-        self.setupList('wiiHaxx', 'bothHomebrew', results, query)
-        self.setupList('wiiHaxx', 'hbc', results, query)
-        self.setupList('cios', 'hermes', results, query)
-        self.setupList('cios', 'cmios', results, query)
-        self.setupList('misc', 'pc', results, query)
-        self.setupList('misc', 'wiiuHomebrew', results, query)
+        for section in self.main.sections:
+            self.setupList(section[0], section[1], results, query)
         if results.model().rowCount() == 0:
             results.model().appendRow(DownloadableItem(f'No results for "{query}"'))
             results.model().item(0).setEnabled(False)
@@ -79,8 +65,7 @@ class SearchDialog(QDialog):
                 self.main = widget
 
         self.ui.setupUi(self)
-        self.ui.search.setIcon(resources.icons['search_16'])
-        self.ui.search.clicked.connect(self.search)
+        self.ui.query.textChanged.connect(self.search)
         self.ui.add.setIcon(resources.icons['plus_16'])
         self.ui.add.clicked.connect(self.addSelected)
         self.ui.remove.setIcon(resources.icons['minus_16'])

@@ -27,10 +27,28 @@ class mainWindow(QMainWindow):
 
     ui = Ui_mainWindow()
 
+    sections = [
+        ['nus', 'sysmenus'],
+        ['nus', 'realsigned'],
+        ['nus', 'fakesigned'],
+        ['nus', 'content'],
+        ['nus', 'channels'],
+        ['nus', 'other'],
+        ['wiiHaxx', 'exploits'],
+        ['wiiHaxx', 'wiiHomebrew'],
+        ['wiiHaxx', 'vWiiHomebrew'],
+        ['wiiHaxx', 'bothHomebrew'],
+        ['wiiHaxx', 'hbc'],
+        ['cios', 'hermes'],
+        ['cios', 'cmios'],
+        ['misc', 'pc'],
+        ['misc', 'wiiuHomebrew']
+    ]
+
     def setupList(self, page, cat, list):
         for i in self.json['downloadList'][page][cat]['item']:
             index = list.model().rowCount()
-            list.model().appendRow(DownloadableItem(i['title']))
+            list.model().appendRow(DownloadableItem(i['name']))
             list.model().item(index).setAttrs(i, page, cat)
 
     def makeQueue(self):
@@ -92,48 +110,47 @@ class mainWindow(QMainWindow):
 
     def setupAll(self):
         resources.setupIcons()
-        # Page 1
-        self.ui.tabWidget.setTabIcon(0, resources.icons['nus_24'])
+
         self.setupList('nus', 'sysmenus', self.ui.sysmenus.list)
         self.setupList('nus', 'realsigned', self.ui.realsigned.list)
         self.setupList('nus', 'fakesigned', self.ui.fakesigned.list)
         self.setupList('nus', 'content', self.ui.contents.list)
         self.setupList('nus', 'channels', self.ui.channels.list)
         self.setupList('nus', 'other', self.ui.other.list)
-        # Page 2
-        self.ui.tabWidget.setTabIcon(1, resources.icons['program_24'])
         self.setupList('wiiHaxx', 'exploits', self.ui.exploits.list)
         self.setupList('wiiHaxx', 'wiiHomebrew', self.ui.wiiHomebrew.list)
         self.setupList('wiiHaxx', 'vWiiHomebrew', self.ui.vWiiHomebrew.list)
         self.setupList('wiiHaxx', 'bothHomebrew', self.ui.bothHomebrew.list)
         self.setupList('wiiHaxx', 'hbc', self.ui.hbc.list)
+        self.setupList('cios', 'hermes', self.ui.hermes.list)
+        self.setupList('cios', 'cmios', self.ui.cmios.list)
+        self.setupList('misc', 'pc', self.ui.pc.list)
+        self.setupList('misc', 'wiiuHomebrew', self.ui.wiiuHomebrew.list)
+
+        # Page 1
+        self.ui.tabWidget.setTabIcon(0, resources.icons['nus_24'])
+
+        # Page 2
+        self.ui.tabWidget.setTabIcon(1, resources.icons['program_24'])
+
         # Page 3
         self.ui.tabWidget.setTabIcon(2, resources.icons['theme_24'])
 
         # Page 4
         self.ui.tabWidget.setTabIcon(3, resources.icons['ios_24'])
-
         self.ui.d2x.setup(self.json['paths'], self.json['recommendedWiiCios'])
-
         self.ui.d2xSettings.clicked.connect(self.doD2xSettings)
-
-        self.setupList('cios', 'hermes', self.ui.hermes.list)
-        self.setupList('cios', 'cmios', self.ui.cmios.list)
         self.ui.wiiRecommended.setIcon(resources.icons['recommended_24'])
         self.ui.vWiiRecommended.setIcon(resources.icons['recommended_24'])
         self.ui.wiiRecommended.clicked.connect(self.ui.d2x.toggleWiiRecommended)
         self.ui.vWiiRecommended.clicked.connect(self.ui.d2x.toggleVWiiRecommended)
-        # Page 5
-        self.setupList('misc', 'pc', self.ui.pc.list)
-        self.setupList('misc', 'wiiuHomebrew', self.ui.wiiuHomebrew.list)
-        self.ui.tabWidget.setTabIcon(4, resources.icons['program_24'])
 
+        # Page 5
+        self.ui.tabWidget.setTabIcon(4, resources.icons['program_24'])
         self.ui.download.setIcon(resources.icons['download_24'])
         self.ui.download.clicked.connect(self.close)
-
         self.ui.search.setIcon(resources.icons['search_24'])
         self.ui.search.clicked.connect(self.startSearch)
-
         self.ui.legendIcon1.setPixmap(resources.icons['recommended_24'].pixmap(24))
         self.ui.legendIcon2.setPixmap(resources.icons['semiRecommended_24'].pixmap(24))
         self.ui.legendIcon3.setPixmap(resources.icons['update_24'].pixmap(24))

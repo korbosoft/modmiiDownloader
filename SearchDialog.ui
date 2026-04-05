@@ -56,7 +56,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>320</width>
+     <width>400</width>
      <height>30</height>
     </rect>
    </property>
@@ -79,6 +79,9 @@
    <property name="text">
     <string>Confirm</string>
    </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="cancel">
    <property name="geometry">
@@ -93,7 +96,7 @@
     <string>Cancel</string>
    </property>
    <property name="default">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
@@ -134,23 +137,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="search">
-   <property name="geometry">
-    <rect>
-     <x>320</x>
-     <y>0</y>
-     <width>80</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Search</string>
-   </property>
-   <property name="icon">
-    <iconset resource="resource.qrc">
-     <normaloff>:/base/svg_search</normaloff>:/base/svg_search</iconset>
-   </property>
-  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -160,6 +146,13 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>query</tabstop>
+  <tabstop>add</tabstop>
+  <tabstop>remove</tabstop>
+  <tabstop>cancel</tabstop>
+  <tabstop>confirm</tabstop>
+ </tabstops>
  <resources>
   <include location="resource.qrc"/>
  </resources>

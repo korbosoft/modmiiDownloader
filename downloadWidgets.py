@@ -6,10 +6,9 @@ from PySide6.QtGui import QStandardItem, QStandardItemModel
 
 from PySide6.QtCore import QMetaObject, Qt, QItemSelectionModel, Slot
 
-from webbrowser import open_new
-
 from resources import icons
 
+from webbrowser import open_new
 import typing
 
 class VertCheck(QCheckBox):
@@ -48,6 +47,8 @@ class DownloadableItem(QStandardItem):
             self.specialAttrs['warning'] = json['warning']
         if 'disabled' in self.specialAttrs['tags']:
             self.setEnabled(False)
+        if 'altname' in json:
+            self.specialAttrs['altname'] = json['altname']
         if 'recommended' in self.specialAttrs['tags']:
             self.setIcon(icons['recommended_16'])
         elif 'semi-recommended' in self.specialAttrs['tags']:
@@ -67,6 +68,7 @@ class DownloadableItem(QStandardItem):
     def copyAttrs(self, item: typing.Self):
         self.setToolTip(item.toolTip())
         self.specialAttrs['id'] = item.specialAttrs['id']
+        self.specialAttrs['altname'] = item.specialAttrs['altname']
         self.specialAttrs['tags'] = item.specialAttrs['tags']
         self.specialAttrs['url'] = item.specialAttrs['url']
         self.specialAttrs['warning'] = item.specialAttrs['warning']
@@ -95,6 +97,7 @@ class DownloadableItem(QStandardItem):
         self.specialAttrs = {
             'id': None,
             'tags': [],
+            'altname': None,
             'url': None,
             'warning': None,
             'page': None,
