@@ -25,7 +25,7 @@ class SearchDialog(QDialog):
                 name = i['altname']
                 ratio = fuzz.WRatio(query, name, processor=utils.default_process)
                 if ratio > 70 or query.lower() in name.lower():
-                    list.model().appendRow(DownloadableItem(name))
+                    list.model().appendRow(DownloadableItem(i['name']))
                     list.model().item(index).setAttrs(i, page, cat)
 
     def addSelected(self):
