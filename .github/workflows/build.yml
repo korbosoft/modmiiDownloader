@@ -80,40 +80,40 @@ jobs:
         replacesArtifacts: true
         tag: "main"
 
-  build-windows-onefile:
-    runs-on: windows-latest
-    permissions:
-      contents: write  # Grants access to create/update releases and tags
-
-
-    steps:
-    - uses: actions/checkout@v6
-    # - name: Enable Developer Command Prompt
-    #   uses: ilammy/msvc-dev-cmd@v1.13.0
-    - name: Set up Python 3.13
-      uses: actions/setup-python@v6
-      with:
-        python-version: "3.13"
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Compile UI/QRC files
-      run: |
-        for %i in (*.ui) do echo pyside6-uic %i -o ui_%~ni.py
-        for %i in (*.qrc) do echo pyside6-rcc %i -o rc_%~ni.py
-    - name: Build Onefile Package
-      run: |
-        python -m nuitka --show-progress --assume-yes-for-downloads main.py --onefile --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
-        copy *.py main.dist
-        copy downloader.json main.dist
-        7z a modmiiDownloader-onefile.zip -- main.dist/*
-    - name: Create Onefile Release
-      uses: ncipollo/release-action@v1.21.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: "modmiiDownloader-onefile.zip"
-        allowUpdates: true
-        omitBodyDuringUpdate: true
-        replacesArtifacts: true
-        tag: "main"
+  # build-windows-onefile:
+  #   runs-on: windows-latest
+  #   permissions:
+  #     contents: write  # Grants access to create/update releases and tags
+  #
+  #
+  #   steps:
+  #   - uses: actions/checkout@v6
+  #   # - name: Enable Developer Command Prompt
+  #   #   uses: ilammy/msvc-dev-cmd@v1.13.0
+  #   - name: Set up Python 3.13
+  #     uses: actions/setup-python@v6
+  #     with:
+  #       python-version: "3.13"
+  #   - name: Install Dependencies
+  #     run: |
+  #       python -m pip install --upgrade pip
+  #       pip install -r requirements.txt
+  #   - name: Compile UI/QRC files
+  #     run: |
+  #       Get-ChildItem *.ui | ForEach-Object {pyside6-uic $_.FullName -o "ui_$($_.BaseName).py"}
+  #       Get-ChildItem *.qrc | ForEach-Object {pyside6-rcc $_.FullName -o "rc_$($_.BaseName).py"}
+  #   - name: Build Onefile Package
+  #     run: |
+  #       python -m nuitka --show-progress --assume-yes-for-downloads main.py --onefile --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
+  #       copy *.py main.dist
+  #       copy downloader.json main.dist
+  #       7z a modmiiDownloader-onefile.zip -- main.dist/*
+  #   - name: Create Onefile Release
+  #     uses: ncipollo/release-action@v1.21.0
+  #     with:
+  #       token: ${{ secrets.GITHUB_TOKEN }}
+  #       artifacts: "modmiiDownloader-onefile.zip"
+  #       allowUpdates: true
+  #       omitBodyDuringUpdate: true
+  #       replacesArtifacts: true
+  #       tag: "main"
