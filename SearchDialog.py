@@ -7,8 +7,6 @@ from downloadWidgets import DownloadableItem, DownloadListSection
 
 import resources
 
-from rapidfuzz import fuzz, utils
-
 class SearchDialog(QDialog):
     ui = Ui_SearchDialog()
     main = None
@@ -17,14 +15,11 @@ class SearchDialog(QDialog):
         for i in self.main.json['downloadList'][page][cat]['item']:
             index = list.model().rowCount()
             name = i['name']
-            ratio = fuzz.WRatio(query, name, processor=utils.default_process)
-            if ratio > 70 or query.lower() in name.lower():
+            if query.lower() in name.lower():
                 list.model().appendRow(DownloadableItem(name))
                 list.model().item(index).setAttrs(i, page, cat)
             elif 'altname' in i:
-                name = i['altname']
-                ratio = fuzz.WRatio(query, name, processor=utils.default_process)
-                if ratio > 70 or query.lower() in name.lower():
+                if query.lower() in i['altname'].lower():
                     list.model().appendRow(DownloadableItem(i['name']))
                     list.model().item(index).setAttrs(i, page, cat)
 
