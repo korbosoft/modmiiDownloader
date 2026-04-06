@@ -768,7 +768,9 @@
                     {
                         "id": "MII",
                         "name": "Mii [RF]",
-                        "altname": "Mii Channel [RF]",
+                        "altnames": [
+                            "Mii Channel [RF]"
+                        ],
                         "toolTip": "Can be installed to Wii and/or vWii.",
                         "tags": [
                             "region-free"
@@ -777,7 +779,9 @@
                     {
                         "id": "IU",
                         "name": "Internet [U]",
-                        "altname": "Internet Channel [U]",
+                        "altnames": [
+                            "Internet Channel [U]"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "usa"
@@ -786,7 +790,9 @@
                     {
                         "id": "IE",
                         "name": "Internet [E]",
-                        "altname": "Internet Channel [E]",
+                        "altnames": [
+                            "Internet Channel [E]"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "eur"
@@ -795,7 +801,9 @@
                     {
                         "id": "IJ",
                         "name": "Internet [J]",
-                        "altname": "Internet Channel [J]",
+                        "altnames": [
+                            "Internet Channel [J]"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "jpn"
@@ -804,7 +812,9 @@
                     {
                         "id": "P0",
                         "name": "Photo 1.0 [RF]",
-                        "altname": "Photo Channel 1.0 [RF]",
+                        "altnames": [
+                            "Photo Channel 1.0 [RF]"
+                        ],
                         "toolTip": "Photo Channel v1.1 is generally an improvement over v1.0; however, v1.1 replaced MP3 support with AAC support. Users that want MP3 support may prefer v1.0.",
                         "tags": [
                             "region-free"
@@ -813,7 +823,9 @@
                     {
                         "id": "P",
                         "name": "Photo 1.1 [U/E/J]",
-                        "altname": "Photo Channel 1.1 [U/E/J]",
+                        "altnames": [
+                            "Photo Channel 1.1 [U/E/J]"
+                        ],
                         "toolTip": "Download also includes a second WAD (Photo-Channel-1.1-dummy-HAZA) which is required for Photo Channel v1.1 to work.",
                         "tags": [
                             "usa",
@@ -824,7 +836,9 @@
                     {
                         "id": "PHOTOK",
                         "name": "Photo 1.1 [K]",
-                        "altname": "Photo Channel 1.1 [K]",
+                        "altnames": [
+                            "Photo Channel 1.1 [K]"
+                        ],
                         "toolTip": "Download also includes a second WAD (Photo-Channel-1.1-dummy-HAZA) which is required for Photo Channel v1.1 to work.",
                         "tags": [
                             "kor"
@@ -833,7 +847,9 @@
                     {
                         "id": "WU",
                         "name": "Weather [U]",
-                        "altname": "Weather Channel [U]",
+                        "altnames": [
+                            "Weather Channel [U]"
+                        ],
                         "toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "usa"
@@ -842,7 +858,9 @@
                     {
                         "id": "WE",
                         "name": "Weather [E]",
-                        "altname": "Weather Channel [E]",
+                        "altnames": [
+                            "Weather Channel [E]"
+                        ],
                         "toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "eur"
@@ -851,7 +869,9 @@
                     {
                         "id": "WJ",
                         "name": "Weather [J]",
-                        "altname": "Weather Channel [J]",
+                        "altnames": [
+                            "Weather Channel [J]"
+                        ],
                         "toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "jpn"
@@ -860,7 +880,9 @@
                     {
                         "id": "NU",
                         "name": "News [U]",
-                        "altname": "News Channel [U]",
+                        "altnames": [
+                            "News Channel [U]"
+                        ],
                         "toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "usa"
@@ -869,7 +891,9 @@
                     {
                         "id": "NE",
                         "name": "News [E]",
-                        "altname": "News Channel [E]",
+                        "altnames": [
+                            "News Channel [E]"
+                        ],
                         "toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "eur"
@@ -878,7 +902,9 @@
                     {
                         "id": "NJ",
                         "name": "News [J]",
-                        "altname": "News Channel [J]",
+                        "altnames": [
+                            "News Channel [J]"
+                        ],
                         "toolTip": "Requires WiiLink to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "jpn"
@@ -887,7 +913,9 @@
                     {
                         "id": "S",
                         "name": "Shop [U/E/J]",
-                        "altname": "Wii Shop Channel [U/E/J]",
+                        "altnames": [
+                            "Wii Shop Channel [U/E/J]"
+                        ],
                         "toolTip": "The Wii Shop Channel can only re-download content you have already purchased.",
                         "tags": [
                             "usa",
@@ -898,7 +926,9 @@
                     {
                         "id": "SK",
                         "name": "Shop [K]",
-                        "altname": "Wii Shop Channel [K]",
+                        "altnames": [
+                            "Wii Shop Channel [K]"
+                        ],
                         "toolTip": "The Wii Shop Channel can only re-download content you have already purchased.",
                         "tags": [
                             "kor"
@@ -907,7 +937,9 @@
                     {
                         "id": "WSU",
                         "name": "Speak [U]",
-                        "altname": "Wii Speak Channel [U]",
+                        "altnames": [
+                            "Wii Speak Channel [U]"
+                        ],
                         "toolTip": "Requires WiiLink and Wiimmfi to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "usa"
@@ -916,7 +948,9 @@
                     {
                         "id": "WSE",
                         "name": "Speak [E]",
-                        "altname": "Wii Speak Channel [E]",
+                        "altnames": [
+                            "Wii Speak Channel [E]"
+                        ],
                         "toolTip": "Requires WiiLink and Wiimmfi to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "eur"
@@ -925,7 +959,9 @@
                     {
                         "id": "WSJ",
                         "name": "Speak [J]",
-                        "altname": "Wii Speak Channel [J]",
+                        "altnames": [
+                            "Wii Speak Channel [J]"
+                        ],
                         "toolTip": "Requires WiiLink and Wiimmfi to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "jpn"
@@ -934,7 +970,9 @@
                     {
                         "id": "WSK",
                         "name": "Speak [K]",
-                        "altname": "Wii Speak Channel [K]",
+                        "altnames": [
+                            "Wii Speak Channel [K]"
+                        ],
                         "toolTip": "Requires WiiLink and Wiimmfi to work, best to use the WiiLink Patcher from Download Page 5 to get this channel.",
                         "tags": [
                             "kor"
@@ -1196,7 +1234,9 @@
                     {
                         "id": "ARC",
                         "name": "ARC ModMii Edition",
-                        "altname": "ARCME",
+                        "altnames": [
+                            "ARCME"
+                        ],
                         "toolTip": "Any Region Changer (ARC) ModMii Edition is a mod of ARC for the Wii. If it detects a region mismatch, you only have to select the \"Auto Fix Settings\" to correct it. It is one of many tools used to complete a region change.",
                         "tags": [
                             "auto-updates"
@@ -1267,7 +1307,10 @@
                     {
                         "id": "OHBC113",
                         "name": "HBC v1.1.3 WAD [OHBC]",
-                        "altname": "Homebrew Channel v1.1.3 WAD [OHBC]",
+                        "altnames": [
+                            "Homebrew Channel v1.1.3 WAD [OHBC]",
+                            "The Homebrew Channel v1.1.3 WAD [OHBC]"
+                        ],
                         "toolTip": "Open Homebrew Channel v1.1.3 WAD by fail0verflow with title ID OHBC. This is the same channel intalled by vWii Compat Installer v1.6. Technically it works on both Wii & vWii but is only recommended for vWii.",
                         "tags": [
                             "vwii",
@@ -1277,7 +1320,10 @@
                     {
                         "id": "OHBC114",
                         "name": "HBC v1.1.4-1 WAD [OHBC]",
-                        "altname": "Homebrew Channel v1.1.4-1 WAD [OHBC]",
+                        "altnames": [
+                            "Homebrew Channel v1.1.4-1 WAD [OHBC]",
+                            "The Homebrew Channel v1.1.4-1 WAD [OHBC]"
+                        ],
                         "toolTip": "Open Homebrew Channel v1.1.4-1 WAD modified by FIX94 with title ID OHBC. Technically it works on both Wii & vWii.",
                         "tags": [
                             "vwii-supported"
@@ -1286,7 +1332,10 @@
                     {
                         "id": "OHBC",
                         "name": "HBC v1.1.5 WAD [LULZ]",
-                        "altname": "Homebrew Channel v1.1.5 WAD [LULZ]",
+                        "altnames": [
+                            "Homebrew Channel v1.1.5 WAD [LULZ]",
+                            "The Homebrew Channel v1.1.5 WAD [LULZ]"
+                        ],
                         "toolTip": "Open Homebrew Channel v1.1.5 WAD with title ID LULZ; this is the same as fail0verflow's v1.1.3 but with it's Title ID changed to LULZ. Technically it works on both Wii & vWii but is only recommended for Wii.",
                         "tags": [
                             "vwii-supported"
@@ -1299,7 +1348,9 @@
                     {
                         "id": "OSClib",
                         "name": "OSC Wii App Library",
-                        "altname": "Open Shop Channel Wii App Library",
+                        "altnames": [
+                            "Open Shop Channel Wii App Library"
+                        ],
                         "toolTip": "Download all 200+ (v)Wii apps available via the Open Shop Channel: https://oscwii.org/library\n\nApps can be excluded from this download by configuring ModMii's \"Skipped Apps\" Option.",
                         "tags": [
                             "auto-updates"
@@ -1308,7 +1359,9 @@
                     {
                         "id": "HBB",
                         "name": "Homebrew Browser",
-                        "altname": "HBB",
+                        "altnames": [
+                            "HBB"
+                        ],
                         "toolTip": "Download homebrew apps (selection is the same as the Open Shop Channel) using your (v)Wii.",
                         "tags": [
                             "auto-updates",
@@ -1352,7 +1405,10 @@
                     {
                         "id": "syscheck",
                         "name": "SysCheck ModMii Edition",
-                        "altname": "SCME",
+                        "altnames": [
+                            "SCME",
+                            "SysCheck ME"
+                        ],
                         "toolTip": "SysCheck ModMii Edition retrieves information about what is installed on your Wii/vWii.",
                         "tags": [
                             "auto-updates",
@@ -1362,6 +1418,11 @@
                     {
                         "id": "yawm",
                         "name": "YAWM ModMii Edition",
+                        "altnames": [
+                            "Yet Another WAD Manager ModMii Edition",
+                            "Yet Another WAD Manager ME",
+                            "YAWM ME"
+                        ],
                         "toolTip": "Yet Another WAD Manager ModMii Edition allows you to (un)install WADs and launch apps.\nIt has built in protection to prevent actions that would cause brick, the ability to install a new System Menu without losing Priiloader, and more!",
                         "tags": [
                             "auto-updates",
@@ -1371,7 +1432,9 @@
                     {
                         "id": "mmm",
                         "name": "Multi-Mod Manager",
-                        "altname": "MMM",
+                        "altnames": [
+                            "MMM"
+                        ],
                         "toolTip": "MMM is a multi-purpose tool for (v)Wii that can install WADs, launch apps, etc, but does not support Motion Plus wiimotes.",
                         "tags": [
                             "vwii-supported"
@@ -1425,7 +1488,10 @@
                     {
                         "id": "locked",
                         "name": "Locked HBC Folder",
-                        "altname": "Locked Homebrew Channel Folder",
+                        "altnames": [
+                            "Locked Homebrew Channel Folder",
+                            "apps_locked"
+                        ],
                         "toolTip": "A password protected apps_locked folder you can move (v)Wii homebrew apps to restrict access to them.\n\nDefault Password: UDLRAB",
                         "tags": [
                             "vwii-supported"
@@ -1452,6 +1518,10 @@
                     {
                         "id": "usbgx",
                         "name": "USB Loader GX",
+                        "altnames": [
+                            "USBLoaderGX",
+                            "USBGX"
+                        ],
                         "toolTip": "A popular USB-Loader with lots of extra features.\n\nNote this app can also update itself.",
                         "tags": [
                             "auto-updates",
@@ -1461,7 +1531,6 @@
                     {
                         "id": "USBX",
                         "name": "USB-Loader Channel/dol",
-                        "altname": "USB Loader Channel/dol",
                         "toolTip": "Multi Forwarder Channel WAD for Wii & vWii.\nforwards to GX, WiiFlow, CFG, and more!\nThe bundled dol file can be installed to Priiloader to autoboot the channel.",
                         "tags": [
                             "vwii-supported"
@@ -1487,7 +1556,9 @@
                     {
                         "id": "usbfolder",
                         "name": "CFG USB Loader",
-                        "altname": "Configurable USB Loader",
+                        "altnames": [
+                            "Configurable USB Loader"
+                        ],
                         "toolTip": "Configurable USB Loader is a popular USB-Loader that is highly customizable.",
                         "tags": [
                             "auto-updates",
@@ -1557,7 +1628,10 @@
                     {
                         "id": "vbagx",
                         "name": "Visual Boy Advance GX",
-                        "altname": "VBAGX",
+                        "altnames": [
+                            "VBAGX",
+                            "VBA GX"
+                        ],
                         "toolTip": "GBA/GBC/GB Emulator",
                         "tags": [
                             "auto-updates",
@@ -1567,6 +1641,9 @@
                     {
                         "id": "WII64",
                         "name": "Wii64",
+                        "altnames": [
+                            "Wii 64"
+                        ],
                         "toolTip": "N64 Emulator",
                         "tags": [
                             "auto-updates",
@@ -1576,6 +1653,9 @@
                     {
                         "id": "Not64",
                         "name": "Not64",
+                        "altnames": [
+                            "Not 64"
+                        ],
                         "toolTip": "N64 Emulator",
                         "tags": [
                             "auto-updates",
@@ -1594,6 +1674,9 @@
                     {
                         "id": "CheatZip",
                         "name": "Cheat Codes",
+                        "altnames": [
+                            "Gecko Codes"
+                        ],
                         "toolTip": "txtcodes folder filled with cheat codes.",
                         "tags": [
                             "vwii-supported"
@@ -1699,7 +1782,7 @@
                     {
                         "id": "cMIOS_WiiPower",
                         "name": "WiiGator/Power cMIOS-v0.2 [10]",
-                        "toolTip": "Since Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv10",
+                        "toolTip": "Since Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv10.",
                         "tags": []
                     },
                     {
@@ -1741,7 +1824,10 @@
                     {
                         "id": "TWBM",
                         "name": "TinyWiiBackupManager",
-                        "altname": "TWBM",
+                        "altnames": [
+                            "TWBM",
+                            "Tiny Wii Backup Manager"
+                        ],
                         "toolTip": "Manage Wii/GameCube games, Wii Homebrew apps, covers and cheats. All major formats supported including wbfs, rvz, iso, etc.",
                         "tags": [
                             "auto-updates"
@@ -1750,7 +1836,9 @@
                     {
                         "id": "wbm",
                         "name": "Wii Backup Manager",
-                        "altname": "WBM",
+                        "altnames": [
+                            "WBM"
+                        ],
                         "toolTip": "Manage Wii backups on your SD card or hard drive and more. Use this tool to convert games to WBFS files (does not support Nkit ISOs).",
                         "tags": [
                             "auto-updates"
@@ -1783,20 +1871,25 @@
                     {
                         "id": "WiiGSC",
                         "name": "Wii Game Shortcut Creator",
-                        "altname": "Crap",
+                        "altnames": [
+                            "Crap"
+                        ],
                         "toolTip": "WiiGSC (formerly Crap) creates shortcut channels to specific Wii games so they can be loaded from the Wii/vWii menu instead of a USB loader.",
                         "tags": []
                     },
                     {
                         "id": "ohnes",
                         "name": "Ohneschwanzenegger",
+                        "altnames": [
+                            "NUS NANDBuilder"
+                        ],
                         "toolTip": "aka NUS NANDBuilder; create, format, & write to a nand.bin that can be installed with BootMii or a flash programmer.",
                         "tags": []
                     },
                     {
                         "id": "UStealth",
                         "name": "UStealth",
-                        "toolTip": "With UStealth you can hide USB hard drives so that the WiiU no longer asks you to Format them. The disk is then also hidden from your computer. If you want to copy something onto it later you have to make your device visible again using UStealth or directly on the console using 'USB Toggle 2.0'. Of course you should not format it if your computer asks you to!\n\nNot needed if Aroma's 'Avoid Format dialog' is enabled.",
+                        "toolTip": "With UStealth you can hide USB hard drives so that the WiiU no longer asks you to Format them. The disk is then also hidden from your computer. If you want to copy something onto it later you have to make your device visible again using UStealth or directly on the console using 'USB Toggle 2.0'. Of course, you should not format it if your computer asks you to!\n\nNot needed if Aroma's 'Avoid Format dialog' is enabled.",
                         "tags": []
                     },
                     {
@@ -1808,7 +1901,9 @@
                     {
                         "id": "OSC",
                         "name": "Open Shop Channel",
-                        "altname": "OSCDL",
+                        "altnames": [
+                            "OSCDL"
+                        ],
                         "toolTip": "A tool to download even more homebrew apps using your PC (selection is the same as the Homebrew Browser).\n\nNote this app can also update itself.",
                         "tags": [
                             "auto-updates"
@@ -1817,7 +1912,9 @@
                     {
                         "id": "GCBM",
                         "name": "GameCube Backup Manager",
-                        "altname": "GCBM",
+                        "altnames": [
+                            "GCBM"
+                        ],
                         "toolTip": "Manage and convert Gamecube backup files; requires a 64-bit OS (32-bit users can google for 'Gamecube ISO Tool').\n\nNote this app can also update itself.",
                         "tags": [
                             "auto-updates"
@@ -1902,7 +1999,13 @@
                     {
                         "id": "HBASlib",
                         "name": "Homebrew App Store WiiU Library",
-                        "altname": "HB App Store WiiU Library",
+                        "altnames": [
+                            "Homebrew App Store Wii U Library",
+                            "HB App Store WiiU Library",
+                            "HB App Store Wii U Library",
+                            "HBAS WiiU Library",
+                            "HBAS Wii U Library"
+                        ],
                         "toolTip": "Download all 150+ WiiU homebrew available via the Homebrew App Store: https://hb-app.store/wiiu\n\nApps can be excluded from this download by configuring ModMii's 'Skipped Apps' Option.",
                         "tags": [
                             "auto-updates"
@@ -1911,7 +2014,10 @@
                     {
                         "id": "appstore",
                         "name": "Homebrew App Store",
-                        "altname": "HB App Store",
+                        "altnames": [
+                            "HB App Store",
+                            "HBAS"
+                        ],
                         "toolTip": "Download homebrew apps using your WiiU (selection is the same as hb-app.store).\nCompatible with Aroma, Tiramisu and Legacy Environments.",
                         "tags": [
                             "auto-updates"
@@ -1928,6 +2034,9 @@
                     {
                         "id": "nanddumper",
                         "name": "NAND Dumper",
+                        "altnames": [
+                            "NANDDumper"
+                        ],
                         "toolTip": "Create backups of the WiiU's NAND.",
                         "tags": [
                             "auto-updates"
@@ -1936,6 +2045,9 @@
                     {
                         "id": "EnvironmentLoader",
                         "name": "Environment Loader",
+                        "altnames": [
+                            "EnvironmentLoader"
+                        ],
                         "toolTip": "Environment Loader allows you load environments on your WiiU. Examples of WiiU environments are Aroma and Tiramisu.",
                         "tags": [
                             "auto-updates"
@@ -1952,7 +2064,9 @@
                     {
                         "id": "wudd",
                         "name": "Wii U Disc Dumper",
-                        "altname": "WUDD",
+                        "altnames": [
+                            "WUDD"
+                        ],
                         "toolTip": "Wii U Disc Dumper (WUDD); supports dumping to SD (FAT32) and USB (NTFS only).\nCompatible with Aroma and Tiramisu Environments.",
                         "tags": [
                             "auto-updates"
@@ -2001,7 +2115,9 @@
                     {
                         "id": "GiveMiiYouTube",
                         "name": "GiveMiiYouTube",
-                        "altname": "Give Mii Youtube",
+                        "altnames": [
+                            "Give Mii Youtube"
+                        ],
                         "toolTip": "An Aroma plugin that allows the WiiU YouTube app to continue functioning after its discontinuation.",
                         "tags": [
                             "auto-updates"
@@ -2042,7 +2158,9 @@
                     {
                         "id": "WiiUIdent",
                         "name": "WiiUIdent",
-                        "altname": "Wii U Ident",
+                        "altnames": [
+                            "Wii U Ident"
+                        ],
                         "toolTip": "WiiUIdent; A WiiU Identification homebrew, which display information about console hardware components, software/hardware versions and much more.\nCompatible with Aroma and Tiramisu Environments.",
                         "tags": [
                             "auto-updates"
@@ -2051,7 +2169,9 @@
                     {
                         "id": "FTPiiUPlugin",
                         "name": "FTPiiU Plugin",
-                        "altname": "FTPii U",
+                        "altnames": [
+                            "FTPii U Plugin"
+                        ],
                         "toolTip": "An FTP server plugin for Aroma.",
                         "tags": [
                             "auto-updates"

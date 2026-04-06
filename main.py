@@ -114,7 +114,7 @@ class mainWindow(QMainWindow):
         self.setupList('nus', 'sysmenus', self.ui.sysmenus.list)
         self.setupList('nus', 'realsigned', self.ui.realsigned.list)
         self.setupList('nus', 'fakesigned', self.ui.fakesigned.list)
-        self.setupList('nus', 'content', self.ui.contents.list)
+        self.setupList('nus', 'content', self.ui.content.list)
         self.setupList('nus', 'channels', self.ui.channels.list)
         self.setupList('nus', 'other', self.ui.other.list)
         self.setupList('wiiHaxx', 'exploits', self.ui.exploits.list)
@@ -159,8 +159,8 @@ class mainWindow(QMainWindow):
     def setStatus(self):
         count = self.makeQueue().count('*')
         if count == 1:
-            self.statusBar().showMessage('1 item selected')
-        self.statusBar().showMessage(f'{count} items selected')
+            self.statusBar().showMessage('1 item selected in queue')
+        self.statusBar().showMessage(f'{count} items selected in queue')
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.Type.UpdateRequest:

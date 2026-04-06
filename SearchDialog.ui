@@ -67,36 +67,20 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="confirm">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>370</y>
-     <width>200</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Confirm</string>
-   </property>
-   <property name="default">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="cancel">
+  <widget class="QPushButton" name="done">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>370</y>
-     <width>200</width>
+     <width>400</width>
      <height>30</height>
     </rect>
    </property>
    <property name="text">
-    <string>Cancel</string>
+    <string>Done</string>
    </property>
    <property name="default">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
@@ -150,8 +134,7 @@
   <tabstop>query</tabstop>
   <tabstop>add</tabstop>
   <tabstop>remove</tabstop>
-  <tabstop>cancel</tabstop>
-  <tabstop>confirm</tabstop>
+  <tabstop>done</tabstop>
  </tabstops>
  <resources>
   <include location="resource.qrc"/>

@@ -110,7 +110,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="DownloadListSection" name="contents">
+        <widget class="DownloadListSection" name="content">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -163,7 +163,7 @@
       <zorder>other</zorder>
       <zorder>sysmenus</zorder>
       <zorder>realsigned</zorder>
-      <zorder>contents</zorder>
+      <zorder>content</zorder>
      </widget>
     </widget>
     <widget class="QWidget" name="homebrew">

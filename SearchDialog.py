@@ -1,9 +1,11 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtWidgets import QDialog, QApplication, QMainWindow
+from PySide6.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox
 
 from ui_SearchDialog import Ui_SearchDialog
 
 from downloadWidgets import DownloadableItem, DownloadListSection
+
+import re
 
 import resources
 
@@ -12,16 +14,18 @@ class SearchDialog(QDialog):
     main = None
 
     def setupList(self, page: str, cat: str, list, query: str):
+        query = re.sub(r'[^a-z0-9\s]', '', query.lower())
         for i in self.main.json['downloadList'][page][cat]['item']:
+            name = re.sub(r'[^a-z0-9\s]', '', i['name'].lower())
             index = list.model().rowCount()
-            name = i['name']
             if query.lower() in name.lower():
-                list.model().appendRow(DownloadableItem(name))
+                list.model().appendRow(DownloadableItem(i['name']))
                 list.model().item(index).setAttrs(i, page, cat)
-            elif 'altname' in i:
-                if query.lower() in i['altname'].lower():
-                    list.model().appendRow(DownloadableItem(i['name']))
-                    list.model().item(index).setAttrs(i, page, cat)
+            elif 'altnames' in i:
+                for altname in i['altnames']:
+                    if query.lower() in re.sub(r'[^a-z0-9\s]', '', altname.lower()):
+                        list.model().appendRow(DownloadableItem(i['name']))
+                        list.model().item(index).setAttrs(i, page, cat)
 
     def addSelected(self):
         items = self.ui.results.getSelectedItems()
@@ -45,10 +49,24 @@ class SearchDialog(QDialog):
 
     def confirm(self):
         queueModel = self.ui.queue.list.model()
-        for index in range(queueModel.rowCount()):
-            item = queueModel.item(index)
-            self.main.findChild(DownloadListSection, item.specialAttrs['cat']).selectChild(item.specialAttrs['id'])
-        self.close()
+        if queueModel.rowCount():
+            msgBox = QMessageBox(self)
+            msgBox.setText('Do you want to save your changes?')
+            msgBox.setInformativeText(f'This will add {queueModel.rowCount()} items to the queue.')
+            msgBox.setStandardButtons(QMessageBox.Save | QMessageBox.Discard | QMessageBox.StandardButton.Cancel)
+            msgBox.setDefaultButton(QMessageBox.Cancel)
+            msgBox.setDetailedText('Selected items:\n' + '\n'.join([queueModel.item(index).text() for index in range(queueModel.rowCount())]))
+            match msgBox.exec():
+                case QMessageBox.StandardButton.Cancel:
+                    pass
+                case QMessageBox.Save:
+                    for index in range(queueModel.rowCount()):
+                        item = queueModel.item(index)
+                        self.main.findChild(DownloadListSection, item.specialAttrs['cat']).selectChild(item.specialAttrs['id'])
+                        self.close()
+                case QMessageBox.Discard:
+                    self.close()
+        else: self.close()
 
     def search(self, query):
         results = self.ui.results.list
@@ -71,6 +89,6 @@ class SearchDialog(QDialog):
         self.ui.add.clicked.connect(self.addSelected)
         self.ui.remove.setIcon(resources.icons['minus_16'])
         self.ui.remove.clicked.connect(self.removeSelected)
-        self.ui.confirm.clicked.connect(self.confirm)
-        self.ui.cancel.clicked.connect(self.close)
+        self.ui.done.clicked.connect(self.confirm)
+        self.search('')
 
