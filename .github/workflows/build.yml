@@ -62,7 +62,7 @@ jobs:
         pip install -r requirements.txt
     - name: Compile UI/QRC files
       run: |
-        Get-ChildItem *.ui | ForEach-Object {pyside6-uic $_.FullName -o "ui_$($_.BaseName).py"}
+        Get-ChildItem *.ui | ForEach-Object {pyside6-uic --rc-prefix $_.FullName -o "ui_$($_.BaseName).py"}
         Get-ChildItem *.qrc | ForEach-Object {pyside6-rcc $_.FullName -o "rc_$($_.BaseName).py"}
     - name: Build Package
       run: |
@@ -100,7 +100,7 @@ jobs:
   #       pip install -r requirements.txt
   #   - name: Compile UI/QRC files
   #     run: |
-  #       Get-ChildItem *.ui | ForEach-Object {pyside6-uic $_.FullName -o "ui_$($_.BaseName).py"}
+  #       Get-ChildItem *.ui | ForEach-Object {pyside6-uic --rc-prefix $_.FullName -o "ui_$($_.BaseName).py"}
   #       Get-ChildItem *.qrc | ForEach-Object {pyside6-rcc $_.FullName -o "rc_$($_.BaseName).py"}
   #   - name: Build Onefile Package
   #     run: |

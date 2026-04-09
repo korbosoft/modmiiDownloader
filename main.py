@@ -56,7 +56,8 @@ class mainWindow(QMainWindow):
         ''.join([item.getSelected() for item in chain(self.findChildren(DownloadListSection))]) + \
         ''.join([item.getSelected() for item in chain(self.findChildren(CiosGroupBox))]) + \
         self.ui.themeGrid.getSelected() + \
-        f'set effect={self.ui.channelEffect.currentText()}\n'
+        f'set effect={self.ui.channelEffect.currentText()}\n' + \
+        f'set effect={self.ui.tabWidget.currentIndex() + 1}\n'
         return queue
 
     def getQueue(self, str):
@@ -159,8 +160,8 @@ class mainWindow(QMainWindow):
     def setStatus(self):
         count = self.makeQueue().count('*')
         if count == 1:
-            self.statusBar().showMessage('1 item selected in queue')
-        self.statusBar().showMessage(f'{count} items selected in queue')
+            self.statusBar().showMessage('1 item in queue')
+        self.statusBar().showMessage(f'{count} items in queue')
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.Type.UpdateRequest:

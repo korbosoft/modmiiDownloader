@@ -12,18 +12,19 @@ import resources
 class SearchDialog(QDialog):
     ui = Ui_SearchDialog()
     main = None
+    sanitize = re.compile(r'[^a-z0-9\s]')
 
-    def setupList(self, page: str, cat: str, list, query: str):
-        query = re.sub(r'[^a-z0-9\s]', '', query.lower())
+    def searchList(self, page: str, cat: str, list, query: str):
+        query = self.sanitize.sub('', query.lower())
         for i in self.main.json['downloadList'][page][cat]['item']:
-            name = re.sub(r'[^a-z0-9\s]', '', i['name'].lower())
+            name = self.sanitize.sub('', i['name'].lower())
             index = list.model().rowCount()
             if query.lower() in name.lower():
                 list.model().appendRow(DownloadableItem(i['name']))
                 list.model().item(index).setAttrs(i, page, cat)
             elif 'altnames' in i:
                 for altname in i['altnames']:
-                    if query.lower() in re.sub(r'[^a-z0-9\s]', '', altname.lower()):
+                    if query.lower() in self.sanitize.sub('', altname.lower()):
                         list.model().appendRow(DownloadableItem(i['name']))
                         list.model().item(index).setAttrs(i, page, cat)
 
@@ -47,6 +48,13 @@ class SearchDialog(QDialog):
         for item in items:
             self.ui.queue.list.model().removeRow(item.row())
 
+    def removeItem(self, item):
+        # self.ui.queue.list.model().removeRow(item)
+        pass
+
+    def addItem(self, item):
+        pass
+
     def confirm(self):
         queueModel = self.ui.queue.list.model()
         if queueModel.rowCount():
@@ -69,13 +77,15 @@ class SearchDialog(QDialog):
         else: self.close()
 
     def search(self, query):
+        query = self.sanitize.sub('', query.lower())
         results = self.ui.results.list
         results.model().removeRows(0, results.model().rowCount())
-        for section in self.main.sections:
-            self.setupList(section[0], section[1], results, query)
-        if results.model().rowCount() == 0:
-            results.model().appendRow(DownloadableItem(f'No results for "{query}"'))
-            results.model().item(0).setEnabled(False)
+        if query != '':
+            for section in self.main.sections:
+                self.searchList(section[0], section[1], results, query)
+            if results.model().rowCount() == 0:
+                results.model().appendRow(DownloadableItem(f'No results for "{query}"'))
+                results.model().item(0).setEnabled(False)
 
     def __init__(self, parent=None):
         super().__init__(parent)
