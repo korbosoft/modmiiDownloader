@@ -5,7 +5,7 @@ from PySide6.QtSvg import QSvgRenderer
 
 from PySide6.QtGui import QImage, QPainter, QIcon, QPixmap
 
-from PySide6.QtCore import QFile, QIODevice, QDirIterator, QTextStream
+from PySide6.QtCore import QFile, QIODevice, QDirIterator, QTextStream, QModelIndex
 
 import rc_resource
 
@@ -14,6 +14,9 @@ icons = {}
 sizes = [16, 24, 32, 48, 64]
 
 def setupIcons():
+	main = QIcon()
+	main.addFile(u":/base/mainIcon")
+	icons['mainIcon'] = main
 	iterator = QDirIterator(':', QDirIterator.Subdirectories)
 	while iterator.hasNext():
 		path = iterator.next()

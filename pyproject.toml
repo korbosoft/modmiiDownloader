@@ -4,8 +4,6 @@ name = "ModMii Downloader UI"
 [tool.pyside6-project]
 files = [
 "D2xCheckGrid.ui",
-"SearchDialog.py",
-"SearchDialog.ui",
 "ThemeGrid.py",
 "ThemeGrid.ui",
 "WaninCheckGrid.ui",
@@ -29,5 +27,6 @@ files = [
 "mainWindow.ui",
 "resource.qrc",
 "resources.py",
+"searchWidgets.py",
 "utils.py",
 ]

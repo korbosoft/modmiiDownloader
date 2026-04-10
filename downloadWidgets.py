@@ -124,10 +124,15 @@ class DownloadList(QListView):
         self.clicked.connect(self.listClicked)
 
 class DownloadListSection(QGroupBox):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, list=None):
         super().__init__(parent)
         self.setObjectName('DownloadListSection')
-        self.list = DownloadList(self)
+
+        if list is not None:
+            self.list = list(self)
+        else:
+            self.list = DownloadList(self)
+
         self.list.setObjectName('list')
         self.list.move(5, 22)
         self.list.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -135,10 +140,10 @@ class DownloadListSection(QGroupBox):
         self.list.setAlternatingRowColors(True)
         self.list.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.list.setUniformItemSizes(True)
+
         self.select = QPushButton(self)
         self.select.setText('Select All')
         self.select.clicked.connect(self.toggleAllItems)
-        QMetaObject.connectSlotsByName(self)
 
     @Slot()
     def toggleAllItems(self):

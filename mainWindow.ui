@@ -38,16 +38,12 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
     </property>
     <widget class="QWidget" name="nus">
-     <attribute name="icon">
-      <iconset resource="resource.qrc">
-       <normaloff>:/base/svg_nus</normaloff>:/base/svg_nus</iconset>
-     </attribute>
      <attribute name="title">
       <string>NUS Files</string>
      </attribute>
@@ -167,10 +163,6 @@
      </widget>
     </widget>
     <widget class="QWidget" name="homebrew">
-     <attribute name="icon">
-      <iconset resource="resource.qrc">
-       <normaloff>:/base/svg_program</normaloff>:/base/svg_program</iconset>
-     </attribute>
      <attribute name="title">
       <string>(v)Wii Homebrew &amp;&amp; Exploits</string>
      </attribute>
@@ -268,10 +260,6 @@
      </widget>
     </widget>
     <widget class="QWidget" name="themes">
-     <attribute name="icon">
-      <iconset resource="resource.qrc">
-       <normaloff>:/base/svg_theme</normaloff>:/base/svg_theme</iconset>
-     </attribute>
      <attribute name="title">
       <string>System Menu Themes</string>
      </attribute>
@@ -393,10 +381,6 @@
      </widget>
     </widget>
     <widget class="QWidget" name="cios">
-     <attribute name="icon">
-      <iconset resource="resource.qrc">
-       <normaloff>:/base/svg_ios</normaloff>:/base/svg_ios</iconset>
-     </attribute>
      <attribute name="title">
       <string>cIOSs &amp;&amp; cMIOSs</string>
      </attribute>
@@ -587,10 +571,6 @@ Settings</string>
      </widget>
     </widget>
     <widget class="QWidget" name="misc">
-     <attribute name="icon">
-      <iconset resource="resource.qrc">
-       <normaloff>:/base/svg_program</normaloff>:/base/svg_program</iconset>
-     </attribute>
      <attribute name="title">
       <string>Wii U Homebrew &amp;&amp; PC Programs </string>
      </attribute>
@@ -821,6 +801,12 @@ Settings</string>
  </widget>
  <customwidgets>
   <customwidget>
+   <class>DownloadListSection</class>
+   <extends>QGroupBox</extends>
+   <header>downloadWidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>D2xCheckGrid</class>
    <extends>QGroupBox</extends>
    <header>ciosWidgets</header>
@@ -830,12 +816,6 @@ Settings</string>
    <class>WaninCheckGrid</class>
    <extends>QGroupBox</extends>
    <header>ciosWidgets</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>DownloadListSection</class>
-   <extends>QGroupBox</extends>
-   <header>downloadWidgets</header>
    <container>1</container>
   </customwidget>
   <customwidget>

@@ -5,9 +5,7 @@
         <file alias="svg_recommended">assets/heart-solid.svg</file>
         <file alias="svg_download">assets/download.svg</file>
         <file alias="svg_update">assets/update.svg</file>
-        <file alias="svg_ios">assets/ios.svg</file>
         <file alias="svg_theme">assets/theme.svg</file>
-        <file alias="svg_exploit">assets/exploit.svg</file>
         <file alias="svg_program">assets/program.svg</file>
         <file alias="svg_settings">assets/settings.svg</file>
         <file alias="svg_nus">assets/nus.svg</file>

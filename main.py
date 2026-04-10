@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import json, os, sys
 
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QTabWidget, QTabBar
 
 from PySide6.QtCore import QEvent
 
@@ -11,7 +11,7 @@ from downloadWidgets import DownloadableItem, DownloadListSection
 
 from ciosWidgets import CiosGroupBox
 
-from SearchDialog import SearchDialog
+from searchWidgets import SearchDialog
 
 # Important:
 # You need to run the following command to generate the ui_form.py file
@@ -45,6 +45,14 @@ class mainWindow(QMainWindow):
         ['misc', 'wiiuHomebrew']
     ]
 
+    def addTabNumbers(self, tabWidget: QTabWidget):
+        tabBar = tabWidget.tabBar()
+        for i in range(tabWidget.tabBar().count()):
+            number = QLabel(f'({i + 1})')
+            number.setContentsMargins(6, 0, 0, 0)
+
+            tabBar.setTabButton(i, QTabBar.ButtonPosition.LeftSide, number)
+
     def setupList(self, page, cat, list):
         for i in self.json['downloadList'][page][cat]['item']:
             index = list.model().rowCount()
@@ -57,7 +65,7 @@ class mainWindow(QMainWindow):
         ''.join([item.getSelected() for item in chain(self.findChildren(CiosGroupBox))]) + \
         self.ui.themeGrid.getSelected() + \
         f'set effect={self.ui.channelEffect.currentText()}\n' + \
-        f'set effect={self.ui.tabWidget.currentIndex() + 1}\n'
+        f'set nextpage={self.ui.tabWidget.currentIndex() + 1}\n'
         return queue
 
     def getQueue(self, str):
@@ -89,7 +97,7 @@ class mainWindow(QMainWindow):
                 with open(i, 'w') as f:
                     string = self.makeQueue()
                     if self.enterD2xSettings:
-                        string = string + 'set nextgoto=betaswitch\nset nextpage=4'
+                        string = string + 'set nextgoto=betaswitch\n'
                     f.write(string)
                     print('Success! Exiting now...')
                     exit = True
@@ -129,16 +137,16 @@ class mainWindow(QMainWindow):
         self.setupList('misc', 'wiiuHomebrew', self.ui.wiiuHomebrew.list)
 
         # Page 1
-        self.ui.tabWidget.setTabIcon(0, resources.icons['nus_24'])
+        #self.ui.tabWidget.setTabIcon(0, resources.icons['nus_24'])
 
         # Page 2
-        self.ui.tabWidget.setTabIcon(1, resources.icons['program_24'])
+        #self.ui.tabWidget.setTabIcon(1, resources.icons['program_24'])
 
         # Page 3
-        self.ui.tabWidget.setTabIcon(2, resources.icons['theme_24'])
+        #self.ui.tabWidget.setTabIcon(2, resources.icons['theme_24'])
 
         # Page 4
-        self.ui.tabWidget.setTabIcon(3, resources.icons['ios_24'])
+        #self.ui.tabWidget.setTabIcon(3, resources.icons['ios_24'])
         self.ui.d2x.setup(self.json['paths'], self.json['recommendedWiiCios'])
         self.ui.d2xSettings.clicked.connect(self.doD2xSettings)
         self.ui.wiiRecommended.setIcon(resources.icons['recommended_24'])
@@ -147,7 +155,7 @@ class mainWindow(QMainWindow):
         self.ui.vWiiRecommended.clicked.connect(self.ui.d2x.toggleVWiiRecommended)
 
         # Page 5
-        self.ui.tabWidget.setTabIcon(4, resources.icons['program_24'])
+        #self.ui.tabWidget.setTabIcon(4, resources.icons['program_24'])
         self.ui.download.setIcon(resources.icons['download_24'])
         self.ui.download.clicked.connect(self.close)
         self.ui.search.setIcon(resources.icons['search_24'])
@@ -158,7 +166,7 @@ class mainWindow(QMainWindow):
         self.ui.legendIcon4.setPixmap(resources.icons['semiAutoUpdate_24'].pixmap(24))
 
     def setStatus(self):
-        count = self.makeQueue().count('*')
+        count = self.makeQueue().count('=*')
         if count == 1:
             self.statusBar().showMessage('1 item in queue')
         self.statusBar().showMessage(f'{count} items in queue')
@@ -172,8 +180,6 @@ class mainWindow(QMainWindow):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.ui.setupUi(self)
-        self.setFixedSize(self.size())
         try:
             with open('Support/subscripts/ModMiiDownloader/downloader.json') as f:
                 j = json.load(f)
@@ -181,19 +187,25 @@ class mainWindow(QMainWindow):
             with open('downloader.json') as f:
                 j = json.load(f)
         self.json = j
+
+        self.ui.setupUi(self)
+        self.setFixedSize(self.size())
         self.setupAll()
+        self.addTabNumbers(self.ui.tabWidget)
         self.setStatus()
         self.statusBar().setSizeGripEnabled(False)
         self.installEventFilter(self)
+
         for i in self.json['paths']['input']:
             print(f'Attempting to load "{i}"')
             try:
                 with open(i) as f:
                     self.queueStr = f.read()
             except FileNotFoundError:
-                print(f'No queue at "{i}"')
+                print(f'No vars at "{i}"')
             except Exception as e:
-                print(f'{type(e).__name__} occurred trying to load queue at "{i}":\n{e}')
+                print(f'{type(e).__name__} occurred trying to load vars at "{i}":\n{e}')
+
         if self.queueStr is not None:
             self.getQueue(self.queueStr)
 
