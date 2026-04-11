@@ -46,8 +46,10 @@ class mainWindow(QMainWindow):
     ]
 
     def addTabNumbers(self, tabWidget: QTabWidget):
+#        numbers = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩']
         tabBar = tabWidget.tabBar()
         for i in range(tabWidget.tabBar().count()):
+#            number = QLabel(numbers[i])
             number = QLabel(f'({i + 1})')
             number.setContentsMargins(6, 0, 0, 0)
 
