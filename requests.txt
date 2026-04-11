@@ -1,0 +1,4 @@
+2) can the queue on the right column show the full current queue; i.e. even items that were selected before clicking the search button. Then ppl could quickly un-queue items that were queued without the search menu
+4) If I already have an item queued, then I use search to queue it, the confirmation popup says it will add 1 item to the queue when really it's adding 0 since it was already queued. This maybe could be easily fixed by only showing results that aren't already queued; i.e. no items will ever appear on both the left and right panels
+5) The confirmation popup will need to be modified to also report x items removed from the queue (only if >0)
+6) not directly related to search, but I wonder if where it says "x items selected in queue" (maybe erase the word selected), but if a user clicks this text it could popup the search menu or something similar so users can easily see a list of all the items queued

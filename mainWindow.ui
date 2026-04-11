@@ -38,7 +38,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -393,7 +393,7 @@
         <height>640</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="ciosLayout">
+      <layout class="QGridLayout" name="ciosLayout" rowstretch="3,2">
        <item row="0" column="2">
         <widget class="DownloadListSection" name="hermes">
          <property name="title">
