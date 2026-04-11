@@ -23,7 +23,7 @@
      <x>0</x>
      <y>0</y>
      <width>262</width>
-     <height>638</height>
+     <height>960</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="layout">
@@ -47,7 +47,7 @@
       <property name="sizeConstraint">
        <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
       </property>
-      <item row="6" column="3">
+      <item row="7" column="3">
        <widget class="QCheckBox" name="c251_58_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -60,7 +60,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="b53">
         <property name="enabled">
          <bool>false</bool>
@@ -70,7 +70,7 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="1">
+      <item row="6" column="1">
        <widget class="QCheckBox" name="c249_57_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -80,7 +80,7 @@
         </property>
        </widget>
       </item>
-      <item row="9" column="0">
+      <item row="10" column="0">
        <widget class="QLabel" name="b80">
         <property name="enabled">
          <bool>false</bool>
@@ -90,7 +90,7 @@
         </property>
        </widget>
       </item>
-      <item row="6" column="1">
+      <item row="7" column="1">
        <widget class="QCheckBox" name="c249_58_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -100,7 +100,23 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="12" column="0" colspan="4">
+       <widget class="QLabel" name="dv">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Recommended cIOSs for vWii ONLY</string>
+        </property>
+        <property name="text">
+         <string>vWii</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
        <widget class="QLabel" name="b55">
         <property name="enabled">
          <bool>false</bool>
@@ -110,17 +126,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QCheckBox" name="c249_37_d2x">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>249</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
+      <item row="3" column="2" colspan="2">
        <widget class="QCheckBox" name="c250_53_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -130,17 +136,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QCheckBox" name="c250_37_d2x">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>250</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="1">
+      <item row="8" column="1">
        <widget class="QCheckBox" name="c249_60_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -150,7 +146,7 @@
         </property>
        </widget>
       </item>
-      <item row="6" column="2">
+      <item row="7" column="2">
        <widget class="QCheckBox" name="c250_58_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -160,7 +156,23 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
+      <item row="0" column="0" colspan="4">
+       <widget class="QLabel" name="wii">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Recommended cIOSs for vWii ONLY</string>
+        </property>
+        <property name="text">
+         <string>Wii</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
        <widget class="QCheckBox" name="c249_55_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -170,132 +182,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="b38">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>[38]</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="2">
-       <widget class="QCheckBox" name="c250_70_d2x">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>250</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="b57">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>[57]</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="2">
-       <widget class="QCheckBox" name="c250_60_d2x">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>250</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QLabel" name="b60">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>[60]</string>
-        </property>
-       </widget>
-      </item>
-      <item row="11" column="1">
-       <widget class="QCheckBox" name="c248_38_d2x_vWii">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>248
-[38]</string>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="2">
-       <widget class="QCheckBox" name="c250_80_d2x">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>250</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="3">
-       <widget class="QCheckBox" name="c250_38_d2x">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="toolTip">
-         <string>♥Recommended cIOS for slot 248, mainly only used for Spongebob's Boating Bash or keyboard support for Animal Crossing City Folk</string>
-        </property>
-        <property name="text">
-         <string>250</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QCheckBox" name="c249_53_d2x">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>249</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="b56">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>[56]</string>
-        </property>
-       </widget>
-      </item>
-      <item row="13" column="1">
-       <widget class="QCheckBox" name="c250_57_d2x_vWii">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>250
-[57]</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QCheckBox" name="c250_56_d2x">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>250</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
+      <item row="2" column="3">
        <widget class="QCheckBox" name="c248_38_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -308,7 +195,167 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="2">
+      <item row="2" column="0">
+       <widget class="QLabel" name="b38">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[38]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="16" column="0">
+       <widget class="QLabel" name="b58_2">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[58]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="0">
+       <widget class="QLabel" name="b56_2">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[56]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="b57">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[57]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="2" colspan="2">
+       <widget class="QCheckBox" name="c250_70_d2x">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="0">
+       <widget class="QLabel" name="b38_2">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[38]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="15" column="0">
+       <widget class="QLabel" name="b57_2">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[57]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="16" column="3">
+       <widget class="QCheckBox" name="c251_58_d2x_vWii">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>251</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2" colspan="2">
+       <widget class="QCheckBox" name="c250_60_d2x">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="b60">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[60]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="3">
+       <widget class="QCheckBox" name="c248_38_d2x_vWii">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>248</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="2" colspan="2">
+       <widget class="QCheckBox" name="c250_80_d2x">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="c249_53_d2x">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="b56">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>[56]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="c249_38_d2x">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2" colspan="2">
+       <widget class="QCheckBox" name="c250_56_d2x">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2" colspan="2">
        <widget class="QCheckBox" name="c250_57_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -321,18 +368,7 @@
         </property>
        </widget>
       </item>
-      <item row="15" column="1">
-       <widget class="QCheckBox" name="c251_58_d2x_vWii">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>251
-[58]</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
+      <item row="7" column="0">
        <widget class="QLabel" name="b58">
         <property name="enabled">
          <bool>false</bool>
@@ -342,17 +378,30 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <widget class="QCheckBox" name="c249_38_d2x">
+      <item row="1" column="2" colspan="2">
+       <widget class="QCheckBox" name="c250_37_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>249</string>
+         <string>250</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="1">
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="c250_38_d2x">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>♥Recommended cIOS for slot 248, mainly only used for Spongebob's Boating Bash or keyboard support for Animal Crossing City Folk</string>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
        <widget class="QCheckBox" name="c249_80_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -362,7 +411,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
+      <item row="1" column="0">
        <widget class="QLabel" name="b37">
         <property name="enabled">
          <bool>false</bool>
@@ -372,7 +421,7 @@
         </property>
        </widget>
       </item>
-      <item row="8" column="1">
+      <item row="9" column="1">
        <widget class="QCheckBox" name="c249_70_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -382,14 +431,34 @@
         </property>
        </widget>
       </item>
-      <item row="10" column="0" colspan="4">
+      <item row="11" column="0" colspan="4">
        <widget class="Line" name="line">
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
        </widget>
       </item>
-      <item row="8" column="0">
+      <item row="14" column="1" colspan="3">
+       <widget class="QCheckBox" name="c249_56_d2x_vWii">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>249</string>
+        </property>
+       </widget>
+      </item>
+      <item row="15" column="2" colspan="2">
+       <widget class="QCheckBox" name="c250_57_d2x_vWii">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
        <widget class="QLabel" name="b70">
         <property name="enabled">
          <bool>false</bool>
@@ -399,7 +468,7 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
+      <item row="4" column="2" colspan="2">
        <widget class="QCheckBox" name="c250_55_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -409,7 +478,7 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
+      <item row="5" column="1">
        <widget class="QCheckBox" name="c249_56_d2x">
         <property name="enabled">
          <bool>false</bool>
@@ -422,27 +491,13 @@
         </property>
        </widget>
       </item>
-      <item row="12" column="1">
-       <widget class="QCheckBox" name="c249_56_d2x_vWii">
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="c249_37_d2x">
         <property name="enabled">
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>249
-[56]</string>
-        </property>
-       </widget>
-      </item>
-      <item row="11" column="0" rowspan="5">
-       <widget class="QLabel" name="dv">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="toolTip">
-         <string>Recommended cIOSs for vWii ONLY</string>
-        </property>
-        <property name="text">
-         <string>vWii</string>
+         <string>249</string>
         </property>
        </widget>
       </item>
@@ -481,11 +536,6 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>c249_37_d2x</tabstop>
-  <tabstop>c250_37_d2x</tabstop>
-  <tabstop>c248_38_d2x</tabstop>
-  <tabstop>c249_38_d2x</tabstop>
-  <tabstop>c250_38_d2x</tabstop>
   <tabstop>c249_53_d2x</tabstop>
   <tabstop>c250_53_d2x</tabstop>
   <tabstop>c249_55_d2x</tabstop>
@@ -504,7 +554,6 @@
   <tabstop>c249_80_d2x</tabstop>
   <tabstop>c250_80_d2x</tabstop>
   <tabstop>c248_38_d2x_vWii</tabstop>
-  <tabstop>c250_57_d2x_vWii</tabstop>
  </tabstops>
  <resources/>
  <connections/>

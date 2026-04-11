@@ -89,6 +89,7 @@ class D2xCheckGrid(CiosGroupBox):
                 break
             except FileNotFoundError:
                 print(f'There seems to be no cIOS map at "{i}"')
+                break
             except ElementTree.ParseError as e:
                 print(f'ParseError occurred trying to parse vWii cIOS map at "{i}":\n{e}')
             except Exception as e:
