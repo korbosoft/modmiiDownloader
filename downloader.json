@@ -689,7 +689,7 @@
                     {
                         "id": "IOS60P",
                         "name": "IOS60[60]",
-                        "toolTip": "IOS70 is used by System Menu 4.2; this IOS is based on IOS60 to maximize compatibility and protection. Officially this IOS is stubbed.",
+                        "toolTip": "IOS60 is used by System Menu 4.0 & 4.1. Officially this IOS is stubbed.",
                         "tags": [
                             "protection"
                         ]
