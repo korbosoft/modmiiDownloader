@@ -689,7 +689,7 @@
                     {
                         "id": "IOS60P",
                         "name": "IOS60[60]",
-                        "toolTip": "IOS60 is used by System Menu 4.0 & 4.1. Officially this IOS is stubbed.",
+                        "toolTip": "IOS60 is used by System Menu 4.0 & 4.1. First to support SDHC. Officially this IOS is stubbed.",
                         "tags": [
                             "protection"
                         ]
@@ -1840,8 +1840,7 @@
                         "id": "wbm",
                         "name": "Wii Backup Manager",
                         "altnames": [
-                            "WBM",
-                            "WiiBackupManager"
+                            "WBM"
                         ],
                         "toolTip": "Manage Wii backups on your SD card or hard drive and more. Use this tool to convert games to WBFS files (does not support Nkit ISOs).",
                         "tags": [
@@ -1857,20 +1856,13 @@
                     {
                         "id": "SMW",
                         "name": "ShowMiiWads",
-                        "altnames": [
-                            "TWBM",
-                            "Tiny Wii Backup Manager"
-                        ],
                         "toolTip": "A \"WAD File Manager\" for your computer that displays information about WAD files, edit them, install or remove them from Emulated NANDs, and more!",
                         "tags": []
                     },
                     {
                         "id": "CM",
                         "name": "CustomizeMii",
-                        "altnames": [
-                            "Customize Mii"
-                        ],
-                        "toolTip": "A custom channel creator for the Wii.\n\nModMii's forwarder dols from the Advanced Downloads Page are better and easier to construct than CustomizeMii's; simply build a forwarder dol using ModMii then add the new dol to your channel using CustomizeMii's Options tab.\n\nIf ahbprot is needed for your channel make sure to use a base WAD that has it already enabled (e.g. ModMii's USB-Loader Channel).",
+                        "toolTip": "A custom channel creator for the Wii.\n\nModMii's forwarder dols from the Advanced Downloads Page are better and easier to construct than Customize Mii's; simply build a forwarder dol using ModMii then add the new dol to your channel using Customize Mii's Options tab.\n\nIf ahbprot is needed for your channel make sure to use a base WAD that has it already enabled (e.g. ModMii's USB-Loader Channel).",
                         "tags": []
                     },
                     {
