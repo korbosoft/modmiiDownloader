@@ -69,12 +69,12 @@ jobs:
         python -m nuitka --show-progress --assume-yes-for-downloads main.py --standalone --windows-icon-from-ico=assets/icon.png --enable-plugin=pyside6 -o ModMiiDownloader.exe
         copy *.py main.dist
         copy downloader.json main.dist
-        7z a modmiiDownloader.zip -- main.dist/*
+        7z a ModMiiDownloader.zip ./main.dist/*
     - name: Create Release
       uses: ncipollo/release-action@v1.21.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: "modmiiDownloader.zip"
+        artifacts: "ModMiiDownloader.zip"
         allowUpdates: true
         omitBodyDuringUpdate: true
         replacesArtifacts: true

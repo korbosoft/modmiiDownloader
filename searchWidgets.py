@@ -184,6 +184,7 @@ class SearchDialog(QDialog):
         self.queue.setTitle("Queue")
 
         self.layout.addWidget(self.queue)
+        # for i in self.main.
 
         QWidget.setTabOrder(self.query, self.add)
         QWidget.setTabOrder(self.add, self.remove)
