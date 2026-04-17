@@ -1,3 +1,5 @@
 #! /usr/bin/sh
-source .venv/bin/activate
-python main.py
+cd $(dirname "$0")/../../..
+source Support/subscripts/ModMiiDownloader/.venv/bin/activate
+python Support/subscripts/ModMiiDownloader/main.py
+exit
