@@ -7,6 +7,8 @@ from xml.etree import ElementTree
 
 from utils import toggleCheckBoxes
 
+import os
+
 import resources
 
 # Important:
@@ -89,7 +91,8 @@ class D2xCheckGrid(CiosGroupBox):
                 break
             except FileNotFoundError:
                 print(f'There seems to be no cIOS map at "{i}"')
-                break
+                if os.path.isdir(os.path.dirname(i)):
+                    break
             except ElementTree.ParseError as e:
                 print(f'ParseError occurred trying to parse vWii cIOS map at "{i}":\n{e}')
             except Exception as e:
@@ -121,12 +124,15 @@ class D2xCheckGrid(CiosGroupBox):
         for base in [37, 38, 53, 55, 56, 57, 58, 60, 70, 80]:
             enabled = self.isIOSBaseAvailable(base, self.wiiMap)
             self.findChild(QLabel, f'b{base}').setEnabled(enabled)
+            if enabled:
+                self.findChild(QLabel, 'wiilabel').setEnabled(True)
             for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x$')):
                 widget.setEnabled(enabled)
         if self.vWiiMap is not None:
             for base in [38, 56, 57, 58]:
-                self.findChild(QLabel, 'dv').setEnabled(True)
+                self.findChild(QLabel, 'vwiilabel').setEnabled(True)
                 enabled = self.isIOSBaseAvailable(base, self.vWiiMap)
+                self.findChild(QLabel, f'bv{base}').setEnabled(enabled)
                 for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x_vWii$')):
                     widget.setEnabled(enabled)
 

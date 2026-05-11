@@ -101,7 +101,7 @@
        </widget>
       </item>
       <item row="12" column="0" colspan="4">
-       <widget class="QLabel" name="dv">
+       <widget class="QLabel" name="vwiilabel">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -157,7 +157,7 @@
        </widget>
       </item>
       <item row="0" column="0" colspan="4">
-       <widget class="QLabel" name="wii">
+       <widget class="QLabel" name="wiilabel">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -206,7 +206,7 @@
        </widget>
       </item>
       <item row="16" column="0">
-       <widget class="QLabel" name="b58_2">
+       <widget class="QLabel" name="bv58">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -216,7 +216,7 @@
        </widget>
       </item>
       <item row="14" column="0">
-       <widget class="QLabel" name="b56_2">
+       <widget class="QLabel" name="bv56">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -246,7 +246,7 @@
        </widget>
       </item>
       <item row="13" column="0">
-       <widget class="QLabel" name="b38_2">
+       <widget class="QLabel" name="bv38">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -256,7 +256,7 @@
        </widget>
       </item>
       <item row="15" column="0">
-       <widget class="QLabel" name="b57_2">
+       <widget class="QLabel" name="bv57">
         <property name="enabled">
          <bool>false</bool>
         </property>

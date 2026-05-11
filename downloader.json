@@ -1944,7 +1944,7 @@
                         "name": "Dolphin",
                         "toolTip": "Wii / Gamecube Emulator; requires 64-bit Windows 10/macOS 11 or newer (older versions of Dolphin from their website support other operating systems).\n\nNote this app can also update itself.",
                         "tags": [
-                            "semi-auto-updates"
+                            "auto-updates"
                         ]
                     },
                     {
@@ -2197,8 +2197,8 @@
             "ciosmaps.xml"
         ],
         "vWiiMap": [
-            "Support/d2x-beta/ciosmaps_vWii.xml",
             "Support/d2xModules/ciosmaps_vWii.xml",
+            "Support/d2x-beta/ciosmaps_vWii.xml",
             "ciosmaps_vWii.xml"
         ],
         "input": [
