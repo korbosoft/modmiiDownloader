@@ -1,7 +1,8 @@
 # This Python file uses the following encoding: utf-8
-import json, os, sys
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QTabWidget, QTabBar
+import os, sys
+
+from PySide6.QtWidgets import QApplication, QMainWindow
 
 from PySide6.QtCore import QEvent
 
@@ -21,9 +22,12 @@ from ui_mainWindow import Ui_mainWindow
 
 import resources
 
+from config import config
+
 class mainWindow(QMainWindow):
     enterD2xSettings = False
     queueStr = None
+    d2xRev = None
 
     ui = Ui_mainWindow()
 
@@ -45,18 +49,8 @@ class mainWindow(QMainWindow):
         ['misc', 'wiiuHomebrew']
     ]
 
-    def addTabNumbers(self, tabWidget: QTabWidget):
-#        numbers = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩']
-        tabBar = tabWidget.tabBar()
-        for i in range(tabWidget.tabBar().count()):
-#            number = QLabel(numbers[i])
-            number = QLabel(f'({i + 1})')
-            number.setContentsMargins(6, 0, 0, 0)
-
-            tabBar.setTabButton(i, QTabBar.ButtonPosition.LeftSide, number)
-
     def setupList(self, page, cat, list):
-        for i in self.json['downloadList'][page][cat]['item']:
+        for i in config['downloadList'][page][cat]['item']:
             index = list.model().rowCount()
             list.model().appendRow(DownloadableItem(i['name']))
             list.model().item(index).setAttrs(i, page, cat)
@@ -82,6 +76,10 @@ class mainWindow(QMainWindow):
         if 'nextpage' in queue:
             if queue['nextpage'].isdigit():
                 self.ui.tabWidget.setCurrentIndex(int(queue['nextpage']) - 1)
+        if 'd2x-beta-rev' in queue:
+            print('fuccck')
+            if queue['d2x-beta-rev'] != '':
+                self.d2xRev = queue['d2x-beta-rev']
 
         queue = [key for key, value in queue.items() if (value == '*' or key == 'No-Spin' or key == 'Spin' or key == 'Fast-Spin')]
         for key in queue:
@@ -93,7 +91,7 @@ class mainWindow(QMainWindow):
 
     def setQueue(self):
         exit = False
-        for i in self.json['paths']['tempcheck']:
+        for i in config['paths']['tempcheck']:
             print(f'Attempting to write to "{i}"')
             try:
                 with open(i, 'w') as f:
@@ -139,17 +137,17 @@ class mainWindow(QMainWindow):
         self.setupList('misc', 'wiiuHomebrew', self.ui.wiiuHomebrew.list)
 
         # Page 1
-        #self.ui.tabWidget.setTabIcon(0, resources.icons['nus_24'])
+        self.ui.tabWidget.setTabIcon(0, resources.icons['1_24'])
 
         # Page 2
-        #self.ui.tabWidget.setTabIcon(1, resources.icons['program_24'])
+        self.ui.tabWidget.setTabIcon(1, resources.icons['2_24'])
 
         # Page 3
-        #self.ui.tabWidget.setTabIcon(2, resources.icons['theme_24'])
+        self.ui.tabWidget.setTabIcon(2, resources.icons['3_24'])
 
         # Page 4
-        #self.ui.tabWidget.setTabIcon(3, resources.icons['ios_24'])
-        self.ui.d2x.setup(self.json['paths'], self.json['recommendedWiiCios'])
+        self.ui.tabWidget.setTabIcon(3, resources.icons['4_24'])
+        self.ui.d2x.setup(self.d2xRev)
         self.ui.d2xSettings.clicked.connect(self.doD2xSettings)
         self.ui.wiiRecommended.setIcon(resources.icons['recommended_24'])
         self.ui.vWiiRecommended.setIcon(resources.icons['recommended_24'])
@@ -157,7 +155,7 @@ class mainWindow(QMainWindow):
         self.ui.vWiiRecommended.clicked.connect(self.ui.d2x.toggleVWiiRecommended)
 
         # Page 5
-        #self.ui.tabWidget.setTabIcon(4, resources.icons['program_24'])
+        self.ui.tabWidget.setTabIcon(4, resources.icons['5_24'])
         self.ui.download.setIcon(resources.icons['download_24'])
         self.ui.download.clicked.connect(self.close)
         self.ui.search.setIcon(resources.icons['search_24'])
@@ -182,23 +180,10 @@ class mainWindow(QMainWindow):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        try:
-            with open('Support/subscripts/ModMiiDownloader/downloader.json') as f:
-                j = json.load(f)
-        except:
-            with open('downloader.json') as f:
-                j = json.load(f)
-        self.json = j
 
         self.ui.setupUi(self)
-        self.setFixedSize(self.size())
-        self.setupAll()
-        self.addTabNumbers(self.ui.tabWidget)
-        self.setStatus()
-        self.statusBar().setSizeGripEnabled(False)
-        self.installEventFilter(self)
 
-        for i in self.json['paths']['input']:
+        for i in config['paths']['input']:
             print(f'Attempting to load "{i}"')
             try:
                 with open(i) as f:
@@ -210,6 +195,13 @@ class mainWindow(QMainWindow):
 
         if self.queueStr is not None:
             self.getQueue(self.queueStr)
+
+        self.setFixedSize(self.size())
+        self.setupAll()
+        self.setStatus()
+        self.statusBar().setSizeGripEnabled(False)
+        self.installEventFilter(self)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
@@ -225,5 +217,8 @@ if __name__ == '__main__':
     try:
         os.remove('temp/wineactive.txt')
     except:
-        os.remove('wineactive.txt')
+        try:
+            os.remove('wineactive.txt')
+        except:
+            print('"wineactive.txt" not found. Task failed successfully??')
     sys.exit(ret)

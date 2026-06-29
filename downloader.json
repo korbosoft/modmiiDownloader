@@ -2197,8 +2197,8 @@
             "ciosmaps.xml"
         ],
         "vWiiMap": [
-            "Support/d2xModules/ciosmaps_vWii.xml",
             "Support/d2x-beta/ciosmaps_vWii.xml",
+            "Support/d2xModules/ciosmaps_vWii.xml",
             "ciosmaps_vWii.xml"
         ],
         "input": [

@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+
 from PySide6.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox, QHBoxLayout, QLineEdit, QPushButton, QWidget
 from PySide6.QtGui import QStandardItemModel
 from PySide6.QtCore import QRect
@@ -8,6 +9,8 @@ from downloadWidgets import DownloadableItem, DownloadListSection, DownloadList
 import re
 
 import resources
+
+from config import config
 
 class SearchList(DownloadList):
     parent = None
@@ -53,7 +56,7 @@ class SearchDialog(QDialog):
 
     def searchList(self, page: str, cat: str, list, query: str):
         query = self.sanitizer.sub('', query.lower())
-        for i in self.main.json['downloadList'][page][cat]['item']:
+        for i in config['paths']['downloadList'][page][cat]['item']:
             name = self.sanitizer.sub('', i['name'].lower())
             index = list.model().rowCount()
             if query.lower() in name.lower():

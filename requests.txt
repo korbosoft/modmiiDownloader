@@ -1,4 +1,13 @@
-2) can the queue on the right column show the full current queue; i.e. even items that were selected before clicking the search button. Then ppl could quickly un-queue items that were queued without the search menu
-4) If I already have an item queued, then I use search to queue it, the confirmation popup says it will add 1 item to the queue when really it's adding 0 since it was already queued. This maybe could be easily fixed by only showing results that aren't already queued; i.e. no items will ever appear on both the left and right panels
-5) The confirmation popup will need to be modified to also report x items removed from the queue (only if >0)
-6) not directly related to search, but I wonder if where it says "x items selected in queue" (maybe erase the word selected), but if a user clicks this text it could popup the search menu or something similar so users can easily see a list of all the items queued
+__260629 Korbo Downloader To Do List:__
+4) Search: can double-clicking entries on the left automatically add it to the queue on the right? and double-click items on the right remove them from the queue?
+5) Search: can the queue on the right column show the full current queue; i.e. even items that were selected before clicking the search button. Then ppl could quickly un-queue items that were queued without the search menu
+7) Search: If I already have an item queued, then I use search to queue it, the confirmation popup says it will add 1 item to the queue when really it's adding 0 since it was already queued. This maybe could be easily fixed by only showing results that aren't already queued; i.e. no items will ever appear on both the left and right panels (Korbo replied that it's "a little tricky, i'll have to do a bunch of checks, but i'll see what i can do")
+8) Search: The confirmation popup will need to be modified to also report x items removed from the queue (only if >0)
+9) maybe where it says "x items in queue" if a user clicks this text it could popup the search menu or something similar so users can easily see a list of all the items queued (Korbo replied that "I should probably change the actual text to indicate it can be clicked, maybe adding ', click for more info'")
+~~10) SKIPPED: is shift+click to batch select doable? Given click and drag works if it's a lot of effort it can be skipped ("7 would be a lot of effort likely")~~
+15) Ideally change temp\tempvars.txt input to temp\tempcheck.bat (so that the same file is used for input\output without requiring modmii.bat to manage it); not a big deal and can be skipped if it's a pain, but this would help simplify the logic
+
+Older lists:
+https://discord.com/channels/771435185178279946/1460963741561782385/1491081439452598395
+https://discord.com/channels/771435185178279946/1460963741561782385/1491084834188038154
+https://discord.com/channels/771435185178279946/1460963741561782385/1495343527599800362

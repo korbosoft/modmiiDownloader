@@ -14,5 +14,15 @@
         <file alias="svg_check">assets/check.svg</file>
         <file alias="svg_minus">assets/minus.svg</file>
         <file alias="svg_plus">assets/plus.svg</file>
+        <file alias="svg_9">assets/number9.svg</file>
+        <file alias="svg_8">assets/number8.svg</file>
+        <file alias="svg_7">assets/number7.svg</file>
+        <file alias="svg_6">assets/number6.svg</file>
+        <file alias="svg_5">assets/number5.svg</file>
+        <file alias="svg_4">assets/number4.svg</file>
+        <file alias="svg_3">assets/number3.svg</file>
+        <file alias="svg_2">assets/number2.svg</file>
+        <file alias="svg_1">assets/number1.svg</file>
+        <file alias="svg_0">assets/number0.svg</file>
     </qresource>
 </RCC>

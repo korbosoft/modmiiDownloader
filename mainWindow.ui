@@ -28,22 +28,32 @@
    <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="CustomTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
       <width>800</width>
-      <height>721</height>
+      <height>720</height>
      </rect>
     </property>
     <property name="currentIndex">
      <number>3</number>
     </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
     <property name="documentMode">
      <bool>true</bool>
     </property>
     <widget class="QWidget" name="nus">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_1</normaloff>:/base/svg_1</iconset>
+     </attribute>
      <attribute name="title">
       <string>NUS Files</string>
      </attribute>
@@ -53,7 +63,7 @@
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>688</height>
+        <height>680</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="nusLayout">
@@ -163,8 +173,12 @@
      </widget>
     </widget>
     <widget class="QWidget" name="homebrew">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_2</normaloff>:/base/svg_2</iconset>
+     </attribute>
      <attribute name="title">
-      <string>(v)Wii Homebrew &amp;&amp; Exploits</string>
+      <string>(v)Wii Programs</string>
      </attribute>
      <widget class="QWidget" name="wiiLayout">
       <property name="geometry">
@@ -172,7 +186,7 @@
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>688</height>
+        <height>680</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="wiiLayout">
@@ -260,6 +274,10 @@
      </widget>
     </widget>
     <widget class="QWidget" name="themes">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_3</normaloff>:/base/svg_3</iconset>
+     </attribute>
      <attribute name="title">
       <string>System Menu Themes</string>
      </attribute>
@@ -269,7 +287,7 @@
         <x>210</x>
         <y>630</y>
         <width>240</width>
-        <height>60</height>
+        <height>50</height>
        </rect>
       </property>
       <property name="font">
@@ -300,7 +318,7 @@
         <x>0</x>
         <y>630</y>
         <width>210</width>
-        <height>60</height>
+        <height>50</height>
        </rect>
       </property>
       <property name="font">
@@ -345,9 +363,9 @@
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>660</y>
+        <y>630</y>
         <width>110</width>
-        <height>30</height>
+        <height>50</height>
        </rect>
       </property>
       <item>
@@ -370,9 +388,9 @@
       <property name="geometry">
        <rect>
         <x>590</x>
-        <y>660</y>
+        <y>630</y>
         <width>100</width>
-        <height>30</height>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -381,8 +399,12 @@
      </widget>
     </widget>
     <widget class="QWidget" name="cios">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_4</normaloff>:/base/svg_4</iconset>
+     </attribute>
      <attribute name="title">
-      <string>cIOSs &amp;&amp; cMIOSs</string>
+      <string>c(M)IOSs</string>
      </attribute>
      <widget class="QWidget" name="ciosLayout">
       <property name="geometry">
@@ -390,7 +412,7 @@
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>640</height>
+        <height>630</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="ciosLayout" rowstretch="3,2">
@@ -445,9 +467,9 @@
      <widget class="QLabel" name="ciosWarning">
       <property name="geometry">
        <rect>
-        <x>585</x>
-        <y>640</y>
-        <width>215</width>
+        <x>580</x>
+        <y>630</y>
+        <width>220</width>
         <height>50</height>
        </rect>
       </property>
@@ -476,7 +498,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>640</y>
+        <y>630</y>
         <width>90</width>
         <height>50</height>
        </rect>
@@ -495,9 +517,9 @@ Settings</string>
      <widget class="QPushButton" name="wiiRecommended">
       <property name="geometry">
        <rect>
-        <x>235</x>
-        <y>640</y>
-        <width>170</width>
+        <x>240</x>
+        <y>630</y>
+        <width>160</width>
         <height>50</height>
        </rect>
       </property>
@@ -518,8 +540,8 @@ Settings</string>
      <widget class="QPushButton" name="vWiiRecommended">
       <property name="geometry">
        <rect>
-        <x>405</x>
-        <y>640</y>
+        <x>400</x>
+        <y>630</y>
         <width>180</width>
         <height>50</height>
        </rect>
@@ -543,8 +565,8 @@ Settings</string>
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>640</y>
-        <width>145</width>
+        <y>630</y>
+        <width>150</width>
         <height>50</height>
        </rect>
       </property>
@@ -554,7 +576,7 @@ Settings</string>
        </font>
       </property>
       <property name="text">
-       <string>e.g., cIOS249 [56] = cIOS at slot 249 based on IOS56</string>
+       <string>e.g., cIOS249 [56] = cIOS in slot 249 based on IOS56</string>
       </property>
       <property name="textFormat">
        <enum>Qt::TextFormat::PlainText</enum>
@@ -571,8 +593,12 @@ Settings</string>
      </widget>
     </widget>
     <widget class="QWidget" name="misc">
+     <attribute name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/base/svg_5</normaloff>:/base/svg_5</iconset>
+     </attribute>
      <attribute name="title">
-      <string>Wii U Homebrew &amp;&amp; PC Programs </string>
+      <string>Wii U &amp;&amp; PC Programs </string>
      </attribute>
      <widget class="QWidget" name="wiiuLayout">
       <property name="geometry">
@@ -580,7 +606,7 @@ Settings</string>
         <x>0</x>
         <y>0</y>
         <width>800</width>
-        <height>688</height>
+        <height>680</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="wiiuLayout">
@@ -822,6 +848,12 @@ Settings</string>
    <class>ThemeGrid</class>
    <extends>QWidget</extends>
    <header>ThemeGrid</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CustomTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>miscWidgets</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

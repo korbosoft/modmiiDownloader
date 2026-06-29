@@ -1,14 +1,16 @@
 # This Python file uses the following encoding: utf-8
+
 from PySide6.QtWidgets import (QApplication, QGroupBox, QListView, QAbstractItemView,
 QCheckBox, QVBoxLayout, QLabel, QSizePolicy, QMessageBox, QPushButton)
 
 from PySide6.QtGui import QStandardItem, QStandardItemModel
 
-from PySide6.QtCore import QMetaObject, Qt, QItemSelectionModel, Slot
+from PySide6.QtCore import Qt, QItemSelectionModel, Slot
 
 from resources import icons
 
 from webbrowser import open_new
+
 import typing
 
 class VertCheck(QCheckBox):

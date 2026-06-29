@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+
 from PySide6.QtWidgets import QCheckBox, QGroupBox, QLabel
 
 from PySide6.QtCore import QRegularExpression
@@ -10,6 +11,8 @@ from utils import toggleCheckBoxes
 import os
 
 import resources
+
+from config import config
 
 # Important:
 # You need to run the following command to generate the ui_form.py file
@@ -43,8 +46,6 @@ class CiosGroupBox(QGroupBox):
 class D2xCheckGrid(CiosGroupBox):
     wiiMap = None
     vWiiMap = None
-    paths = None
-    recommendedWiiCios = None
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -52,51 +53,47 @@ class D2xCheckGrid(CiosGroupBox):
         self.ui.setupUi(self)
         self.ui.select.clicked.connect(self.selectAll)
 
-    def setup(self, paths=None, recommendedWiiCios=None):
-        if paths is not None and self.paths is None:
-            self.paths = paths
-        if recommendedWiiCios is not None and self.recommendedWiiCios is None:
-            self.recommendedWiiCios = recommendedWiiCios
-        self.loadD2xMaps()
+    def setup(self, d2xRev):
+        self.loadD2xMaps(d2xRev)
         self.setupD2x()
 
     def toggleWiiRecommended(self):
-        toggleCheckBoxes(self, [self.findChild(QCheckBox, f'c{cios['slot']}_{cios['base']}_d2x') for cios in self.recommendedWiiCios])
+        toggleCheckBoxes(self, [self.findChild(QCheckBox, f'c{cios['slot']}_{cios['base']}_d2x') for cios in config['recommendedWiiCios']])
 
     def toggleVWiiRecommended(self):
         toggleCheckBoxes(self, '_vWii$', True)
 
-    def loadD2xMaps(self):
+    def loadD2xMaps(self, d2xRev):
         # load Wii cIOS map
-        for i in self.paths['wiiMap']:
+        for i in range(len(config['paths']['wiiMap'])):
+            path = config['paths']['wiiMap'][i]
             try:
-                print(f'Attempting to load "{i}"')
-                self.wiiMap = ElementTree.parse(i).getroot()
+                print(f'Attempting to load "{path}"')
+                map = ElementTree.parse(path).getroot()
+                if map.find('ciosgroup').get('name') == f'd2x-v{d2xRev}':
+                    self.wiiMap = map
                 break
             except FileNotFoundError:
-                print(f'There seems to be no cIOS map at "{i}"')
+                print(f'There seems to be no cIOS map at "{path}"')
             except ElementTree.ParseError as e:
-                print(f'ParseError occurred trying to parse Wii cIOS map at "{i}":\n{e}')
+                print(f'ParseError occurred trying to parse Wii cIOS map at "{path}":\n{e}')
             except Exception as e:
-                print(f'{type(e).__name__} occurred trying to load/parse Wii cIOS map at "{i}":\n{e}')
+                print(f'{type(e).__name__} occurred trying to load/parse Wii cIOS map at "{path}":\n{e}')
         if self.wiiMap is None:
             print('Failed to load/parse ciosmaps.xml, so no Wii d2x. This shouldn\'t ever happen?')
         else:
             print('Successfully loaded & parsed ciosmaps.xml!')
         # load vWii cIOS map
-        for i in self.paths['vWiiMap']:
-            try:
-                print(f'Attempting to load "{i}"')
-                self.vWiiMap = ElementTree.parse(i).getroot()
-                break
-            except FileNotFoundError:
-                print(f'There seems to be no cIOS map at "{i}"')
-                if os.path.isdir(os.path.dirname(i)):
-                    break
-            except ElementTree.ParseError as e:
-                print(f'ParseError occurred trying to parse vWii cIOS map at "{i}":\n{e}')
-            except Exception as e:
-                print(f'{type(e).__name__} occurred trying to load/parse vWii cIOS map at "{i}":\n{e}')
+        path = config['paths']['vWiiMap'][i]
+        try:
+            print(f'Attempting to load "{path}"')
+            self.vWiiMap = ElementTree.parse(path).getroot()
+        except FileNotFoundError:
+            print(f'There seems to be no cIOS map at "{path}"')
+        except ElementTree.ParseError as e:
+            print(f'ParseError occurred trying to parse vWii cIOS map at "{path}":\n{e}')
+        except Exception as e:
+            print(f'{type(e).__name__} occurred trying to load/parse vWii cIOS map at "{path}":\n{e}')
         if self.vWiiMap is None:
             print('Failed to load/parse ciosmaps_vWii.xml, so no vWii d2x. :/')
         else:
@@ -109,9 +106,6 @@ class D2xCheckGrid(CiosGroupBox):
         return False
 
     def setupD2x(self):
-        if self.wiiMap is None or self.vWiiMap is None:
-            self.loadD2xMaps()
-
         for widget in self.findChildren(QCheckBox, QRegularExpression('_d2x$')):
             widget.setIcon(resources.icons['blank_24'])
         for widget in self.findChildren(QCheckBox, QRegularExpression('_vWii$')):
@@ -136,7 +130,7 @@ class D2xCheckGrid(CiosGroupBox):
                 for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x_vWii$')):
                     widget.setEnabled(enabled)
 
-        for item in self.recommendedWiiCios:
+        for item in config['recommendedWiiCios']:
             self.findChild(QCheckBox, f'c{item['slot']}_{item['base']}_d2x').setIcon(resources.icons['recommended_24'])
 
 class WaninCheckGrid(CiosGroupBox):
