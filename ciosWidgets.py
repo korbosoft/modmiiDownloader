@@ -64,15 +64,17 @@ class D2xCheckGrid(CiosGroupBox):
         toggleCheckBoxes(self, '_vWii$', True)
 
     def loadD2xMaps(self, d2xRev):
-        # load Wii cIOS map
+        i = None
+
         for i in range(len(config['paths']['wiiMap'])):
             path = config['paths']['wiiMap'][i]
             try:
                 print(f'Attempting to load "{path}"')
                 map = ElementTree.parse(path).getroot()
-                if map.find('ciosgroup').get('name') == f'd2x-v{d2xRev}':
+                ciosgroup = map.find('ciosgroup')
+                if ciosgroup is not None and ciosgroup.get('name') == f'd2x-v{d2xRev}':
                     self.wiiMap = map
-                break
+                    break
             except FileNotFoundError:
                 print(f'There seems to be no cIOS map at "{path}"')
             except ElementTree.ParseError as e:
@@ -83,17 +85,19 @@ class D2xCheckGrid(CiosGroupBox):
             print('Failed to load/parse ciosmaps.xml, so no Wii d2x. This shouldn\'t ever happen?')
         else:
             print('Successfully loaded & parsed ciosmaps.xml!')
-        # load vWii cIOS map
-        path = config['paths']['vWiiMap'][i]
-        try:
-            print(f'Attempting to load "{path}"')
-            self.vWiiMap = ElementTree.parse(path).getroot()
-        except FileNotFoundError:
-            print(f'There seems to be no cIOS map at "{path}"')
-        except ElementTree.ParseError as e:
-            print(f'ParseError occurred trying to parse vWii cIOS map at "{path}":\n{e}')
-        except Exception as e:
-            print(f'{type(e).__name__} occurred trying to load/parse vWii cIOS map at "{path}":\n{e}')
+
+        if i is not None and i < len(config['paths']['vWiiMap']):
+            path = config['paths']['vWiiMap'][i]
+            try:
+                print(f'Attempting to load "{path}"')
+                self.vWiiMap = ElementTree.parse(path).getroot()
+            except FileNotFoundError:
+                print(f'There seems to be no cIOS map at "{path}"')
+            except ElementTree.ParseError as e:
+                print(f'ParseError occurred trying to parse vWii cIOS map at "{path}":\n{e}')
+            except Exception as e:
+                print(f'{type(e).__name__} occurred trying to load/parse vWii cIOS map at "{path}":\n{e}')
+
         if self.vWiiMap is None:
             print('Failed to load/parse ciosmaps_vWii.xml, so no vWii d2x. :/')
         else:
