@@ -38,7 +38,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <property name="iconSize">
      <size>
@@ -445,7 +445,7 @@
        <item row="0" column="0" rowspan="2">
         <widget class="D2xCheckGrid" name="d2x">
          <property name="title">
-          <string>d2x-d2xversion cIOSs</string>
+          <string>d2x cIOSs</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
