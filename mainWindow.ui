@@ -55,7 +55,7 @@
        <normaloff>:/base/svg_1</normaloff>:/base/svg_1</iconset>
      </attribute>
      <attribute name="title">
-      <string>NUS Files</string>
+      <string>NUS</string>
      </attribute>
      <widget class="QWidget" name="nusLayout">
       <property name="geometry">
@@ -178,7 +178,7 @@
        <normaloff>:/base/svg_2</normaloff>:/base/svg_2</iconset>
      </attribute>
      <attribute name="title">
-      <string>(v)Wii Programs</string>
+      <string>(v)Wii Apps</string>
      </attribute>
      <widget class="QWidget" name="wiiLayout">
       <property name="geometry">
@@ -404,7 +404,7 @@
        <normaloff>:/base/svg_4</normaloff>:/base/svg_4</iconset>
      </attribute>
      <attribute name="title">
-      <string>c(M)IOSs</string>
+      <string>cIOSs &amp;&amp; cMIOSs</string>
      </attribute>
      <widget class="QWidget" name="ciosLayout">
       <property name="geometry">
@@ -598,7 +598,7 @@ Settings</string>
        <normaloff>:/base/svg_5</normaloff>:/base/svg_5</iconset>
      </attribute>
      <attribute name="title">
-      <string>Wii U &amp;&amp; PC Programs </string>
+      <string>Wii U &amp;&amp; PC Apps</string>
      </attribute>
      <widget class="QWidget" name="wiiuLayout">
       <property name="geometry">
@@ -813,7 +813,7 @@ Settings</string>
     </property>
     <property name="icon">
      <iconset resource="resource.qrc">
-      <normaloff>:/base/svg_download</normaloff>:/base/svg_download</iconset>
+      <normaloff>:/base/svg_search</normaloff>:/base/svg_search</iconset>
     </property>
     <property name="iconSize">
      <size>
