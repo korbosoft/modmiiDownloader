@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 19.0.0, 2026-06-29T10:58:15. -->
+<!-- Written by QtCreator 19.0.0, 2026-07-17T06:56:50. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -157,13 +157,13 @@
      <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph dwarf,4096 -F 250</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">main.py</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.</value>
-     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/korbo/ModMiiDownloader/main.py</value>
+     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/korbo/Repositories/ModMiiDownloader/main.py</value>
      <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
-     <value type="QString" key="ProjectExplorer.RunConfiguration.UniqueId"></value>
-     <value type="QString" key="PythonEditor.RunConfiguation.Script">/home/korbo/ModMiiDownloader/main.py</value>
+     <value type="QString" key="ProjectExplorer.RunConfiguration.UniqueId">{81483965-40b0-40bd-8ba6-2fd366e44967}</value>
+     <value type="QString" key="PythonEditor.RunConfiguation.Script">/home/korbo/Repositories/ModMiiDownloader/main.py</value>
      <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
      <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-     <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/korbo/ModMiiDownloader</value>
+     <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/korbo/Repositories/ModMiiDownloader</value>
      <value type="QString" key="RunConfiguration.X11Forwarding">:0</value>
     </valuemap>
     <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
@@ -196,13 +196,13 @@
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph dwarf,4096 -F 250</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">main.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/korbo/ModMiiDownloader/main.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/korbo/Repositories/ModMiiDownloader/main.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.UniqueId"></value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">/home/korbo/ModMiiDownloader/main.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.UniqueId">{81483965-40b0-40bd-8ba6-2fd366e44967}</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">/home/korbo/Repositories/ModMiiDownloader/main.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/korbo/ModMiiDownloader</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/korbo/Repositories/ModMiiDownloader</value>
     <value type="QString" key="RunConfiguration.X11Forwarding">:0</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>

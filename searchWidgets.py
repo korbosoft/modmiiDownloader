@@ -56,7 +56,7 @@ class SearchDialog(QDialog):
 
     def searchList(self, page: str, cat: str, list, query: str):
         query = self.sanitizer.sub('', query.lower())
-        for i in config['paths']['downloadList'][page][cat]['item']:
+        for i in config['downloadList'][page][cat]['item']:
             name = self.sanitizer.sub('', i['name'].lower())
             index = list.model().rowCount()
             if query.lower() in name.lower():
