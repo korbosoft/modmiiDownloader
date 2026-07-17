@@ -77,7 +77,6 @@ class mainWindow(QMainWindow):
             if queue['nextpage'].isdigit():
                 self.ui.tabWidget.setCurrentIndex(int(queue['nextpage']) - 1)
         if 'd2x-beta-rev' in queue:
-            print('fuccck')
             if queue['d2x-beta-rev'] != '':
                 self.d2xRev = queue['d2x-beta-rev']
 
