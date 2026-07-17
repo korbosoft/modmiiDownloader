@@ -2,7 +2,7 @@
 
 from PySide6.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox, QHBoxLayout, QLineEdit, QPushButton, QWidget
 from PySide6.QtGui import QStandardItemModel
-from PySide6.QtCore import QRect
+from PySide6.QtCore import QRect, Qt
 
 from downloadWidgets import DownloadableItem, DownloadListSection, DownloadList
 
@@ -11,6 +11,8 @@ import re
 import resources
 
 from config import config
+
+sanitizer = re.compile(r'[^a-z0-9\s]')
 
 class SearchList(DownloadList):
     parent = None
@@ -52,21 +54,31 @@ class SearchListSection(DownloadListSection):
 
 class SearchDialog(QDialog):
     main = None
-    sanitizer = re.compile(r'[^a-z0-9\s]')
 
-    def searchList(self, page: str, cat: str, list, query: str):
-        query = self.sanitizer.sub('', query.lower())
+
+    def searchList(self, page: str, cat: str, list, query: str, queued_ids):
+        query = sanitizer.sub('', query.lower())
         for i in config['downloadList'][page][cat]['item']:
-            name = self.sanitizer.sub('', i['name'].lower())
+
+            # 1. Skip immediately if this item is already in the queue
+            if i.get('id') in queued_ids:
+                continue
+
+            name = sanitizer.sub('', i['name'].lower())
             index = list.model().rowCount()
+
+            # 2. Check primary name match
             if query.lower() in name.lower():
                 list.model().appendRow(DownloadableItem(i['name']))
                 list.model().item(index).setAttrs(i, page, cat)
+
+            # 3. Check altname match
             elif 'altnames' in i:
                 for altname in i['altnames']:
-                    if query.lower() in self.sanitizer.sub('', altname.lower()):
+                    if query.lower() in sanitizer.sub('', altname.lower()):
                         list.model().appendRow(DownloadableItem(i['name']))
                         list.model().item(index).setAttrs(i, page, cat)
+                        break
 
     def addSelected(self):
         items = self.results.getSelectedItems()
@@ -103,13 +115,46 @@ class SearchDialog(QDialog):
 
     def confirm(self):
         queueModel = self.queue.list.model()
-        if queueModel.rowCount():
+        if queueModel.rowCount() or self.oldQueue.model().rowCount():
             msgBox = QMessageBox(self)
             msgBox.setText('Do you want to save your changes?')
-            msgBox.setInformativeText(f'This will add {queueModel.rowCount()} items to the queue.')
+
+            # Get set of IDs originally in queue
+            old_ids = set()
+            old_model = self.oldQueue.model()
+            for i in range(old_model.rowCount()):
+                item = old_model.item(i)
+                if item and hasattr(item, 'specialAttrs'):
+                    item_id = item.specialAttrs.get('id')
+                    if item_id:
+                        old_ids.add(item_id)
+
+            # Get set of IDs currently in queue
+            current_ids = set()
+            for i in range(queueModel.rowCount()):
+                item = queueModel.item(i)
+                if item and hasattr(item, 'specialAttrs'):
+                    item_id = item.specialAttrs.get('id')
+                    if item_id:
+                        current_ids.add(item_id)
+
+            # Calculate actual additions and removals
+            added_count = len(current_ids - old_ids)
+            removed_count = len(old_ids - current_ids)
+
+            info_lines = []
+            if added_count > 0:
+                info_lines.append(f'{added_count} new item{"s" if added_count > 1 else ""}')
+            if removed_count > 0:
+                info_lines.append(f'{removed_count} removed item{"s" if removed_count > 1 else ""}')
+
+            if info_lines:
+                msgBox.setInformativeText("\n".join(info_lines))
+
             msgBox.setStandardButtons(QMessageBox.Save | QMessageBox.Discard | QMessageBox.StandardButton.Cancel)
             msgBox.setDefaultButton(QMessageBox.Cancel)
             msgBox.setDetailedText('Selected items:\n' + '\n'.join([queueModel.item(index).text() for index in range(queueModel.rowCount())]))
+
             match msgBox.exec():
                 case QMessageBox.StandardButton.Cancel:
                     pass
@@ -123,15 +168,25 @@ class SearchDialog(QDialog):
         else: self.close()
 
     def search(self, query):
-        query = self.sanitizer.sub('', query.lower())
-        results = self.results.list
-        results.model().removeRows(0, results.model().rowCount())
-        if query != '':
-            for section in self.main.sections:
-                self.searchList(section[0], section[1], results, query)
-            if results.model().rowCount() == 0:
-                results.model().appendRow(DownloadableItem(f'No results for "{query}"'))
-                results.model().item(0).setEnabled(False)
+            query = sanitizer.sub('', query.lower())
+            results = self.results.list
+            queue = self.queue.list
+            results.model().removeRows(0, results.model().rowCount())
+
+            if query != '':
+                queued_ids = {
+                    queue.model().item(i).specialAttrs['id']
+                    for i in range(queue.model().rowCount())
+                }
+
+                queued_ids.discard(None)
+
+                for section in self.main.sections:
+                    self.searchList(section[0], section[1], results, query, queued_ids)
+
+                if results.model().rowCount() == 0:
+                    results.model().appendRow(DownloadableItem(f'No results for "{query}"'))
+                    results.model().item(0).setEnabled(False)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -186,8 +241,20 @@ class SearchDialog(QDialog):
         self.queue.setObjectName("queue")
         self.queue.setTitle("Queue")
 
+        self.oldQueue = QueueList(self)
+        self.oldQueue.setObjectName("oldQueue")
+        self.oldQueue.hide()
+
         self.layout.addWidget(self.queue)
-        # for i in self.main.
+
+        for section in self.main.sections:
+            for item in self.main.findChild(DownloadListSection, section[1]).getSelectedItems():
+                queueModel = self.queue.list.model()
+                oldQueueModel = self.oldQueue.model()
+                queueModel.appendRow(DownloadableItem(item.text()))
+                oldQueueModel.appendRow(DownloadableItem(item.text()))
+                queueModel.item(queueModel.rowCount() - 1).copyAttrs(item)
+                oldQueueModel.item(oldQueueModel.rowCount() - 1).copyAttrs(item)
 
         QWidget.setTabOrder(self.query, self.add)
         QWidget.setTabOrder(self.add, self.remove)

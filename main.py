@@ -64,9 +64,9 @@ class mainWindow(QMainWindow):
         f'set nextpage={self.ui.tabWidget.currentIndex() + 1}\n'
         return queue
 
-    def getQueue(self, str):
+    def getQueue(self, string):
         queue = {}
-        for line in str.replace('set ', '').splitlines():
+        for line in string.replace('set ', '').splitlines():
             if '=' in line:
                 key, value, *_ = line.split('=')
                 queue[key] = value
@@ -182,7 +182,7 @@ class mainWindow(QMainWindow):
 
         self.ui.setupUi(self)
 
-        for i in config['paths']['input']:
+        for i in config['paths']['tempcheck']:
             print(f'Attempting to load "{i}"')
             try:
                 with open(i) as f:
