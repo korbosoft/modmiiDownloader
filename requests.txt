@@ -1,7 +1,6 @@
 __260629 Korbo Downloader To Do List:__
 9) maybe where it says "x items in queue" if a user clicks this text it could popup the search menu or something similar so users can easily see a list of all the items queued (Korbo replied that "I should probably change the actual text to indicate it can be clicked, maybe adding ', click for more info'")
 ~~10) SKIPPED: is shift+click to batch select doable? Given click and drag works if it's a lot of effort it can be skipped ("7 would be a lot of effort likely")~~
-15) Ideally change temp\tempvars.txt input to temp\tempcheck.bat (so that the same file is used for input\output without requiring modmii.bat to manage it); not a big deal and can be skipped if it's a pain, but this would help simplify the logic
 
 Older lists:
 https://discord.com/channels/771435185178279946/1460963741561782385/1491081439452598395

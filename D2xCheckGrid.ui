@@ -23,7 +23,7 @@
      <x>0</x>
      <y>0</y>
      <width>262</width>
-     <height>960</height>
+     <height>628</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="layout">
@@ -528,7 +528,7 @@
        </size>
       </property>
       <property name="text">
-       <string>Select All</string>
+       <string>Toggle All</string>
       </property>
      </widget>
     </item>

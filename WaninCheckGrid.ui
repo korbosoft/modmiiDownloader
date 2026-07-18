@@ -389,7 +389,7 @@
        </size>
       </property>
       <property name="text">
-       <string>Select All</string>
+       <string>Toggle All</string>
       </property>
      </widget>
     </item>

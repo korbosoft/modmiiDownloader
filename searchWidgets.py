@@ -2,9 +2,9 @@
 
 from PySide6.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox, QHBoxLayout, QLineEdit, QPushButton, QWidget
 from PySide6.QtGui import QStandardItemModel
-from PySide6.QtCore import QRect, Qt
+from PySide6.QtCore import QRect, Qt, QItemSelectionModel
 
-from downloadWidgets import DownloadableItem, DownloadListSection, DownloadList
+from downloadWidgets import DownloadableItem, DownloadListSection, DownloadList, ID_ROLE
 
 import re
 
@@ -19,6 +19,7 @@ class SearchList(DownloadList):
 
     def add(self, index):
         QApplication.activeWindow().addItem(index)
+        self.selectionModel().select(index, QItemSelectionModel.SelectionFlag.Deselect)
 
     def remove(self, index):
         self.model().removeRow(index.row())
@@ -56,97 +57,110 @@ class SearchDialog(QDialog):
     main = None
 
 
-    def searchList(self, page: str, cat: str, list, query: str, queued_ids):
+    def searchList(self, page: str, cat: str, item_list, query: str, queued_ids):
         query = sanitizer.sub('', query.lower())
         for i in config['downloadList'][page][cat]['item']:
 
-            # 1. Skip immediately if this item is already in the queue
             if i.get('id') in queued_ids:
                 continue
 
             name = sanitizer.sub('', i['name'].lower())
-            index = list.model().rowCount()
+            index = item_list.model().rowCount()
 
-            # 2. Check primary name match
             if query.lower() in name.lower():
-                list.model().appendRow(DownloadableItem(i['name']))
-                list.model().item(index).setAttrs(i, page, cat)
+                item_list.model().appendRow(DownloadableItem(i['name']))
+                item_list.model().item(index).setAttrs(i, page, cat)
 
-            # 3. Check altname match
             elif 'altnames' in i:
                 for altname in i['altnames']:
                     if query.lower() in sanitizer.sub('', altname.lower()):
-                        list.model().appendRow(DownloadableItem(i['name']))
-                        list.model().item(index).setAttrs(i, page, cat)
+                        item_list.model().appendRow(DownloadableItem(i['name']))
+                        item_list.model().item(index).setAttrs(i, page, cat)
                         break
 
     def addSelected(self):
         items = self.results.getSelectedItems()
-        queueModel = self.queue.list.model()
+        queueModel = self.queue.item_list.model()
+
         for item in items:
+            target_id = item.data(ID_ROLE)
             duplicate = False
-            for i in range(self.results.list.model().rowCount()):
-                if queueModel.item(i) is not None:
-                    if item.specialAttrs['id'] == queueModel.item(i).specialAttrs['id']:
-                        duplicate = True
+
+            for i in range(queueModel.rowCount()):
+                idx = queueModel.index(i, 0)
+                queue_id = queueModel.data(idx, ID_ROLE)
+
+                if queue_id == target_id:
+                    duplicate = True
+                    break
+
             if not duplicate:
-                index = queueModel.rowCount()
-                queueModel.appendRow(DownloadableItem(item.text()))
-                queueModel.item(index).copyAttrs(item)
+                new_item = DownloadableItem(item.text())
+                new_item.copyAttrs(item)
+                queueModel.appendRow(new_item)
+
         self.results.deselectAllItems()
 
     def removeSelected(self):
         items = self.queue.getSelectedItems()
         for item in items:
-            self.queue.list.model().removeRow(item.row())
+            self.queue.item_list.model().removeRow(item.row())
 
     def addItem(self, index):
-        queueModel = self.queue.list.model()
+        queueModel = self.queue.item_list.model()
+        resultsModel = self.results.item_list.model()
+
+        item = resultsModel.item(index.row())
+        if not item:
+            return
+
+        target_id = item.data(ID_ROLE)
         duplicate = False
-        item = self.results.list.model().item(index.row())
-        for i in range(self.results.list.model().rowCount()):
-            if queueModel.item(i) is not None:
-                if item.specialAttrs['id'] == queueModel.item(i).specialAttrs['id']:
-                    duplicate = True
+
+        for i in range(queueModel.rowCount()):
+            idx = queueModel.index(i, 0)
+            queue_id = queueModel.data(idx, ID_ROLE)
+
+            if queue_id == target_id:
+                duplicate = True
+                break
+
         if not duplicate:
-            index = queueModel.rowCount()
-            queueModel.appendRow(DownloadableItem(item.text()))
-            queueModel.item(index).copyAttrs(item)
+            new_item = DownloadableItem(item.text())
+            new_item.copyAttrs(item)
+            queueModel.appendRow(new_item)
 
     def confirm(self):
-        queueModel = self.queue.list.model()
+        queueModel = self.queue.item_list.model()
         if queueModel.rowCount() or self.oldQueue.model().rowCount():
             msgBox = QMessageBox(self)
             msgBox.setText('Do you want to save your changes?')
 
-            # Get set of IDs originally in queue
-            old_ids = set()
-            old_model = self.oldQueue.model()
-            for i in range(old_model.rowCount()):
-                item = old_model.item(i)
+            oldIDs = set()
+            oldModel = self.oldQueue.model()
+            for i in range(oldModel.rowCount()):
+                item = oldModel.item(i)
                 if item and hasattr(item, 'specialAttrs'):
-                    item_id = item.specialAttrs.get('id')
+                    item_id = oldModel.data(item.index(), ID_ROLE)
                     if item_id:
-                        old_ids.add(item_id)
+                        oldIDs.add(item_id)
 
-            # Get set of IDs currently in queue
-            current_ids = set()
+            currentIDs = set()
             for i in range(queueModel.rowCount()):
                 item = queueModel.item(i)
                 if item and hasattr(item, 'specialAttrs'):
-                    item_id = item.specialAttrs.get('id')
+                    item_id = queueModel.data(item.index(), ID_ROLE)
                     if item_id:
-                        current_ids.add(item_id)
+                        currentIDs.add(item_id)
 
-            # Calculate actual additions and removals
-            added_count = len(current_ids - old_ids)
-            removed_count = len(old_ids - current_ids)
+            addedCount = len(currentIDs - oldIDs)
+            removedCount = len(oldIDs - currentIDs)
 
             info_lines = []
-            if added_count > 0:
-                info_lines.append(f'{added_count} new item{"s" if added_count > 1 else ""}')
-            if removed_count > 0:
-                info_lines.append(f'{removed_count} removed item{"s" if removed_count > 1 else ""}')
+            if addedCount > 0:
+                info_lines.append(f'{addedCount} new item{"s" if addedCount > 1 else ""}')
+            if removedCount > 0:
+                info_lines.append(f'{removedCount} removed item{"s" if removedCount > 1 else ""}')
 
             if info_lines:
                 msgBox.setInformativeText("\n".join(info_lines))
@@ -161,7 +175,7 @@ class SearchDialog(QDialog):
                 case QMessageBox.Save:
                     for index in range(queueModel.rowCount()):
                         item = queueModel.item(index)
-                        self.main.findChild(DownloadListSection, item.specialAttrs['cat']).selectChild(item.specialAttrs['id'])
+                        self.main.findChild(DownloadListSection, item.specialAttrs['cat']).selectChild(queueModel.data(item.index(), ID_ROLE))
                         self.close()
                 case QMessageBox.Discard:
                     self.close()
@@ -169,8 +183,8 @@ class SearchDialog(QDialog):
 
     def search(self, query):
             query = sanitizer.sub('', query.lower())
-            results = self.results.list
-            queue = self.queue.list
+            results = self.results.item_list
+            queue = self.queue.item_list
             results.model().removeRows(0, results.model().rowCount())
 
             if query != '':
@@ -249,12 +263,16 @@ class SearchDialog(QDialog):
 
         for section in self.main.sections:
             for item in self.main.findChild(DownloadListSection, section[1]).getSelectedItems():
-                queueModel = self.queue.list.model()
+                queueModel = self.queue.item_list.model()
                 oldQueueModel = self.oldQueue.model()
-                queueModel.appendRow(DownloadableItem(item.text()))
-                oldQueueModel.appendRow(DownloadableItem(item.text()))
-                queueModel.item(queueModel.rowCount() - 1).copyAttrs(item)
-                oldQueueModel.item(oldQueueModel.rowCount() - 1).copyAttrs(item)
+
+                q_item = DownloadableItem(item.text())
+                q_item.copyAttrs(item)
+                queueModel.appendRow(q_item)
+
+                old_item = DownloadableItem(item.text())
+                old_item.copyAttrs(item)
+                oldQueueModel.appendRow(old_item)
 
         QWidget.setTabOrder(self.query, self.add)
         QWidget.setTabOrder(self.add, self.remove)

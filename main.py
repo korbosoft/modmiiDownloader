@@ -49,11 +49,11 @@ class mainWindow(QMainWindow):
         ['misc', 'wiiuHomebrew']
     ]
 
-    def setupList(self, page, cat, list):
+    def setupList(self, page, cat, item_list):
         for i in config['downloadList'][page][cat]['item']:
-            index = list.model().rowCount()
-            list.model().appendRow(DownloadableItem(i['name']))
-            list.model().item(index).setAttrs(i, page, cat)
+            index = item_list.model().rowCount()
+            item_list.model().appendRow(DownloadableItem(i['name']))
+            item_list.model().item(index).setAttrs(i, page, cat)
 
     def makeQueue(self):
         queue = \
@@ -76,9 +76,6 @@ class mainWindow(QMainWindow):
         if 'nextpage' in queue:
             if queue['nextpage'].isdigit():
                 self.ui.tabWidget.setCurrentIndex(int(queue['nextpage']) - 1)
-        if 'd2x-beta-rev' in queue:
-            if queue['d2x-beta-rev'] != '':
-                self.d2xRev = queue['d2x-beta-rev']
 
         queue = [key for key, value in queue.items() if (value == '*' or key == 'No-Spin' or key == 'Spin' or key == 'Fast-Spin')]
         for key in queue:
@@ -119,21 +116,21 @@ class mainWindow(QMainWindow):
     def setupAll(self):
         resources.setupIcons()
 
-        self.setupList('nus', 'sysmenus', self.ui.sysmenus.list)
-        self.setupList('nus', 'realsigned', self.ui.realsigned.list)
-        self.setupList('nus', 'fakesigned', self.ui.fakesigned.list)
-        self.setupList('nus', 'content', self.ui.content.list)
-        self.setupList('nus', 'channels', self.ui.channels.list)
-        self.setupList('nus', 'other', self.ui.other.list)
-        self.setupList('wiiHaxx', 'exploits', self.ui.exploits.list)
-        self.setupList('wiiHaxx', 'wiiHomebrew', self.ui.wiiHomebrew.list)
-        self.setupList('wiiHaxx', 'vWiiHomebrew', self.ui.vWiiHomebrew.list)
-        self.setupList('wiiHaxx', 'bothHomebrew', self.ui.bothHomebrew.list)
-        self.setupList('wiiHaxx', 'hbc', self.ui.hbc.list)
-        self.setupList('cios', 'hermes', self.ui.hermes.list)
-        self.setupList('cios', 'cmios', self.ui.cmios.list)
-        self.setupList('misc', 'pc', self.ui.pc.list)
-        self.setupList('misc', 'wiiuHomebrew', self.ui.wiiuHomebrew.list)
+        self.setupList('nus', 'sysmenus', self.ui.sysmenus.item_list)
+        self.setupList('nus', 'realsigned', self.ui.realsigned.item_list)
+        self.setupList('nus', 'fakesigned', self.ui.fakesigned.item_list)
+        self.setupList('nus', 'content', self.ui.content.item_list)
+        self.setupList('nus', 'channels', self.ui.channels.item_list)
+        self.setupList('nus', 'other', self.ui.other.item_list)
+        self.setupList('wiiHaxx', 'exploits', self.ui.exploits.item_list)
+        self.setupList('wiiHaxx', 'wiiHomebrew', self.ui.wiiHomebrew.item_list)
+        self.setupList('wiiHaxx', 'vWiiHomebrew', self.ui.vWiiHomebrew.item_list)
+        self.setupList('wiiHaxx', 'bothHomebrew', self.ui.bothHomebrew.item_list)
+        self.setupList('wiiHaxx', 'hbc', self.ui.hbc.item_list)
+        self.setupList('cios', 'hermes', self.ui.hermes.item_list)
+        self.setupList('cios', 'cmios', self.ui.cmios.item_list)
+        self.setupList('misc', 'pc', self.ui.pc.item_list)
+        self.setupList('misc', 'wiiuHomebrew', self.ui.wiiuHomebrew.item_list)
 
         # Page 1
         self.ui.tabWidget.setTabIcon(0, resources.icons['1_24'])
@@ -146,12 +143,12 @@ class mainWindow(QMainWindow):
 
         # Page 4
         self.ui.tabWidget.setTabIcon(3, resources.icons['4_24'])
-        self.ui.d2x.setup(self.d2xRev)
         self.ui.d2xSettings.clicked.connect(self.doD2xSettings)
         self.ui.wiiRecommended.setIcon(resources.icons['recommended_24'])
         self.ui.vWiiRecommended.setIcon(resources.icons['recommended_24'])
         self.ui.wiiRecommended.clicked.connect(self.ui.d2x.toggleWiiRecommended)
         self.ui.vWiiRecommended.clicked.connect(self.ui.d2x.toggleVWiiRecommended)
+        self.ui.d2x.setup(self.d2xRev)
 
         # Page 5
         self.ui.tabWidget.setTabIcon(4, resources.icons['5_24'])
@@ -193,14 +190,23 @@ class mainWindow(QMainWindow):
                 print(f'{type(e).__name__} occurred trying to load vars at "{i}":\n{e}')
 
         if self.queueStr is not None:
-            self.getQueue(self.queueStr)
+            queue = {}
+            for line in self.queueStr.replace('set ', '').splitlines():
+                if '=' in line:
+                    key, value, *_ = line.split('=')
+                    queue[key] = value
+            if 'd2x-beta-rev' in queue and queue['d2x-beta-rev'] != '':
+                self.d2xRev = queue['d2x-beta-rev']
 
         self.setFixedSize(self.size())
         self.setupAll()
+
+        if self.queueStr is not None:
+            self.getQueue(self.queueStr)
+
         self.setStatus()
         self.statusBar().setSizeGripEnabled(False)
         self.installEventFilter(self)
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

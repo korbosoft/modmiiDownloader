@@ -13,6 +13,8 @@ from webbrowser import open_new
 
 import typing
 
+ID_ROLE = Qt.ItemDataRole.UserRole + 1
+
 class VertCheck(QCheckBox):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -38,8 +40,9 @@ class VertCheck(QCheckBox):
 
 class DownloadableItem(QStandardItem):
     def setAttrs(self, json: dict, page: str, cat: str):
+        self.setData(json['id'], ID_ROLE)
+
         self.setToolTip(json['toolTip'])
-        self.specialAttrs['id'] = json['id']
         self.specialAttrs['tags'] = json['tags']
         self.specialAttrs['page'] = page
         self.specialAttrs['cat'] = cat
@@ -68,8 +71,9 @@ class DownloadableItem(QStandardItem):
             self.setFont(font)
 
     def copyAttrs(self, item: typing.Self):
+        self.setData(item.data(ID_ROLE), ID_ROLE)
+
         self.setToolTip(item.toolTip())
-        self.specialAttrs['id'] = item.specialAttrs['id']
         self.specialAttrs['altname'] = item.specialAttrs['altname']
         self.specialAttrs['tags'] = item.specialAttrs['tags']
         self.specialAttrs['url'] = item.specialAttrs['url']
@@ -97,7 +101,6 @@ class DownloadableItem(QStandardItem):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.specialAttrs = {
-            'id': None,
             'tags': [],
             'altname': None,
             'url': None,
@@ -126,72 +129,81 @@ class DownloadList(QListView):
         self.clicked.connect(self.listClicked)
 
 class DownloadListSection(QGroupBox):
-    def __init__(self, parent=None, list=None):
+    def __init__(self, parent=None, item_list=None):
         super().__init__(parent)
         self.setObjectName('DownloadListSection')
 
-        if list is not None:
-            self.list = list(self)
+        if item_list is not None:
+            self.item_list = item_list(self)
         else:
-            self.list = DownloadList(self)
+            self.item_list = DownloadList(self)
 
-        self.list.setObjectName('list')
-        self.list.move(5, 22)
-        self.list.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.list.setProperty('showDropIndicator', False)
-        self.list.setAlternatingRowColors(True)
-        self.list.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
-        self.list.setUniformItemSizes(True)
+        self.item_list.setObjectName('list')
+        self.item_list.move(5, 22)
+        self.item_list.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.item_list.setProperty('showDropIndicator', False)
+        self.item_list.setAlternatingRowColors(True)
+        self.item_list.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
+        self.item_list.setUniformItemSizes(True)
 
         self.select = QPushButton(self)
-        self.select.setText('Select All')
+        self.select.setText('Toggle All')
         self.select.clicked.connect(self.toggleAllItems)
 
     @Slot()
     def toggleAllItems(self):
+        model = self.item_list.model()
         selected = []
-        for i in range(self.list.model().rowCount()):
-            if self.list.model().item(i).isEnabled():
-                selected.append(self.list.selectionModel().isSelected(self.list.model().item(i).index()))
+        for i in range(model.rowCount()):
+            if model.item(i).isEnabled():
+                selected.append(self.item_list.selectionModel().isSelected(model.item(i).index()))
             else:
                 selected.append(True)
-        for i in range(self.list.model().rowCount()):
-            if self.list.model().item(i).isEnabled():
-                self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Select if False in selected else QItemSelectionModel.SelectionFlag.Deselect)
+        for i in range(model.rowCount()):
+            if model.item(i).isEnabled():
+                self.item_list.selectionModel().select(model.item(i).index(), QItemSelectionModel.SelectionFlag.Select if False in selected else QItemSelectionModel.SelectionFlag.Deselect)
 
     def deselectAllItems(self):
-        for i in range(self.list.model().rowCount()):
-            if self.list.model().item(i).isEnabled():
-                self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Deselect)
+        model = self.item_list.model()
+        for i in range(model.rowCount()):
+            if model.item(i).isEnabled():
+                self.item_list.selectionModel().select(model.item(i).index(), QItemSelectionModel.SelectionFlag.Deselect)
 
-    def selectChild(self, name):
-        for i in range(self.list.model().rowCount()):
-            if self.list.model().item(i).specialAttrs['id'] == name:
-                self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Select)
+    def selectChild(self, item_id):
+        model = self.item_list.model()
+        matches = model.match(model.index(0, 0), ID_ROLE, item_id, hits=1, flags=Qt.MatchFlag.MatchExactly)
+        for index in matches:
+            if model.item(index.row()).isEnabled():
+                self.item_list.selectionModel().select(index, QItemSelectionModel.SelectionFlag.Select)
 
-    def toggleChild(self, name):
-        for i in range(self.list.model().rowCount()):
-            if self.list.model().item(i).specialAttrs['id'] == name:
-                self.list.selectionModel().select(self.list.model().item(i).index(), QItemSelectionModel.SelectionFlag.Toggle)
+    def toggleChild(self, item_id):
+        model = self.item_list.model()
+        matches = model.match(model.index(0, 0), ID_ROLE, item_id, hits=1, flags=Qt.MatchFlag.MatchExactly)
+        for index in matches:
+            self.item_list.selectionModel().select(index, QItemSelectionModel.SelectionFlag.Toggle)
+
 
     def getSelected(self):
+        model = self.item_list.model()
         str = ''
-        for i in range(self.list.model().rowCount()):
-            if 'disabled' not in self.list.model().item(i).specialAttrs['tags']:
-                str = str + f'set {self.list.model().item(i).specialAttrs['id']}={'*' if self.list.selectionModel().isSelected(self.list.model().item(i).index()) else ''}\n'
+        for i in range(model.rowCount()):
+            if 'disabled' not in model.item(i).specialAttrs['tags']:
+                index = model.item(i).index()
+                str = str + f'set {model.data(index, ID_ROLE)}={'*' if self.item_list.selectionModel().isSelected(index) else ''}\n'
         return str
 
     def getSelectedItems(self):
-        list = []
-        for i in range(self.list.model().rowCount()):
-            if 'disabled' not in self.list.model().item(i).specialAttrs['tags']:
-                if self.list.selectionModel().isSelected(self.list.model().item(i).index()):
-                    list.append(self.list.model().item(i))
-        return list
+        model = self.item_list.model()
+        selected = []
+        for i in range(model.rowCount()):
+            if 'disabled' not in model.item(i).specialAttrs['tags']:
+                if self.item_list.selectionModel().isSelected(model.item(i).index()):
+                    selected.append(model.item(i))
+        return selected
 
     def resizeEvent(self, event):
-        self.list.resize(self.width() - 9, self.height() - 56)
+        self.item_list.resize(self.width() - 9, self.height() - 56)
         self.select.resize(self.width() - 9, 30)
-        self.select.move(5, self.list.height() + 22)
+        self.select.move(5, self.item_list.height() + 22)
 
 

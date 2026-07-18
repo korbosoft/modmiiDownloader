@@ -8,8 +8,6 @@ from xml.etree import ElementTree
 
 from utils import toggleCheckBoxes
 
-import os
-
 import resources
 
 from config import config
