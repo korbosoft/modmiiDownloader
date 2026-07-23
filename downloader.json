@@ -1783,19 +1783,19 @@
                         ]
                     },
                     {
-                        "id": "cMIOS_WiiPower",
+                        "id": "RVL-cMIOS-v65535(v10)_WiiGator_WiiPower_v0.2",
                         "name": "WiiGator/Power cMIOS-v0.2 [10]",
                         "toolTip": "Since Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv10.",
                         "tags": []
                     },
                     {
-                        "id": "cmios_WiiGator",
+                        "id": "RVL-cmios-v4_WiiGator_GCBL_v0.2",
                         "name": "WiiGator cMIOS-v0.2 [4]",
                         "toolTip": "Since Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv4.",
                         "tags": []
                     },
                     {
-                        "id": "cmios_Wanin",
+                        "id": "RVL-cmios-v4_Waninkoko_rev5",
                         "name": "Waninkoko cMIOS-rev5 [4]",
                         "toolTip": "Since Nintendont, cMIOSs are generally not needed unless loading backup Gamecube discs on older compatible Wiis.\n\nBased on MIOSv4.",
                         "tags": []
@@ -2092,7 +2092,7 @@
                         ]
                     },
                     {
-                        "id": "WiiloadPlugin",
+                        "id": "Wiiload Plugin",
                         "name": "Wiiload Plugin",
                         "toolTip": "An Aroma plugin intended for developers to load homebrew and plugins via the network.",
                         "tags": [
@@ -2170,7 +2170,7 @@
                         ]
                     },
                     {
-                        "id": "FTPiiUPlugin",
+                        "id": "FTPiiU Plugin",
                         "name": "FTPiiU Plugin",
                         "altnames": [
                             "FTPii U Plugin"
