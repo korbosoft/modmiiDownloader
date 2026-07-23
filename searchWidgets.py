@@ -2,7 +2,7 @@
 
 from PySide6.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox, QHBoxLayout, QLineEdit, QPushButton, QWidget
 from PySide6.QtGui import QStandardItemModel
-from PySide6.QtCore import QRect, Qt, QItemSelectionModel
+from PySide6.QtCore import QRect, QItemSelectionModel
 
 from downloadWidgets import DownloadableItem, DownloadListSection, DownloadList, ID_ROLE
 
@@ -173,10 +173,14 @@ class SearchDialog(QDialog):
                 case QMessageBox.StandardButton.Cancel:
                     pass
                 case QMessageBox.Save:
+                    for section in self.main.findChildren(DownloadListSection):
+                        section.deselectAllItems()
+
                     for index in range(queueModel.rowCount()):
                         item = queueModel.item(index)
                         self.main.findChild(DownloadListSection, item.specialAttrs['cat']).selectChild(queueModel.data(item.index(), ID_ROLE))
-                        self.close()
+
+                    self.close()
                 case QMessageBox.Discard:
                     self.close()
         else: self.close()
@@ -184,13 +188,15 @@ class SearchDialog(QDialog):
     def search(self, query):
             query = sanitizer.sub('', query.lower())
             results = self.results.item_list
+            resultsModel = results.model()
             queue = self.queue.item_list
-            results.model().removeRows(0, results.model().rowCount())
+            queueModel = queue.model()
+            resultsModel.removeRows(0, resultsModel.rowCount())
 
             if query != '':
                 queued_ids = {
-                    queue.model().item(i).specialAttrs['id']
-                    for i in range(queue.model().rowCount())
+                    queueModel.data(queueModel.item(i).index(), ID_ROLE)
+                    for i in range(queueModel.rowCount())
                 }
 
                 queued_ids.discard(None)
@@ -198,9 +204,9 @@ class SearchDialog(QDialog):
                 for section in self.main.sections:
                     self.searchList(section[0], section[1], results, query, queued_ids)
 
-                if results.model().rowCount() == 0:
-                    results.model().appendRow(DownloadableItem(f'No results for "{query}"'))
-                    results.model().item(0).setEnabled(False)
+                if resultsModel.rowCount() == 0:
+                    resultsModel.appendRow(DownloadableItem(f'No results for "{query}"'))
+                    resultsModel.item(0).setEnabled(False)
 
     def __init__(self, parent=None):
         super().__init__(parent)
