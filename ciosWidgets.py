@@ -49,7 +49,8 @@ class D2xCheckGrid(CiosGroupBox):
         super().__init__(parent)
         self.ui = Ui_D2xCheckGrid()
         self.ui.setupUi(self)
-        self.ui.select.clicked.connect(self.selectAll)
+        self.ui.wiiToggle.clicked.connect(self.toggleWii)
+        self.ui.vWiiToggle.clicked.connect(self.toggleVWii)
 
     def setup(self, d2xRev):
         self.loadD2xMaps(d2xRev)
@@ -58,7 +59,10 @@ class D2xCheckGrid(CiosGroupBox):
     def toggleWiiRecommended(self):
         toggleCheckBoxes(self, [self.findChild(QCheckBox, f'c{cios['slot']}_{cios['base']}_d2x') for cios in config['recommendedWiiCios']])
 
-    def toggleVWiiRecommended(self):
+    def toggleWii(self):
+        toggleCheckBoxes(self, r'c\d+_\d+_d2x', True)
+
+    def toggleVWii(self):
         toggleCheckBoxes(self, '_vWii$', True)
 
     def loadD2xMaps(self, d2xRev):
@@ -83,6 +87,7 @@ class D2xCheckGrid(CiosGroupBox):
             print('Failed to load/parse ciosmaps.xml, so no Wii d2x. This shouldn\'t ever happen?')
         else:
             print('Successfully loaded & parsed ciosmaps.xml!')
+            self.ui.wiiToggle.setEnabled(True)
 
         if i is not None and i < len(config['paths']['vWiiMap']):
             path = config['paths']['vWiiMap'][i]
@@ -100,6 +105,7 @@ class D2xCheckGrid(CiosGroupBox):
             print('Failed to load/parse ciosmaps_vWii.xml, so no vWii d2x. :/')
         else:
             print('Successfully loaded & parsed ciosmaps_vWii.xml!')
+            self.ui.vWiiToggle.setEnabled(True)
 
     def isIOSBaseAvailable(self, base, map):
         for i in map.find('ciosgroup').findall('base'):

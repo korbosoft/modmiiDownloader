@@ -147,7 +147,7 @@ class mainWindow(QMainWindow):
         self.ui.wiiRecommended.setIcon(resources.icons['recommended_24'])
         self.ui.vWiiRecommended.setIcon(resources.icons['recommended_24'])
         self.ui.wiiRecommended.clicked.connect(self.ui.d2x.toggleWiiRecommended)
-        self.ui.vWiiRecommended.clicked.connect(self.ui.d2x.toggleVWiiRecommended)
+        self.ui.vWiiRecommended.clicked.connect(self.ui.d2x.toggleVWii)
         self.ui.d2x.setup(self.d2xRev)
 
         # Page 5

@@ -92,7 +92,7 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>Non-Fakesigned IOSs\MIOS</string>
+          <string>Non-Fakesigned IOSs/MIOS</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
