@@ -74,9 +74,15 @@ class D2xCheckGrid(CiosGroupBox):
                 print(f'Attempting to load "{path}"')
                 map = ElementTree.parse(path).getroot()
                 ciosgroup = map.find('ciosgroup')
-                if ciosgroup is not None and ciosgroup.get('name') == f'd2x-v{d2xRev}':
+                if (ciosgroup is not None and \
+                    ciosgroup.get('name') == f'd2x-v{d2xRev})') or \
+                    d2xRev is None:
                     self.wiiMap = map
                     break
+                elif ciosgroup is not None:
+                    print(f'cIOS name ({ciosgroup.get('name')}) doesn\'t match what I want (d2x-v{d2xRev})')
+                else:
+                    print('cIOS map doesn\'t exist')
             except FileNotFoundError:
                 print(f'There seems to be no cIOS map at "{path}"')
             except ElementTree.ParseError as e:
@@ -127,12 +133,12 @@ class D2xCheckGrid(CiosGroupBox):
             enabled = self.isIOSBaseAvailable(base, self.wiiMap)
             self.findChild(QLabel, f'b{base}').setEnabled(enabled)
             if enabled:
-                self.findChild(QLabel, 'wiilabel').setEnabled(True)
+                self.findChild(QLabel, 'wiiLabel').setEnabled(True)
             for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x$')):
                 widget.setEnabled(enabled)
         if self.vWiiMap is not None:
             for base in [38, 56, 57, 58]:
-                self.findChild(QLabel, 'vwiilabel').setEnabled(True)
+                self.findChild(QLabel, 'vWiiLabel').setEnabled(True)
                 enabled = self.isIOSBaseAvailable(base, self.vWiiMap)
                 self.findChild(QLabel, f'bv{base}').setEnabled(enabled)
                 for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x_vWii$')):
