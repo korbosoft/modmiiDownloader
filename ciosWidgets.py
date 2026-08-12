@@ -75,7 +75,7 @@ class D2xCheckGrid(CiosGroupBox):
                 map = ElementTree.parse(path).getroot()
                 ciosgroup = map.find('ciosgroup')
                 if (ciosgroup is not None and \
-                    ciosgroup.get('name') == f'd2x-v{d2xRev})') or \
+                    ciosgroup.get('name') == f'd2x-v{d2xRev}') or \
                     d2xRev is None:
                     self.wiiMap = map
                     break
