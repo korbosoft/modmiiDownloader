@@ -53,7 +53,7 @@
      <item>
       <widget class="CustomTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <property name="documentMode">
         <bool>true</bool>
@@ -473,39 +473,13 @@
          <property name="spacing">
           <number>5</number>
          </property>
-         <item row="0" column="3">
-          <widget class="QCheckBox" name="c248_38_d2x_vWii">
+         <item row="0" column="0" colspan="3">
+          <widget class="QLabel" name="bv38">
            <property name="enabled">
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>248</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0" colspan="4">
-          <spacer name="vWiispacer">
-           <property name="orientation">
-            <enum>Qt::Orientation::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Policy::MinimumExpanding</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="4" column="3">
-          <widget class="QCheckBox" name="c251_58_d2x_vWii">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>251</string>
+            <string>[38]</string>
            </property>
           </widget>
          </item>
@@ -531,16 +505,6 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="bv56">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>[56]</string>
-           </property>
-          </widget>
-         </item>
          <item row="2" column="1" colspan="3">
           <widget class="QCheckBox" name="c249_56_d2x_vWii">
            <property name="enabled">
@@ -548,6 +512,32 @@
            </property>
            <property name="text">
             <string>249</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" colspan="4">
+          <spacer name="vWiispacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <widget class="QLabel" name="bv57">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>[57]</string>
            </property>
           </widget>
          </item>
@@ -561,23 +551,33 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="0" colspan="3">
-          <widget class="QLabel" name="bv38">
+         <item row="4" column="3">
+          <widget class="QCheckBox" name="c251_58_d2x_vWii">
            <property name="enabled">
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>[38]</string>
+            <string>251</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="0" colspan="2">
-          <widget class="QLabel" name="bv57">
+         <item row="2" column="0">
+          <widget class="QLabel" name="bv56">
            <property name="enabled">
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>[57]</string>
+            <string>[56]</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QCheckBox" name="c248_38_d2x_vWii">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>248</string>
            </property>
           </widget>
          </item>
