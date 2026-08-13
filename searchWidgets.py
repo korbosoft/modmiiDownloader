@@ -56,6 +56,10 @@ class SearchListSection(DownloadListSection):
 class SearchDialog(QDialog):
     main = None
 
+    def searchCheckboxes(self, query: str):
+        query = sanitizer.sub('', query.lower())
+
+        pass
 
     def searchList(self, page: str, cat: str, item_list, query: str, queued_ids):
         query = sanitizer.sub('', query.lower())

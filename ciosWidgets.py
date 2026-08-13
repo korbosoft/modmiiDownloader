@@ -2,7 +2,7 @@
 
 from PySide6.QtWidgets import QCheckBox, QGroupBox, QLabel
 
-from PySide6.QtCore import QRegularExpression, QRect
+from PySide6.QtCore import QRegularExpression
 
 from xml.etree import ElementTree
 
