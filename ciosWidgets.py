@@ -2,7 +2,7 @@
 
 from PySide6.QtWidgets import QCheckBox, QGroupBox, QLabel
 
-from PySide6.QtCore import QRegularExpression
+from PySide6.QtCore import QRegularExpression, QRect
 
 from xml.etree import ElementTree
 
@@ -38,9 +38,6 @@ class CiosGroupBox(QGroupBox):
     def selectAll(self):
         toggleCheckBoxes(self, self.findChildren(QCheckBox))
 
-    def resizeEvent(self, event):
-        self.ui.layout.setGeometry(self.geometry())
-
 class D2xCheckGrid(CiosGroupBox):
     wiiMap = None
     vWiiMap = None
@@ -51,6 +48,7 @@ class D2xCheckGrid(CiosGroupBox):
         self.ui.setupUi(self)
         self.ui.wiiToggle.clicked.connect(self.toggleWii)
         self.ui.vWiiToggle.clicked.connect(self.toggleVWii)
+        self.setLayout(self.ui.layout)
 
     def setup(self, d2xRev):
         self.loadD2xMaps(d2xRev)
@@ -60,7 +58,7 @@ class D2xCheckGrid(CiosGroupBox):
         toggleCheckBoxes(self, [self.findChild(QCheckBox, f'c{cios['slot']}_{cios['base']}_d2x') for cios in config['recommendedWiiCios']])
 
     def toggleWii(self):
-        toggleCheckBoxes(self, r'c\d+_\d+_d2x', True)
+        toggleCheckBoxes(self, r'c\d+_\d+_d2x$', True)
 
     def toggleVWii(self):
         toggleCheckBoxes(self, '_vWii$', True)
@@ -132,13 +130,10 @@ class D2xCheckGrid(CiosGroupBox):
         for base in [37, 38, 53, 55, 56, 57, 58, 60, 70, 80]:
             enabled = self.isIOSBaseAvailable(base, self.wiiMap)
             self.findChild(QLabel, f'b{base}').setEnabled(enabled)
-            if enabled:
-                self.findChild(QLabel, 'wiiLabel').setEnabled(True)
             for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x$')):
                 widget.setEnabled(enabled)
         if self.vWiiMap is not None:
             for base in [38, 56, 57, 58]:
-                self.findChild(QLabel, 'vWiiLabel').setEnabled(True)
                 enabled = self.isIOSBaseAvailable(base, self.vWiiMap)
                 self.findChild(QLabel, f'bv{base}').setEnabled(enabled)
                 for widget in self.findChildren(QCheckBox, QRegularExpression(f'{base}_d2x_vWii$')):
