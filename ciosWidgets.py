@@ -35,6 +35,11 @@ class CiosGroupBox(QGroupBox):
         if child is not None:
             child.setChecked(True)
 
+    def findChild(self, name):
+        child = self.findChild(QCheckBox, name)
+        if child is not None:
+            return child
+
     def selectAll(self):
         toggleCheckBoxes(self, self.findChildren(QCheckBox))
 

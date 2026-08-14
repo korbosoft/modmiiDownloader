@@ -12,7 +12,6 @@ from resources import icons
 
 ID_ROLE = Qt.ItemDataRole.UserRole + 1
 
-
 class VertCheck(QCheckBox):
     def __init__(self, parent=None):
         super().__init__(parent)

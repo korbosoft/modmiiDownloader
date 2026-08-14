@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <author>Korbo</author>
- <class>mainWindow</class>
- <widget class="QMainWindow" name="mainWindow">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>911</width>
-    <height>800</height>
+    <width>957</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -891,7 +891,7 @@ Settings</string>
   <customwidget>
    <class>ThemeGrid</class>
    <extends>QGroupBox</extends>
-   <header>ThemeGrid</header>
+   <header>ThemeWidgets</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -2190,6 +2190,13 @@
             }
         }
     },
+    "themes": [
+        "Original",
+        "DarkWii_Red",
+        "DarkWii_Green",
+        "DarkWii_Blue",
+        "DarkWii_Orange"
+    ],
     "checkboxNames": {
         "c249_37_d2x": "cIOS249[37]-PLACEHOLDER",
         "c250_37_d2x": "cIOS250[37]-PLACEHOLDER",

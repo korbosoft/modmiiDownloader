@@ -1,10 +1,12 @@
 # This Python file uses the following encoding: utf-8
 
-from PySide6.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox, QHBoxLayout, QLineEdit, QPushButton, QWidget
+from PySide6.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox, QHBoxLayout, QLineEdit, QPushButton, QWidget, QCheckBox
 from PySide6.QtGui import QStandardItemModel
 from PySide6.QtCore import QRect, QItemSelectionModel
 
 from downloadWidgets import DownloadableItem, DownloadListSection, DownloadList, ID_ROLE
+
+from ciosWidgets import CiosGroupBox
 
 import re
 
@@ -56,10 +58,12 @@ class SearchListSection(DownloadListSection):
 class SearchDialog(QDialog):
     main = None
 
-    def searchCheckboxes(self, query: str):
+    def searchCheckBoxes(self, query: str):
         query = sanitizer.sub('', query.lower())
-
-        pass
+        for groupBox in self.main.findChildren(CiosGroupBox):
+            for checkBox in groupBox.findChildren(QCheckBox):
+                for i in json
+                if QCheckBox.objectName in config['checkboxNames']
 
     def searchList(self, page: str, cat: str, item_list, query: str, queued_ids):
         query = sanitizer.sub('', query.lower())
