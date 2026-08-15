@@ -88,3 +88,4 @@ d2xmodules/
 ui_*.py
 rc_*.py
 wineactive.txt
+ciosmaps*.xml

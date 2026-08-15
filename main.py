@@ -197,6 +197,7 @@ class mainWindow(QMainWindow):
                     queue[key] = value
             if 'd2x-beta-rev' in queue and queue['d2x-beta-rev'] != '':
                 self.d2xRev = queue['d2x-beta-rev']
+            else: self.d2xRev = 'if you are seeing this then korbo forgot to comment a line out'
 
         self.setFixedSize(self.size())
         self.setupAll()
