@@ -9,7 +9,6 @@ from PySide6.QtWidgets import (
     QMainWindow, QMessageBox, QPushButton, QVBoxLayout
 )
 
-from ciosWidgets import CiosGroupBox
 from config import config
 from downloadWidgets import DownloadableItem, DownloadList, DownloadListSection, ID_ROLE
 import resources
@@ -136,6 +135,12 @@ class SearchDialog(QDialog):
             for i in range(model.rowCount())
         } - {None}
 
+    def _sort_model(self, model):
+        items = [model.takeRow(0)[0] for _ in range(model.rowCount())]
+        items.sort(key=lambda item: item.text().lower())
+        for item in items:
+            model.appendRow(item)
+
     def _add_item_to_queue(self, source_item, queue_model, existing_ids: set) -> bool:
         target_id = source_item.data(ID_ROLE)
         if target_id in existing_ids:
@@ -154,6 +159,8 @@ class SearchDialog(QDialog):
 
         queue_model.appendRow(new_item)
         existing_ids.add(target_id)
+
+        self._sort_model(queue_model)
         return True
 
     def _populate_initial_queue(self):
@@ -184,74 +191,75 @@ class SearchDialog(QDialog):
                         old_item.setIcon(icon)
                     old_model.appendRow(old_item)
 
-        for group_box in self.main.findChildren(CiosGroupBox):
-            for check_box in group_box.findChildren(QCheckBox):
-                if check_box.isEnabled() and check_box.isChecked():
-                    real_name = check_box.objectName()
-                    display_name = config['checkboxNames'].get(real_name)
-                    if not display_name:
-                        continue
+        for check_box in self.main.findChildren(QCheckBox):
+            if check_box.isEnabled() and check_box.isChecked():
+                real_name = check_box.objectName()
+                display_name = config['checkboxNames'].get(real_name)
+                if not display_name:
+                    continue
 
-                    if 'PLACEHOLDER' in display_name and hasattr(self.main, 'd2xRev'):
-                        display_name = display_name.replace('PLACEHOLDER', f'd2x-v{self.main.d2xRev}')
+                if 'PLACEHOLDER' in display_name and hasattr(self.main, 'd2xRev'):
+                    display_name = display_name.replace('PLACEHOLDER', f'd2x-v{self.main.d2xRev}')
 
-                    icon = self._get_checkbox_icon(real_name)
+                icon = self._get_checkbox_icon(real_name)
 
-                    cb_item = DownloadableItem(display_name)
-                    cb_item.setData(real_name, ID_ROLE)
-                    cb_item.is_checkbox = True
-                    cb_item.real_name = real_name
-                    if icon:
-                        cb_item.setIcon(icon)
+                cb_item = DownloadableItem(display_name)
+                cb_item.setData(real_name, ID_ROLE)
+                cb_item.is_checkbox = True
+                cb_item.real_name = real_name
+                if icon:
+                    cb_item.setIcon(icon)
 
-                    old_item = DownloadableItem(display_name)
-                    old_item.setData(real_name, ID_ROLE)
-                    old_item.is_checkbox = True
-                    old_item.real_name = real_name
-                    if icon:
-                        old_item.setIcon(icon)
+                old_item = DownloadableItem(display_name)
+                old_item.setData(real_name, ID_ROLE)
+                old_item.is_checkbox = True
+                old_item.real_name = real_name
+                if icon:
+                    old_item.setIcon(icon)
 
-                    queue_model.appendRow(cb_item)
-                    old_model.appendRow(old_item)
+                queue_model.appendRow(cb_item)
+                old_model.appendRow(old_item)
 
-    def _search_checkboxes_as_items(self, query: str, queued_ids: set):
+        self._sort_model(queue_model)
+        self._sort_model(old_model)
+
+    def _search_checkboxes(self, query: str, queued_ids: set):
         if not self.main:
             return
 
         clean_query = sanitizer.sub('', query.lower())
         results_model = self.results.item_list.model()
 
-        for group_box in self.main.findChildren(CiosGroupBox):
-            for check_box in group_box.findChildren(QCheckBox):
-                if not check_box.isEnabled() or check_box.isChecked():
-                    continue
+        for check_box in self.main.findChildren(QCheckBox):
+            if not check_box.isEnabled() or check_box.isChecked():
+                continue
 
-                real_name = check_box.objectName()
-                if not real_name or real_name in queued_ids:
-                    continue
+            real_name = check_box.objectName()
+            if not real_name or real_name in queued_ids:
+                continue
 
-                display_name = config['checkboxNames'].get(real_name)
-                if not display_name:
-                    continue
+            display_name = config['checkboxNames'].get(real_name)
+            if not display_name:
+                continue
 
-                clean_real_name = sanitizer.sub('', real_name.lower())
-                clean_display_name = sanitizer.sub('', display_name.lower())
+            clean_real_name = sanitizer.sub('', real_name.lower())
+            clean_display_name = sanitizer.sub('', display_name.lower())
 
-                if clean_query in clean_display_name or clean_query in clean_real_name:
-                    formatted_name = display_name
-                    if 'PLACEHOLDER' in formatted_name and hasattr(self.main, 'd2xRev'):
-                        formatted_name = formatted_name.replace('PLACEHOLDER', f'd2x-v{self.main.d2xRev}')
+            if clean_query in clean_display_name or clean_query in clean_real_name:
+                formatted_name = display_name
+                if 'PLACEHOLDER' in formatted_name and hasattr(self.main, 'd2xRev'):
+                    formatted_name = formatted_name.replace('PLACEHOLDER', f'd2x-v{self.main.d2xRev}')
 
-                    item = DownloadableItem(formatted_name)
-                    item.setData(real_name, ID_ROLE)
-                    item.is_checkbox = True
-                    item.real_name = real_name
+                item = DownloadableItem(formatted_name)
+                item.setData(real_name, ID_ROLE)
+                item.is_checkbox = True
+                item.real_name = real_name
 
-                    icon = self._get_checkbox_icon(real_name)
-                    if icon:
-                        item.setIcon(icon)
+                icon = self._get_checkbox_icon(real_name)
+                if icon:
+                    item.setIcon(icon)
 
-                    results_model.appendRow(item)
+                results_model.appendRow(item)
 
     def searchList(self, page: str, cat: str, item_list, query: str, queued_ids: set):
         clean_query = sanitizer.sub('', query.lower())
@@ -288,11 +296,19 @@ class SearchDialog(QDialog):
 
         queued_ids = self._get_queue_ids()
 
+        temp_model = QStandardItemModel()
+
         if self.main and hasattr(self.main, 'sections'):
             for section in self.main.sections:
                 self.searchList(section[0], section[1], self.results.item_list, clean_query, queued_ids)
 
-        self._search_checkboxes_as_items(clean_query, queued_ids)
+        self._search_checkboxes(clean_query, queued_ids)
+
+        items = [results_model.takeRow(0)[0] for _ in range(results_model.rowCount())]
+        items.sort(key=lambda item: item.text().lower())
+
+        for item in items:
+            results_model.appendRow(item)
 
         if results_model.rowCount() == 0:
             placeholder = DownloadableItem(f'No results for "{query}"')
@@ -369,9 +385,8 @@ class SearchDialog(QDialog):
                     for section in self.main.findChildren(DownloadListSection):
                         section.deselectAllItems()
 
-                    for group_box in self.main.findChildren(CiosGroupBox):
-                        for cb in group_box.findChildren(QCheckBox):
-                            cb.setChecked(False)
+                    for cb in self.main.findChildren(QCheckBox):
+                        cb.setChecked(False)
 
                     for row in range(queue_model.rowCount()):
                         item = queue_model.item(row)
