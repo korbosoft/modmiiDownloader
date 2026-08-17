@@ -48,6 +48,12 @@ class SearchListSection(DownloadListSection):
 class SearchDialog(QDialog):
     reverse_checkboxes = {val: key for key, val in config['checkboxNames'].items()}
 
+    def closeEvent(self, event):
+        if self.confirm():
+            event.accept()
+        else:
+            event.ignore()
+
     def __init__(self, parent=None):
         super().__init__(parent)
 
@@ -110,7 +116,7 @@ class SearchDialog(QDialog):
 
         self.doneButton = QPushButton("Done", self, objectName="done")
         self.doneButton.setDefault(True)
-        self.doneButton.clicked.connect(self.confirm)
+        self.doneButton.clicked.connect(self.close)
         main_layout.addWidget(self.doneButton)
 
         self.setTabOrder(self.query, self.add_btn)
@@ -296,8 +302,6 @@ class SearchDialog(QDialog):
 
         queued_ids = self._get_queue_ids()
 
-        temp_model = QStandardItemModel()
-
         if self.main and hasattr(self.main, 'sections'):
             for section in self.main.sections:
                 self.searchList(section[0], section[1], self.results.item_list, clean_query, queued_ids)
@@ -315,6 +319,10 @@ class SearchDialog(QDialog):
             placeholder.setEnabled(False)
             results_model.appendRow(placeholder)
 
+    def refresh(self):
+        self.results.deselectAllItems()
+        self.query.textChanged.emit(self.query.text())
+
     def addSelected(self):
         items = self.results.getSelectedItems()
         queue_model = self.queue.item_list.model()
@@ -323,12 +331,15 @@ class SearchDialog(QDialog):
         for item in items:
             self._add_item_to_queue(item, queue_model, existing_ids)
 
-        self.results.deselectAllItems()
+        self.refresh()
 
     def removeSelected(self):
         model = self.queue.item_list.model()
+
         for item in reversed(self.queue.getSelectedItems()):
             model.removeRow(item.row())
+
+        self.refresh()
 
     def addItem(self, index):
         results_model = self.results.item_list.model()
@@ -342,10 +353,6 @@ class SearchDialog(QDialog):
         queue_model = self.queue.item_list.model()
         old_model = self.oldQueue.model()
 
-        if queue_model.rowCount() == 0 and old_model.rowCount() == 0:
-            self.close()
-            return
-
         def extract_ids(model):
             ids = set()
             for row in range(model.rowCount()):
@@ -358,6 +365,10 @@ class SearchDialog(QDialog):
 
         old_ids = extract_ids(old_model)
         current_ids = extract_ids(queue_model)
+
+        if old_ids == current_ids:
+            self.close()
+            return
 
         added_count = len(current_ids - old_ids)
         removed_count = len(old_ids - current_ids)
@@ -407,8 +418,8 @@ class SearchDialog(QDialog):
                                 if sec_widget:
                                     sec_widget.selectChild(item_id)
 
-                self.close()
+                return True
             case QMessageBox.Discard:
-                self.close()
+                return True
             case QMessageBox.Cancel:
-                pass
+                return False

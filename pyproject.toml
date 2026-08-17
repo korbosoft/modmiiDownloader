@@ -6,7 +6,6 @@ files = [
 "D2xCheckGrid.ui",
 "MainWindow.ui",
 "ThemeGrid.ui",
-"ThemeWidgets.py",
 "WaninCheckGrid.ui",
 "assets/download.svg",
 "assets/heart-solid.svg",
@@ -28,5 +27,6 @@ files = [
 "resource.qrc",
 "resources.py",
 "searchWidgets.py",
+"themeWidgets.py",
 "utils.py",
 ]

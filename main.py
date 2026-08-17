@@ -146,8 +146,8 @@ class mainWindow(QMainWindow):
         self.ui.d2xSettings.clicked.connect(self.doD2xSettings)
         self.ui.wiiRecommended.setIcon(resources.icons['recommended_24'])
         self.ui.vWiiRecommended.setIcon(resources.icons['recommended_24'])
-        self.ui.wiiRecommended.clicked.connect(self.ui.d2x.toggleWiiRecommended)
-        self.ui.vWiiRecommended.clicked.connect(self.ui.d2x.toggleVWii)
+        self.ui.wiiRecommended.clicked.connect(self.ui.d2x.selectWiiRecommended)
+        self.ui.vWiiRecommended.clicked.connect(self.ui.d2x.selectVWiiRecommended)
         self.ui.d2x.setup(self.d2xRev)
 
         # Page 5
@@ -163,9 +163,15 @@ class mainWindow(QMainWindow):
 
     def setStatus(self):
         count = self.makeQueue().count('=*')
-        if count == 1:
-            self.statusBar().showMessage('1 item in queue')
-        self.statusBar().showMessage(f'{count} items in queue')
+        str = ''
+        if count == 0:
+            str = 'No items '
+        elif count == 1:
+            str = '1 item '
+        else:
+            str = f'{count} items '
+        str += 'in queue'
+        self.statusBar().showMessage(str)
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.Type.UpdateRequest:
@@ -207,6 +213,7 @@ class mainWindow(QMainWindow):
 
         self.setStatus()
         self.statusBar().setSizeGripEnabled(False)
+        self.statusBar().clicked.connect(self.startSearch)
         self.installEventFilter(self)
 
 if __name__ == '__main__':

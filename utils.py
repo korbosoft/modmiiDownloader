@@ -22,3 +22,16 @@ def toggleCheckBoxes(self, arg, isRegex=False):
 	for checkBox in checkBoxes:
 		if checkBox.isEnabled():
 			checkBox.setChecked(True if False in checked else False)
+
+@Slot()
+def selectCheckBoxes(self, arg, isRegex=False):
+	if isinstance(arg, list):
+		checkBoxes = arg
+	else:
+		if isRegex:
+			checkBoxes = self.findChildren(QCheckBox, QRegularExpression(arg))
+		else:
+			checkBoxes = self.findChildren(QCheckBox, arg)
+	for checkBox in checkBoxes:
+		if checkBox.isEnabled():
+			checkBox.setChecked(True)

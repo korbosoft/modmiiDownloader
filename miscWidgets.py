@@ -1,6 +1,13 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import QSize
-from PySide6.QtWidgets import QTabBar, QTabWidget
+from PySide6.QtCore import QSize, Signal
+from PySide6.QtWidgets import QTabBar, QTabWidget, QStatusBar
+
+class ClickableStatusBar(QStatusBar):
+    clicked = Signal()
+
+    def mousePressEvent(self, event):
+        self.clicked.emit()
+        super().mousePressEvent(event)
 
 class CustomTabWidget(QTabWidget):
     class CustomTabBar(QTabBar):

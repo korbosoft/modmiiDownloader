@@ -6,7 +6,7 @@ from PySide6.QtCore import QRegularExpression
 
 from xml.etree import ElementTree
 
-from utils import toggleCheckBoxes
+from utils import selectCheckBoxes, toggleCheckBoxes
 
 import resources
 
@@ -54,8 +54,11 @@ class D2xCheckGrid(CiosGroupBox):
         self.loadD2xMaps(d2xRev)
         self.setupD2x()
 
-    def toggleWiiRecommended(self):
-        toggleCheckBoxes(self, [self.findChild(QCheckBox, f'c{cios['slot']}_{cios['base']}_d2x') for cios in config['recommendedWiiCios']])
+    def selectWiiRecommended(self):
+        selectCheckBoxes(self, [self.findChild(QCheckBox, f'c{cios['slot']}_{cios['base']}_d2x') for cios in config['recommendedWiiCios']])
+
+    def selectVWiiRecommended(self):
+        selectCheckBoxes(self, '_vWii$', True)
 
     def toggleWii(self):
         toggleCheckBoxes(self, r'c\d+_\d+_d2x$', True)

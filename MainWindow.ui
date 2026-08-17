@@ -47,7 +47,7 @@
     <item>
      <widget class="CustomTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -447,35 +447,15 @@
         <property name="spacing">
          <number>5</number>
         </property>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="d2xSettings">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>d2x Version
-Settings</string>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>24</width>
-            <height>24</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="ciosInfo">
+        <item row="3" column="0" colspan="6">
+         <widget class="QLabel" name="ciosInfo_2">
           <property name="font">
            <font>
             <bold>true</bold>
            </font>
           </property>
           <property name="text">
-           <string>e.g., cIOS249 [56] = cIOS in slot 249 based on IOS56</string>
+           <string>Note: Only one cIOS can be installed to a slot (e.g. 249); To change a cIOS's slot either use ModMii's Advanced Downloads Menu or open downloaded WADs using ModMii or ShowMiiWads to edit them</string>
           </property>
           <property name="textFormat">
            <enum>Qt::TextFormat::PlainText</enum>
@@ -491,30 +471,7 @@ Settings</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="wiiRecommended">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Select Recommended</string>
-          </property>
-          <property name="icon">
-           <iconset resource="resource.qrc">
-            <normaloff>:/base/svg_recommended</normaloff>:/base/svg_recommended</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>24</width>
-            <height>24</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="3">
+        <item row="2" column="4">
          <widget class="QPushButton" name="vWiiRecommended">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -538,8 +495,14 @@ Settings</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="4">
+        <item row="2" column="5">
          <widget class="QLabel" name="ciosWarning">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <bold>true</bold>
@@ -562,7 +525,27 @@ Settings</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="0" colspan="5">
+        <item row="2" column="0">
+         <widget class="QPushButton" name="d2xSettings">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>d2x Version
+Settings</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="6">
          <layout class="QGridLayout" name="ciosSelectGrid" rowstretch="3,2">
           <property name="spacing">
            <number>5</number>
@@ -620,6 +603,54 @@ Settings</string>
            </widget>
           </item>
          </layout>
+        </item>
+        <item row="2" column="3">
+         <widget class="QPushButton" name="wiiRecommended">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Select Recommended
+(Wii)</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/base/svg_recommended</normaloff>:/base/svg_recommended</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QLabel" name="ciosInfo">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Note: The number in brackets indicates the base IOS; e.g., cIOS249 [56] = cIOS in slot 249 based on IOS56</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::TextFormat::PlainText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -717,75 +748,17 @@ Settings</string>
         <property name="spacing">
          <number>5</number>
         </property>
-        <item row="0" column="2">
-         <widget class="QLabel" name="legendLabel1">
+        <item row="1" column="5">
+         <widget class="QLabel" name="legendLabel4">
           <property name="text">
-           <string>Recommended</string>
+           <string>Updated when XFlak Remembers</string>
           </property>
          </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="legendIcon1"/>
-        </item>
-        <item row="0" column="0" rowspan="2">
-         <spacer name="legendSpacer5">
-          <property name="orientation">
-           <enum>Qt::Orientation::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Policy::MinimumExpanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="legendIcon2"/>
-        </item>
-        <item row="1" column="2">
-         <widget class="QLabel" name="legendLabel2">
-          <property name="text">
-           <string>Semi-Recommended</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3" rowspan="2">
-         <spacer name="legendSpacer4">
-          <property name="orientation">
-           <enum>Qt::Orientation::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Policy::MinimumExpanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-         </spacer>
         </item>
         <item row="0" column="5">
          <widget class="QLabel" name="legendLabel3">
           <property name="text">
            <string>Auto-Updating</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="4">
-         <widget class="QLabel" name="legendIcon3"/>
-        </item>
-        <item row="1" column="4">
-         <widget class="QLabel" name="legendIcon4"/>
-        </item>
-        <item row="1" column="5">
-         <widget class="QLabel" name="legendLabel4">
-          <property name="text">
-           <string>Updated when XFlak Remembers</string>
           </property>
          </widget>
         </item>
@@ -804,6 +777,64 @@ Settings</string>
            </size>
           </property>
          </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="legendIcon2"/>
+        </item>
+        <item row="1" column="4">
+         <widget class="QLabel" name="legendIcon4"/>
+        </item>
+        <item row="0" column="3" rowspan="2">
+         <spacer name="legendSpacer4">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="0" rowspan="2">
+         <spacer name="legendSpacer5">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="legendLabel1">
+          <property name="text">
+           <string>Recommended</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="legendIcon1"/>
+        </item>
+        <item row="0" column="4">
+         <widget class="QLabel" name="legendIcon3"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="legendLabel2">
+          <property name="text">
+           <string>Semi-Recommended</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -857,7 +888,7 @@ Settings</string>
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusBar">
+  <widget class="ClickableStatusBar" name="statusBar">
    <property name="sizeGripEnabled">
     <bool>false</bool>
    </property>
@@ -891,8 +922,13 @@ Settings</string>
   <customwidget>
    <class>ThemeGrid</class>
    <extends>QGroupBox</extends>
-   <header>ThemeWidgets</header>
+   <header>themeWidgets</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ClickableStatusBar</class>
+   <extends>QStatusBar</extends>
+   <header>miscWidgets</header>
   </customwidget>
  </customwidgets>
  <tabstops>
