@@ -6,6 +6,9 @@
                     {
                         "id": "SM4.1U",
                         "name": "4.1U",
+                        "altnames": [
+                            "4.1U System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "usa"
@@ -14,6 +17,9 @@
                     {
                         "id": "SM4.2U",
                         "name": "4.2U",
+                        "altnames": [
+                            "4.2U System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "usa"
@@ -22,6 +28,9 @@
                     {
                         "id": "SM4.3U",
                         "name": "4.3U",
+                        "altnames": [
+                            "4.3U System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "usa"
@@ -30,6 +39,9 @@
                     {
                         "id": "SM4.1E",
                         "name": "4.1E",
+                        "altnames": [
+                            "4.1E System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "eur"
@@ -38,6 +50,9 @@
                     {
                         "id": "SM4.2E",
                         "name": "4.2E",
+                        "altnames": [
+                            "4.2E System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "eur"
@@ -46,6 +61,9 @@
                     {
                         "id": "SM4.3E",
                         "name": "4.3E",
+                        "altnames": [
+                            "4.3E System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "eur"
@@ -54,6 +72,9 @@
                     {
                         "id": "SM4.1J",
                         "name": "4.1J",
+                        "altnames": [
+                            "4.1J System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "jpn"
@@ -62,6 +83,9 @@
                     {
                         "id": "SM4.2J",
                         "name": "4.2J",
+                        "altnames": [
+                            "4.2J System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "jpn"
@@ -70,6 +94,9 @@
                     {
                         "id": "SM4.3J",
                         "name": "4.3J",
+                        "altnames": [
+                            "4.3J System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "jpn"
@@ -78,6 +105,9 @@
                     {
                         "id": "SM4.1K",
                         "name": "4.1K",
+                        "altnames": [
+                            "4.1K System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "kor"
@@ -86,6 +116,9 @@
                     {
                         "id": "SM4.2K",
                         "name": "4.2K",
+                        "altnames": [
+                            "4.2K System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "kor"
@@ -94,6 +127,9 @@
                     {
                         "id": "SM4.3K",
                         "name": "4.3K",
+                        "altnames": [
+                            "4.3K System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "kor"
@@ -102,6 +138,9 @@
                     {
                         "id": "vSM4.3U",
                         "name": "vWii 4.3U (5.2.0)",
+                        "altnames": [
+                            "vWii 4.3U (5.2.0) System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "usa",
@@ -111,6 +150,9 @@
                     {
                         "id": "vSM4.3E",
                         "name": "vWii 4.3E (5.2.0)",
+                        "altnames": [
+                            "vWii 4.3E (5.2.0) System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "eur",
@@ -120,6 +162,9 @@
                     {
                         "id": "vSM4.3J",
                         "name": "vWii 4.3J (5.2.0)",
+                        "altnames": [
+                            "vWii 4.3J (5.2.0) 4.1U System Menu"
+                        ],
                         "toolTip": null,
                         "tags": [
                             "jpn",
@@ -1246,7 +1291,9 @@
                         "id": "KK",
                         "name": "KoreanKii",
                         "toolTip": "Wii app to add or remove the Korean key from the SEEPROM. Used when region changing to and from Korean System Menu Versions.\n\nWARNING: You will 003 brick if you install the Korean Key UNLESS you are on a Korean System Menu version and/or have IOS60 installed as your System Menu IOS.",
-                        "tags": []
+                        "tags": [
+                            "auto-updates"
+                        ]
                     },
                     {
                         "id": "nswitch",
@@ -2269,114 +2316,114 @@
         "O_vU": "Theme content (vWiiU)",
         "O_vE": "Theme content (vWiiE)",
         "O_vJ": "Theme content (vWiiJ)",
-        "DarkWii_Red_43U": "Dark Wii Red (4.3U)",
-        "DarkWii_Red_42U": "Dark Wii Red (4.2U)",
-        "DarkWii_Red_41U": "Dark Wii Red (4.1U)",
-        "DarkWii_Red_43E": "Dark Wii Red (4.3E)",
-        "DarkWii_Red_42E": "Dark Wii Red (4.2E)",
-        "DarkWii_Red_41E": "Dark Wii Red (4.1E)",
-        "DarkWii_Red_43J": "Dark Wii Red (4.3J)",
-        "DarkWii_Red_42J": "Dark Wii Red (4.2J)",
-        "DarkWii_Red_41J": "Dark Wii Red (4.1J)",
-        "DarkWii_Red_43K": "Dark Wii Red (4.3K)",
-        "DarkWii_Red_42K": "Dark Wii Red (4.2K)",
-        "DarkWii_Red_41K": "Dark Wii Red (4.1K)",
-        "DarkWii_Red_vU": "Dark Wii Red (vWiiU)",
-        "DarkWii_Red_vE": "Dark Wii Red (vWiiE)",
-        "DarkWii_Red_vJ": "Dark Wii Red (vWiiJ)",
-        "DarkWii_Green_43U": "Dark Wii Green (4.3U)",
-        "DarkWii_Green_42U": "Dark Wii Green (4.2U)",
-        "DarkWii_Green_41U": "Dark Wii Green (4.1U)",
-        "DarkWii_Green_43E": "Dark Wii Green (4.3E)",
-        "DarkWii_Green_42E": "Dark Wii Green (4.2E)",
-        "DarkWii_Green_41E": "Dark Wii Green (4.1E)",
-        "DarkWii_Green_43J": "Dark Wii Green (4.3J)",
-        "DarkWii_Green_42J": "Dark Wii Green (4.2J)",
-        "DarkWii_Green_41J": "Dark Wii Green (4.1J)",
-        "DarkWii_Green_43K": "Dark Wii Green (4.3K)",
-        "DarkWii_Green_42K": "Dark Wii Green (4.2K)",
-        "DarkWii_Green_41K": "Dark Wii Green (4.1K)",
-        "DarkWii_Green_vU": "Dark Wii Green (vWiiU)",
-        "DarkWii_Green_vE": "Dark Wii Green (vWiiE)",
-        "DarkWii_Green_vJ": "Dark Wii Green (vWiiJ)",
-        "DarkWii_Blue_43U": "Dark Wii Blue (4.3U)",
-        "DarkWii_Blue_42U": "Dark Wii Blue (4.2U)",
-        "DarkWii_Blue_41U": "Dark Wii Blue (4.1U)",
-        "DarkWii_Blue_43E": "Dark Wii Blue (4.3E)",
-        "DarkWii_Blue_42E": "Dark Wii Blue (4.2E)",
-        "DarkWii_Blue_41E": "Dark Wii Blue (4.1E)",
-        "DarkWii_Blue_43J": "Dark Wii Blue (4.3J)",
-        "DarkWii_Blue_42J": "Dark Wii Blue (4.2J)",
-        "DarkWii_Blue_41J": "Dark Wii Blue (4.1J)",
-        "DarkWii_Blue_43K": "Dark Wii Blue (4.3K)",
-        "DarkWii_Blue_42K": "Dark Wii Blue (4.2K)",
-        "DarkWii_Blue_41K": "Dark Wii Blue (4.1K)",
-        "DarkWii_Blue_vU": "Dark Wii Blue (vWiiU)",
-        "DarkWii_Blue_vE": "Dark Wii Blue (vWiiE)",
-        "DarkWii_Blue_vJ": "Dark Wii Blue (vWiiJ)",
-        "DarkWii_Orange_43U": "Dark Wii Orange (4.3U)",
-        "DarkWii_Orange_42U": "Dark Wii Orange (4.2U)",
-        "DarkWii_Orange_41U": "Dark Wii Orange (4.1U)",
-        "DarkWii_Orange_43E": "Dark Wii Orange (4.3E)",
-        "DarkWii_Orange_42E": "Dark Wii Orange (4.2E)",
-        "DarkWii_Orange_41E": "Dark Wii Orange (4.1E)",
-        "DarkWii_Orange_43J": "Dark Wii Orange (4.3J)",
-        "DarkWii_Orange_42J": "Dark Wii Orange (4.2J)",
-        "DarkWii_Orange_41J": "Dark Wii Orange (4.1J)",
-        "DarkWii_Orange_43K": "Dark Wii Orange (4.3K)",
-        "DarkWii_Orange_42K": "Dark Wii Orange (4.2K)",
-        "DarkWii_Orange_41K": "Dark Wii Orange (4.1K)",
-        "DarkWii_Orange_vU": "Dark Wii Orange (vWiiU)",
-        "DarkWii_Orange_vE": "Dark Wii Orange (vWiiE)",
-        "DarkWii_Orange_vJ": "Dark Wii Orange (vWiiJ)",
-        "DarkWii_Red_43U_W": "Dark Wii Red (4.3U) (WAD)",
-        "DarkWii_Red_42U_W": "Dark Wii Red (4.2U) (WAD)",
-        "DarkWii_Red_41U_W": "Dark Wii Red (4.1U) (WAD)",
-        "DarkWii_Red_43E_W": "Dark Wii Red (4.3E) (WAD)",
-        "DarkWii_Red_42E_W": "Dark Wii Red (4.2E) (WAD)",
-        "DarkWii_Red_41E_W": "Dark Wii Red (4.1E) (WAD)",
-        "DarkWii_Red_43J_W": "Dark Wii Red (4.3J) (WAD)",
-        "DarkWii_Red_42J_W": "Dark Wii Red (4.2J) (WAD)",
-        "DarkWii_Red_41J_W": "Dark Wii Red (4.1J) (WAD)",
-        "DarkWii_Red_43K_W": "Dark Wii Red (4.3K) (WAD)",
-        "DarkWii_Red_42K_W": "Dark Wii Red (4.2K) (WAD)",
-        "DarkWii_Red_41K_W": "Dark Wii Red (4.1K) (WAD)",
-        "DarkWii_Green_43U_W": "Dark Wii Green (4.3U) (WAD)",
-        "DarkWii_Green_42U_W": "Dark Wii Green (4.2U) (WAD)",
-        "DarkWii_Green_41U_W": "Dark Wii Green (4.1U) (WAD)",
-        "DarkWii_Green_43E_W": "Dark Wii Green (4.3E) (WAD)",
-        "DarkWii_Green_42E_W": "Dark Wii Green (4.2E) (WAD)",
-        "DarkWii_Green_41E_W": "Dark Wii Green (4.1E) (WAD)",
-        "DarkWii_Green_43J_W": "Dark Wii Green (4.3J) (WAD)",
-        "DarkWii_Green_42J_W": "Dark Wii Green (4.2J) (WAD)",
-        "DarkWii_Green_41J_W": "Dark Wii Green (4.1J) (WAD)",
-        "DarkWii_Green_43K_W": "Dark Wii Green (4.3K) (WAD)",
-        "DarkWii_Green_42K_W": "Dark Wii Green (4.2K) (WAD)",
-        "DarkWii_Green_41K_W": "Dark Wii Green (4.1K) (WAD)",
-        "DarkWii_Blue_43U_W": "Dark Wii Blue (4.3U) (WAD)",
-        "DarkWii_Blue_42U_W": "Dark Wii Blue (4.2U) (WAD)",
-        "DarkWii_Blue_41U_W": "Dark Wii Blue (4.1U) (WAD)",
-        "DarkWii_Blue_43E_W": "Dark Wii Blue (4.3E) (WAD)",
-        "DarkWii_Blue_42E_W": "Dark Wii Blue (4.2E) (WAD)",
-        "DarkWii_Blue_41E_W": "Dark Wii Blue (4.1E) (WAD)",
-        "DarkWii_Blue_43J_W": "Dark Wii Blue (4.3J) (WAD)",
-        "DarkWii_Blue_42J_W": "Dark Wii Blue (4.2J) (WAD)",
-        "DarkWii_Blue_41J_W": "Dark Wii Blue (4.1J) (WAD)",
-        "DarkWii_Blue_43K_W": "Dark Wii Blue (4.3K) (WAD)",
-        "DarkWii_Blue_42K_W": "Dark Wii Blue (4.2K) (WAD)",
-        "DarkWii_Blue_41K_W": "Dark Wii Blue (4.1K) (WAD)",
-        "DarkWii_Orange_43U_W": "Dark Wii Orange (4.3U) (WAD)",
-        "DarkWii_Orange_42U_W": "Dark Wii Orange (4.2U) (WAD)",
-        "DarkWii_Orange_41U_W": "Dark Wii Orange (4.1U) (WAD)",
-        "DarkWii_Orange_43E_W": "Dark Wii Orange (4.3E) (WAD)",
-        "DarkWii_Orange_42E_W": "Dark Wii Orange (4.2E) (WAD)",
-        "DarkWii_Orange_41E_W": "Dark Wii Orange (4.1E) (WAD)",
-        "DarkWii_Orange_43J_W": "Dark Wii Orange (4.3J) (WAD)",
-        "DarkWii_Orange_42J_W": "Dark Wii Orange (4.2J) (WAD)",
-        "DarkWii_Orange_41J_W": "Dark Wii Orange (4.1J) (WAD)",
-        "DarkWii_Orange_43K_W": "Dark Wii Orange (4.3K) (WAD)",
-        "DarkWii_Orange_42K_W": "Dark Wii Orange (4.2K) (WAD)",
-        "DarkWii_Orange_41K_W": "Dark Wii Orange (4.1K) (WAD)"
+        "DarkWii_Red_43U": "Dark Wii Red (4.3U) CSM Theme",
+        "DarkWii_Red_42U": "Dark Wii Red (4.2U) CSM Theme",
+        "DarkWii_Red_41U": "Dark Wii Red (4.1U) CSM Theme",
+        "DarkWii_Red_43E": "Dark Wii Red (4.3E) CSM Theme",
+        "DarkWii_Red_42E": "Dark Wii Red (4.2E) CSM Theme",
+        "DarkWii_Red_41E": "Dark Wii Red (4.1E) CSM Theme",
+        "DarkWii_Red_43J": "Dark Wii Red (4.3J) CSM Theme",
+        "DarkWii_Red_42J": "Dark Wii Red (4.2J) CSM Theme",
+        "DarkWii_Red_41J": "Dark Wii Red (4.1J) CSM Theme",
+        "DarkWii_Red_43K": "Dark Wii Red (4.3K) CSM Theme",
+        "DarkWii_Red_42K": "Dark Wii Red (4.2K) CSM Theme",
+        "DarkWii_Red_41K": "Dark Wii Red (4.1K) CSM Theme",
+        "DarkWii_Red_vU": "Dark Wii Red (vWiiU) CSM Theme",
+        "DarkWii_Red_vE": "Dark Wii Red (vWiiE) CSM Theme",
+        "DarkWii_Red_vJ": "Dark Wii Red (vWiiJ) CSM Theme",
+        "DarkWii_Green_43U": "Dark Wii Green (4.3U) CSM Theme",
+        "DarkWii_Green_42U": "Dark Wii Green (4.2U) CSM Theme",
+        "DarkWii_Green_41U": "Dark Wii Green (4.1U) CSM Theme",
+        "DarkWii_Green_43E": "Dark Wii Green (4.3E) CSM Theme",
+        "DarkWii_Green_42E": "Dark Wii Green (4.2E) CSM Theme",
+        "DarkWii_Green_41E": "Dark Wii Green (4.1E) CSM Theme",
+        "DarkWii_Green_43J": "Dark Wii Green (4.3J) CSM Theme",
+        "DarkWii_Green_42J": "Dark Wii Green (4.2J) CSM Theme",
+        "DarkWii_Green_41J": "Dark Wii Green (4.1J) CSM Theme",
+        "DarkWii_Green_43K": "Dark Wii Green (4.3K) CSM Theme",
+        "DarkWii_Green_42K": "Dark Wii Green (4.2K) CSM Theme",
+        "DarkWii_Green_41K": "Dark Wii Green (4.1K) CSM Theme",
+        "DarkWii_Green_vU": "Dark Wii Green (vWiiU) CSM Theme",
+        "DarkWii_Green_vE": "Dark Wii Green (vWiiE) CSM Theme",
+        "DarkWii_Green_vJ": "Dark Wii Green (vWiiJ) CSM Theme",
+        "DarkWii_Blue_43U": "Dark Wii Blue (4.3U) CSM Theme",
+        "DarkWii_Blue_42U": "Dark Wii Blue (4.2U) CSM Theme",
+        "DarkWii_Blue_41U": "Dark Wii Blue (4.1U) CSM Theme",
+        "DarkWii_Blue_43E": "Dark Wii Blue (4.3E) CSM Theme",
+        "DarkWii_Blue_42E": "Dark Wii Blue (4.2E) CSM Theme",
+        "DarkWii_Blue_41E": "Dark Wii Blue (4.1E) CSM Theme",
+        "DarkWii_Blue_43J": "Dark Wii Blue (4.3J) CSM Theme",
+        "DarkWii_Blue_42J": "Dark Wii Blue (4.2J) CSM Theme",
+        "DarkWii_Blue_41J": "Dark Wii Blue (4.1J) CSM Theme",
+        "DarkWii_Blue_43K": "Dark Wii Blue (4.3K) CSM Theme",
+        "DarkWii_Blue_42K": "Dark Wii Blue (4.2K) CSM Theme",
+        "DarkWii_Blue_41K": "Dark Wii Blue (4.1K) CSM Theme",
+        "DarkWii_Blue_vU": "Dark Wii Blue (vWiiU) CSM Theme",
+        "DarkWii_Blue_vE": "Dark Wii Blue (vWiiE) CSM Theme",
+        "DarkWii_Blue_vJ": "Dark Wii Blue (vWiiJ) CSM Theme",
+        "DarkWii_Orange_43U": "Dark Wii Orange (4.3U) CSM Theme",
+        "DarkWii_Orange_42U": "Dark Wii Orange (4.2U) CSM Theme",
+        "DarkWii_Orange_41U": "Dark Wii Orange (4.1U) CSM Theme",
+        "DarkWii_Orange_43E": "Dark Wii Orange (4.3E) CSM Theme",
+        "DarkWii_Orange_42E": "Dark Wii Orange (4.2E) CSM Theme",
+        "DarkWii_Orange_41E": "Dark Wii Orange (4.1E) CSM Theme",
+        "DarkWii_Orange_43J": "Dark Wii Orange (4.3J) CSM Theme",
+        "DarkWii_Orange_42J": "Dark Wii Orange (4.2J) CSM Theme",
+        "DarkWii_Orange_41J": "Dark Wii Orange (4.1J) CSM Theme",
+        "DarkWii_Orange_43K": "Dark Wii Orange (4.3K) CSM Theme",
+        "DarkWii_Orange_42K": "Dark Wii Orange (4.2K) CSM Theme",
+        "DarkWii_Orange_41K": "Dark Wii Orange (4.1K) CSM Theme",
+        "DarkWii_Orange_vU": "Dark Wii Orange (vWiiU) CSM Theme",
+        "DarkWii_Orange_vE": "Dark Wii Orange (vWiiE) CSM Theme",
+        "DarkWii_Orange_vJ": "Dark Wii Orange (vWiiJ) CSM Theme",
+        "DarkWii_Red_43U_W": "Dark Wii Red (4.3U) WAD Theme",
+        "DarkWii_Red_42U_W": "Dark Wii Red (4.2U) WAD Theme",
+        "DarkWii_Red_41U_W": "Dark Wii Red (4.1U) WAD Theme",
+        "DarkWii_Red_43E_W": "Dark Wii Red (4.3E) WAD Theme",
+        "DarkWii_Red_42E_W": "Dark Wii Red (4.2E) WAD Theme",
+        "DarkWii_Red_41E_W": "Dark Wii Red (4.1E) WAD Theme",
+        "DarkWii_Red_43J_W": "Dark Wii Red (4.3J) WAD Theme",
+        "DarkWii_Red_42J_W": "Dark Wii Red (4.2J) WAD Theme",
+        "DarkWii_Red_41J_W": "Dark Wii Red (4.1J) WAD Theme",
+        "DarkWii_Red_43K_W": "Dark Wii Red (4.3K) WAD Theme",
+        "DarkWii_Red_42K_W": "Dark Wii Red (4.2K) WAD Theme",
+        "DarkWii_Red_41K_W": "Dark Wii Red (4.1K) WAD Theme",
+        "DarkWii_Green_43U_W": "Dark Wii Green (4.3U) WAD Theme",
+        "DarkWii_Green_42U_W": "Dark Wii Green (4.2U) WAD Theme",
+        "DarkWii_Green_41U_W": "Dark Wii Green (4.1U) WAD Theme",
+        "DarkWii_Green_43E_W": "Dark Wii Green (4.3E) WAD Theme",
+        "DarkWii_Green_42E_W": "Dark Wii Green (4.2E) WAD Theme",
+        "DarkWii_Green_41E_W": "Dark Wii Green (4.1E) WAD Theme",
+        "DarkWii_Green_43J_W": "Dark Wii Green (4.3J) WAD Theme",
+        "DarkWii_Green_42J_W": "Dark Wii Green (4.2J) WAD Theme",
+        "DarkWii_Green_41J_W": "Dark Wii Green (4.1J) WAD Theme",
+        "DarkWii_Green_43K_W": "Dark Wii Green (4.3K) WAD Theme",
+        "DarkWii_Green_42K_W": "Dark Wii Green (4.2K) WAD Theme",
+        "DarkWii_Green_41K_W": "Dark Wii Green (4.1K) WAD Theme",
+        "DarkWii_Blue_43U_W": "Dark Wii Blue (4.3U) WAD Theme",
+        "DarkWii_Blue_42U_W": "Dark Wii Blue (4.2U) WAD Theme",
+        "DarkWii_Blue_41U_W": "Dark Wii Blue (4.1U) WAD Theme",
+        "DarkWii_Blue_43E_W": "Dark Wii Blue (4.3E) WAD Theme",
+        "DarkWii_Blue_42E_W": "Dark Wii Blue (4.2E) WAD Theme",
+        "DarkWii_Blue_41E_W": "Dark Wii Blue (4.1E) WAD Theme",
+        "DarkWii_Blue_43J_W": "Dark Wii Blue (4.3J) WAD Theme",
+        "DarkWii_Blue_42J_W": "Dark Wii Blue (4.2J) WAD Theme",
+        "DarkWii_Blue_41J_W": "Dark Wii Blue (4.1J) WAD Theme",
+        "DarkWii_Blue_43K_W": "Dark Wii Blue (4.3K) WAD Theme",
+        "DarkWii_Blue_42K_W": "Dark Wii Blue (4.2K) WAD Theme",
+        "DarkWii_Blue_41K_W": "Dark Wii Blue (4.1K) WAD Theme",
+        "DarkWii_Orange_43U_W": "Dark Wii Orange (4.3U) WAD Theme",
+        "DarkWii_Orange_42U_W": "Dark Wii Orange (4.2U) WAD Theme",
+        "DarkWii_Orange_41U_W": "Dark Wii Orange (4.1U) WAD Theme",
+        "DarkWii_Orange_43E_W": "Dark Wii Orange (4.3E) WAD Theme",
+        "DarkWii_Orange_42E_W": "Dark Wii Orange (4.2E) WAD Theme",
+        "DarkWii_Orange_41E_W": "Dark Wii Orange (4.1E) WAD Theme",
+        "DarkWii_Orange_43J_W": "Dark Wii Orange (4.3J) WAD Theme",
+        "DarkWii_Orange_42J_W": "Dark Wii Orange (4.2J) WAD Theme",
+        "DarkWii_Orange_41J_W": "Dark Wii Orange (4.1J) WAD Theme",
+        "DarkWii_Orange_43K_W": "Dark Wii Orange (4.3K) WAD Theme",
+        "DarkWii_Orange_42K_W": "Dark Wii Orange (4.2K) WAD Theme",
+        "DarkWii_Orange_41K_W": "Dark Wii Orange (4.1K) WAD Theme"
     },
     "paths": {
         "wiiMap": [
