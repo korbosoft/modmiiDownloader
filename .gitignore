@@ -12,9 +12,6 @@
 *.rej
 *.so
 *.so.*
-*_pch.h.cpp
-*_resource.rc
-*.qm
 .#*
 *.*#
 core
@@ -26,19 +23,7 @@ tags
 Makefile*
 *.prl
 *.app
-moc_*.cpp
-ui_*.h
-qrc_*.cpp
 Thumbs.db
-*.res
-*.rc
-/.qmake.cache
-/.qmake.stash
-
-# qtcreator generated files
-*.pro.user*
-*.qbs.user*
-CMakeLists.txt.user*
 
 # xemacs temporary files
 *.flc
@@ -51,7 +36,6 @@ CMakeLists.txt.user*
 *.idb
 *.ilk
 *.pdb
-*.sln
 *.suo
 *.vcproj
 *vcproj.*.*.user
@@ -65,9 +49,6 @@ CMakeLists.txt.user*
 *.Debug
 *.Release
 
-# Python byte code
-*.pyc
-
 # Binaries
 # --------
 *.dll
@@ -75,17 +56,15 @@ CMakeLists.txt.user*
 ./ModMiiDownloader
 
 # Directories with generated files
-.moc/
-.obj/
-.pch/
-.rcc/
-.uic/
 /build*/
 
-ciosmaps*
+ciosmaps*.xml
 d2xmodules/
 *.bat
-ui_*.py
-rc_*.py
 wineactive.txt
-ciosmaps*.xml
+
+# .NET
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
