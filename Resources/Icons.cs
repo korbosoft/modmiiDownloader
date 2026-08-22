@@ -78,7 +78,7 @@ public static class Icons {
 
         using var reader = new StreamReader(stream);
         string markup = reader.ReadToEnd()
-            .Replace("#000000", ColorTranslator.ToHtml(SystemColors.ControlText), StringComparison.OrdinalIgnoreCase);
+            .Replace("#000000", ColorTranslator.ToHtml(SystemColors.ControlText));
 
         try {
             var document = SvgDocument.FromSvg<SvgDocument>(markup);

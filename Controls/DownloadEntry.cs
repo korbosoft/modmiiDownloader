@@ -1,9 +1,8 @@
+namespace ModMiiDownloader.Controls;
+
 using ModMiiDownloader.Model;
 using ModMiiDownloader.Resources;
 
-namespace ModMiiDownloader.Controls;
-
-/// <summary>One row of a download list: a catalogue entry plus where it came from.</summary>
 public sealed class DownloadEntry {
     public DownloadEntry(DownloadItemInfo info, string page, string category) {
         Info = info;
@@ -13,7 +12,6 @@ public sealed class DownloadEntry {
         Category = category;
     }
 
-    /// <summary>A row that stands in for one of the cIOS/theme checkboxes in the search dialog.</summary>
     public DownloadEntry(string id, string name, string iconKey) {
         Id = id;
         Name = name;
@@ -21,7 +19,6 @@ public sealed class DownloadEntry {
         CheckBoxIconKey = iconKey;
     }
 
-    /// <summary>An unselectable "No results" row.</summary>
     public static DownloadEntry Placeholder(string text) {
         return new("", text, Icons.Blank) { IsPlaceholder = true };
     }
@@ -41,7 +38,6 @@ public sealed class DownloadEntry {
     public string? ToolTip => Info?.ToolTip;
     public bool Disabled => IsPlaceholder || (Info?.Disabled ?? false);
 
-    /// <summary>Set once the entry's link has been opened, so it can be drawn as visited.</summary>
     public bool Visited { get; set; }
 
     public string IconKey {
@@ -57,7 +53,6 @@ public sealed class DownloadEntry {
         }
     }
 
-    /// <summary>Matches the query against the display name and any alternative names.</summary>
     public bool Matches(string sanitizedQuery) {
         if (Search.Sanitize(Name).Contains(sanitizedQuery, StringComparison.Ordinal)) return true;
 

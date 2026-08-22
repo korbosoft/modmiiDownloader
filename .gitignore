@@ -68,3 +68,4 @@ wineactive.txt
 [Oo]bj/
 .vs/
 *.user
+FodyWeavers.xsd

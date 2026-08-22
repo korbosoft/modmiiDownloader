@@ -1,41 +1,27 @@
-# Builds ModMiiDownloader and releases it as a single self-contained Windows executable,
-# so ModMii can fetch just the one file when the downloader is needed.
-
-name: .NET application
+name: .NET Framework 4.8 application
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
-
-permissions:
-  contents: write
+    branches: [ "main" ]
 
 jobs:
-  build-windows:
-    runs-on: windows-latest
-    permissions:
-      contents: write  # Grants access to create/update releases and tags
+  build:
+    runs-on: windows-latest  # Required for full .NET Framework
 
     steps:
-    - uses: actions/checkout@v6
-    - name: Set up .NET 10
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: "10.0.x"
-    - name: Publish
-      run: dotnet publish ModMiiDownloader.csproj -p:PublishProfile=win-x64
-    - name: Check the artifact is a lone executable
-      shell: pwsh
-      run: |
-        $files = Get-ChildItem bin/publish
-        $files | Select-Object Name, Length
-        if ($files.Count -ne 1) { throw "expected a single file, got $($files.Count)" }
-    - name: Create Release
-      uses: ncipollo/release-action@v1.21.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: "bin/publish/ModMiiDownloader.exe"
-        allowUpdates: true
-        omitBodyDuringUpdate: true
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Restore NuGet Packages
+      run: nuget restore ModMiiDownloader.slnx
+
+    - name: Build Solution
+      run: msbuild ModMiiDownloader.slnx /p:Configuration=Release /p:Platform="Any CPU"

@@ -2,12 +2,7 @@ using ModMiiDownloader.Resources;
 
 namespace ModMiiDownloader.Controls;
 
-/// <summary>Shared look for the cIOS and theme checkbox grids.</summary>
 internal static class GridFactory {
-    /// <summary>
-    /// Grid tables dock to the top and keep their preferred height. Filling instead would let
-    /// a short container compress the rows, which clips the icons in them.
-    /// </summary>
     public static TableLayoutPanel Table(int columns, int rows) {
         return new() {
             Dock = DockStyle.Top,
@@ -20,7 +15,6 @@ internal static class GridFactory {
         };
     }
 
-    /// <summary>Scrolling host for a grid, so an undersized box scrolls rather than squashing.</summary>
     public static Panel ScrollHost(Control content) {
         return new() {
             Dock = DockStyle.Fill,
@@ -31,11 +25,6 @@ internal static class GridFactory {
         };
     }
 
-    /// <summary>
-    /// A grid checkbox. Its name is the ModMii variable, so it doubles as the queue key.
-    /// FlatStyle.Standard is needed because the system-drawn checkbox ignores Image, and the
-    /// icon is sized off the font so it reads as a heart rather than a blob beside the label.
-    /// </summary>
     public static CheckBox Box(string name, string text, string iconKey = Icons.Blank, bool enabled = true) {
         var box = new CheckBox {
             Name = name,
@@ -52,11 +41,7 @@ internal static class GridFactory {
 
         if (iconKey == Icons.Blank) return box;
 
-        // The icon is sized off the font, so it tracks the text at any DPI. Autosizing measures
-        // the text alone, hence the minimum height that keeps the icon from being clipped.
         void FitIconToFont() {
-            // Slightly under the text height so the icon reads as a mark beside the label
-            // rather than competing with it.
             int size = Math.Max(8, box.Font.Height - 4);
             box.Image = Icons.GetExact(iconKey, size);
             box.MinimumSize = new Size(0, size + 4);

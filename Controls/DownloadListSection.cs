@@ -1,7 +1,7 @@
+namespace ModMiiDownloader.Controls;
+
 using ModMiiDownloader.Model;
 using System.Text;
-
-namespace ModMiiDownloader.Controls;
 
 /// <summary>A titled list of downloadable items with the "Toggle All" button underneath.</summary>
 public class DownloadListSection : SectionBox {
@@ -45,9 +45,7 @@ public class DownloadListSection : SectionBox {
             .Select(info => new DownloadEntry(info, page, category)));
 
         // Items hidden on this platform still owe ModMii a variable, so keep their ids.
-        _hidden = items.Where(info => info.HiddenHere && !info.Disabled)
-            .Select(info => info.Id)
-            .ToList();
+        _hidden = [.. items.Where(info => info.HiddenHere && !info.Disabled).Select(info => info.Id)];
     }
 
     public void SelectChild(string id) {

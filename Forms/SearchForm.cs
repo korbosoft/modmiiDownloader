@@ -5,13 +5,8 @@ using ModMiiDownloader.Model;
 using ModMiiDownloader.Resources;
 using System.Text.RegularExpressions;
 
-/// <summary>
-/// Type-to-filter view over everything the tabs hold, including the cIOS and theme
-/// checkboxes, with a queue pane that is written back to the main window on save.
-/// </summary>
-public partial class SearchForm : Form {
-    [GeneratedRegex(@"^c(\d+)_(\d+)_")]
-    private static partial Regex CiosName();
+public class SearchForm : Form {
+    private static readonly Regex CiosName = new(@"^c(\d+)_(\d+)_", RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
     private readonly MainForm _main;
     private readonly DownloaderConfig _config;
@@ -28,6 +23,7 @@ public partial class SearchForm : Form {
 
         Text = "Search";
         Icon = Icons.App;
+        if (SystemFonts.MessageBoxFont is Font systemFont) Font = systemFont;
         ClientSize = new Size(450, 450);
         MinimumSize = new Size(360, 320);
         StartPosition = FormStartPosition.CenterParent;
@@ -52,7 +48,7 @@ public partial class SearchForm : Form {
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
         _query.Dock = DockStyle.Fill;
-        _query.PlaceholderText = "Enter query here...";
+        CueBanner.Set(_query, "Enter query here...");
         _query.Margin = new Padding(0, 0, 0, 5);
         _query.TextChanged += (_, _) => RunSearch(_query.Text);
         layout.Controls.Add(_query, 0, 0);
@@ -88,8 +84,6 @@ public partial class SearchForm : Form {
             pane.ToggleButton.Visible = false;
         }
 
-        // Refreshing is deferred so the list is not rebuilt while it is still handling the
-        // click that triggered it.
         _results.List.EntryDoubleClicked += (_, e) => {
             AddToQueue(e.Entry);
             BeginInvoke(Refresh_Results);
@@ -154,7 +148,6 @@ public partial class SearchForm : Form {
         foreach (string id in QueueIds) _originalIds.Add(id);
     }
 
-    /// <summary>Builds the queue row that stands in for a checkbox, or null if it has no display name.</summary>
     private DownloadEntry? CheckBoxEntry(string name) {
         string? display = _config.CheckboxDisplayName(name);
         if (display is null) return null;
@@ -166,7 +159,7 @@ public partial class SearchForm : Form {
     }
 
     private string CheckBoxIcon(string name) {
-        Match match = CiosName().Match(name);
+        Match match = CiosName.Match(name);
         return !match.Success
             ? Icons.Blank
             : _config.IsRecommendedWiiCios(int.Parse(match.Groups[1].Value), int.Parse(match.Groups[2].Value))
@@ -195,8 +188,10 @@ public partial class SearchForm : Form {
         HashSet<string> queued = QueueIds;
         var matches = new List<DownloadEntry>();
 
-        foreach ((string? page, Dictionary<string, DownloadCategory>? categories) in _config.DownloadList) {
-            foreach ((string? category, DownloadCategory _) in categories) {
+        foreach (KeyValuePair<string, Dictionary<string, DownloadCategory>> pageEntry in _config.DownloadList) {
+            string page = pageEntry.Key;
+            foreach (KeyValuePair<string, DownloadCategory> categoryEntry in pageEntry.Value) {
+                string category = categoryEntry.Key;
                 matches.AddRange(_config.Items(page, category)
                     .Where(info => !queued.Contains(info.Id) && !info.HiddenHere)
                     .Select(info => new DownloadEntry(info, page, category))
@@ -297,7 +292,6 @@ public partial class SearchForm : Form {
         string text = "Do you want to save your changes?";
         if (details.Count > 0) text += $"\n\n{string.Join("\n", details)}";
 
-        // Yes saves, No discards, Cancel returns to the dialog.
         return MessageBox.Show(this, text, "Search", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
     }
 

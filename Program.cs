@@ -10,8 +10,6 @@ internal static class Program {
         try {
             return Run();
         } catch (Exception e) {
-            // Wine is missing pieces a real Windows always has, so a startup failure there
-            // would otherwise be a silent exit with nothing for ModMii to report.
             Log.Error(e, "start the downloader");
             MessageBox.Show(
                 $"The downloader could not start.\n\n{e.GetType().Name}: {e.Message}",
@@ -21,9 +19,9 @@ internal static class Program {
     }
 
     private static int Run() {
-        ApplicationConfiguration.Initialize();
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
 
-        // Icons rasterise once at the display's scale, so the scale has to be known up front.
         using (var probe = new Form()) Icons.DpiScale = probe.DeviceDpi / 96f;
 
         DownloaderConfig config;

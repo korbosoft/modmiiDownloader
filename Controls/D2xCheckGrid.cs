@@ -1,14 +1,9 @@
+namespace ModMiiDownloader.Controls;
+
 using ModMiiDownloader.Model;
 using ModMiiDownloader.Resources;
 
-namespace ModMiiDownloader.Controls;
-
-/// <summary>
-/// The d2x slot/base grid, split into Wii and vWii tabs. Which bases exist depends on the
-/// ciosmaps.xml that ships with the installed d2x revision, so most of it starts disabled.
-/// </summary>
 public class D2xCheckGrid : SectionBox {
-    // Wii: base IOS -> the slots d2x can install it to, in the column order the Qt grid used.
     private static readonly (int Base, int[] Slots)[] WiiRows =
     [
         (37, [249, 250]),
@@ -23,7 +18,6 @@ public class D2xCheckGrid : SectionBox {
         (80, [249, 250]),
     ];
 
-    // vWii only ever gets one slot per base.
     private static readonly (int Base, int Slot)[] VWiiRows =
     [
         (38, 248),
@@ -62,21 +56,15 @@ public class D2xCheckGrid : SectionBox {
         Controls.Add(_tabs);
     }
 
-    /// <summary>
-    /// A TabControl does not measure its pages, so the box would collapse to the default
-    /// panel width and clip the widest row. Measure both grids and ask for the larger.
-    /// </summary>
     public override Size GetPreferredSize(Size proposedSize) {
         Size wii = _wiiGrid.PreferredSize;
         Size vWii = _vWiiGrid.PreferredSize;
 
-        // Allow for the tab strip, the toggle button and the page's own border.
         return new Size(
             Math.Max(wii.Width, vWii.Width) + Padding.Horizontal + 20,
             Math.Max(wii.Height, vWii.Height) + Padding.Vertical + _wiiToggle.Height + 46);
     }
 
-    /// <summary>Applies the loaded cIOS maps: enables the bases d2x actually supports.</summary>
     public void Setup(CiosMapSet maps) {
         if (maps.Wii is not null) {
             Title = $"{maps.Wii.Name} cIOSs";
@@ -98,10 +86,9 @@ public class D2xCheckGrid : SectionBox {
     }
 
     public void SelectWiiRecommended() {
-        CheckBoxTools.Check(_config.RecommendedWiiCios
+        CheckBoxTools.Check([.. _config.RecommendedWiiCios
             .Select(cios => CheckBoxTools.Find(this, $"c{cios.Slot}_{cios.Base}_d2x"))
-            .OfType<CheckBox>()
-            .ToList());
+            .OfType<CheckBox>()]);
     }
 
     public void SelectVWiiRecommended() {
@@ -118,7 +105,7 @@ public class D2xCheckGrid : SectionBox {
 
     private void SetBaseEnabled(string labelName, string boxPattern, bool enabled) {
         Control? label = Controls.Find(labelName, searchAllChildren: true).FirstOrDefault();
-        if (label is not null) label.Enabled = enabled;
+        label?.Enabled = enabled;
 
         foreach (CheckBox box in CheckBoxTools.Matching(this, boxPattern))
             box.Enabled = enabled;
@@ -140,13 +127,10 @@ public class D2xCheckGrid : SectionBox {
             table.Controls.Add(GridFactory.RowLabel($"b{baseIos}", $"[{baseIos}]", enabled: false), 0, row);
 
             for (int i = 0; i < slots.Length; i++) {
-                // Recommended slots are marked up front; setting the image later would leave
-                // the autosized checkbox too narrow for it.
                 string icon = _config.IsRecommendedWiiCios(slots[i], baseIos) ? "recommended" : Icons.Blank;
                 CheckBox box = GridFactory.Box($"c{slots[i]}_{baseIos}_d2x", slots[i].ToString(), icon, enabled: false);
                 table.Controls.Add(box, i + 1, row);
 
-                // With only two slots the second one stretches over the spare column.
                 if (slots.Length == 2 && i == 1) table.SetColumnSpan(box, 2);
             }
         }
@@ -170,7 +154,6 @@ public class D2xCheckGrid : SectionBox {
         return table;
     }
 
-    /// <summary>Every row hugs its contents so nothing gets squeezed.</summary>
     private static void StyleRows(TableLayoutPanel table, int contentRows) {
         table.ColumnStyles.Clear();
         for (int i = 0; i < table.ColumnCount; i++)

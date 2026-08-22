@@ -1,11 +1,6 @@
 using System.ComponentModel;
 
 namespace ModMiiDownloader.Controls;
-
-/// <summary>
-/// A group box with a centred title, which is what every QGroupBox in the Qt layout used.
-/// WinForms only left-aligns its caption, so the frame and title are drawn here.
-/// </summary>
 public class SectionBox : Panel {
     private const int TitleGap = 6;
 

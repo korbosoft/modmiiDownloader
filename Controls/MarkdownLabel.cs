@@ -1,12 +1,8 @@
+namespace ModMiiDownloader.Controls;
+
 using System.ComponentModel;
 using System.Text;
 
-namespace ModMiiDownloader.Controls;
-
-/// <summary>
-/// The warning labels were Qt MarkdownText, so "*_LIKE THIS_*" has to keep its emphasis.
-/// Only bold and italic runs are handled, which is all the UI text uses.
-/// </summary>
 public class MarkdownLabel : Label {
     private List<Run> _runs = [];
     private string _markdown = "";
@@ -49,9 +45,8 @@ public class MarkdownLabel : Label {
         foreach (Line line in lines) {
             int x = (ClientSize.Width - line.Width) / 2;
             foreach ((Run? run, Font? font) in line.Runs) {
-                Size size = TextRenderer.MeasureText(e.Graphics, run.Text, font, Size.Empty, TextFormatFlags.NoPadding);
                 TextRenderer.DrawText(e.Graphics, run.Text, font, new Point(x, y), color, TextFormatFlags.NoPadding);
-                x += size.Width;
+                x += MeasureWidth(e.Graphics, run.Text, font);
             }
 
             y += line.Height;
@@ -72,7 +67,7 @@ public class MarkdownLabel : Label {
                     continue;
                 }
 
-                int width = TextRenderer.MeasureText(graphics, word, font, Size.Empty, TextFormatFlags.NoPadding).Width;
+                int width = MeasureWidth(graphics, word, font);
                 if (current.Width + width > maxWidth && current.Runs.Count > 0) {
                     lines.Add(current);
                     current = new Line();
@@ -89,6 +84,17 @@ public class MarkdownLabel : Label {
 
         if (current.Runs.Count > 0) lines.Add(current);
         return lines;
+    }
+
+    private static int MeasureWidth(Graphics graphics, string text, Font font) {
+        const string sentinel = ".";
+
+        int withSentinel = TextRenderer
+            .MeasureText(graphics, text + sentinel, font, Size.Empty, TextFormatFlags.NoPadding).Width;
+        int sentinelOnly = TextRenderer
+            .MeasureText(graphics, sentinel, font, Size.Empty, TextFormatFlags.NoPadding).Width;
+
+        return Math.Max(0, withSentinel - sentinelOnly);
     }
 
     private Font FontFor(Run run) {
@@ -137,7 +143,6 @@ public class MarkdownLabel : Label {
             if (c is '*' or '_') {
                 Flush();
 
-                // A doubled marker is bold, a single one italic.
                 if (i + 1 < markdown.Length && markdown[i + 1] == c) {
                     bold = !bold;
                     i++;

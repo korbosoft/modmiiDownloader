@@ -1,8 +1,6 @@
 namespace ModMiiDownloader.Controls;
 
-/// <summary>Waninkoko cIOSs: a fixed list of revision/base pairs, each installable to 249 or 250.</summary>
 public class WaninCheckGrid : SectionBox {
-    // Label, then the variable suffix each slot's checkbox uses.
     private static readonly (string Label, string Suffix)[] Rows =
     [
         ("Wanin-v21 [37]", "37_v21"),
@@ -47,16 +45,12 @@ public class WaninCheckGrid : SectionBox {
 
         _toggle = GridFactory.Toggle();
         _toggle.Dock = DockStyle.Bottom;
-        _toggle.Click += (_, _) => CheckBoxTools.Toggle(CheckBoxTools.All(this).ToList());
+        _toggle.Click += (_, _) => CheckBoxTools.Toggle([.. CheckBoxTools.All(this)]);
 
         Controls.Add(GridFactory.ScrollHost(_table));
         Controls.Add(_toggle);
     }
 
-    /// <summary>
-    /// The rows live in a scrolling host, which does not report their size, so the box would
-    /// collapse in its autosized column. Measure the grid itself instead.
-    /// </summary>
     public override Size GetPreferredSize(Size proposedSize) {
         if (_table is null) return base.GetPreferredSize(proposedSize);
 

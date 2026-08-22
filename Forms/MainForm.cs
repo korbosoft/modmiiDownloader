@@ -6,13 +6,8 @@ using ModMiiDownloader.Resources;
 using System.Text;
 
 public class MainForm : Form {
-    /// <summary>
-    /// ModMii passes the installed d2x revision in the vars file. When it hands us vars
-    /// without one, this deliberately matches no ciosmaps group so nothing gets enabled.
-    /// </summary>
-    private const string UnknownD2xRev = "if you are seeing this then korbo forgot to comment a line out";
+    private const string UnknownD2xRev = "korboscrewedup";
 
-    /// <summary>page, category and section title, in the order the tabs lay them out.</summary>
     private static readonly (string Page, string Category, string Title)[] Sections =
     [
         ("nus", "sysmenus", "System Menus"),
@@ -61,6 +56,7 @@ public class MainForm : Form {
 
         Text = "ModMii";
         Icon = Icons.App;
+        if (SystemFonts.MessageBoxFont is Font systemFont) Font = systemFont;
         StartPosition = FormStartPosition.CenterScreen;
         ClientSize = new Size(957, 650);
         MinimumSize = new Size(957 + (Width - ClientSize.Width), 650 + (Height - ClientSize.Height));
@@ -76,7 +72,6 @@ public class MainForm : Form {
 
     public DownloaderConfig Config => _config;
 
-    /// <summary>The d2x revision ModMii reported, used to expand PLACEHOLDER in display names.</summary>
     public string? D2xRev => _d2xRev;
 
     public IReadOnlyDictionary<string, DownloadListSection> SectionsByCategory => _sections;
@@ -130,7 +125,7 @@ public class MainForm : Form {
         table.Controls.Add(NewSection(Sections[6]), 0, 0);  // exploits
         table.Controls.Add(NewSection(Sections[7]), 1, 0);  // wiiHomebrew
 
-        DownloadListSection both = NewSection(Sections[8]);                 // (v)Wii homebrew, full height
+        DownloadListSection both = NewSection(Sections[8]);                 // (v)Wii homebrew
         table.Controls.Add(both, 2, 0);
         table.SetRowSpan(both, 2);
 
@@ -222,7 +217,6 @@ public class MainForm : Form {
             AutoSizeMode = AutoSizeMode.GrowAndShrink,
             Margin = new Padding(0, 4, 0, 0),
         };
-        // The two notes share what the buttons leave over, so neither gets clipped.
         buttons.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         buttons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
         buttons.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
@@ -384,11 +378,14 @@ public class MainForm : Form {
             AutoSize = false,
             Margin = new Padding(4, 2, 4, 2),
             MinimumSize = new Size(0, 34),
+            Font = UiFont(italic ? FontStyle.Bold | FontStyle.Italic : FontStyle.Bold),
+            Markdown = markdown
         };
-
-        label.Font = new Font(label.Font, italic ? FontStyle.Bold | FontStyle.Italic : FontStyle.Bold);
-        label.Markdown = markdown;
         return label;
+    }
+
+    private static Font UiFont(FontStyle style) {
+        return new Font(SystemFonts.MessageBoxFont ?? DefaultFont, style);
     }
 
     private static Label NewInfo(string text) {
@@ -396,7 +393,7 @@ public class MainForm : Form {
             Text = text,
             Dock = DockStyle.Fill,
             TextAlign = ContentAlignment.MiddleCenter,
-            Font = new Font(DefaultFont, FontStyle.Bold),
+            Font = UiFont(FontStyle.Bold),
             Margin = new Padding(6, 2, 6, 2),
             AutoSize = false,
             MinimumSize = new Size(0, 34),
@@ -425,8 +422,6 @@ public class MainForm : Form {
 
         _d2x.Setup(CiosMapSet.Load(_config.Paths, _d2xRev));
 
-        // ListView selection is only tracked once the native control exists and tab pages are
-        // realised lazily, so create every list up front or the restored queue reads back empty.
         foreach (DownloadListSection section in _sections.Values) _ = section.List.Handle;
     }
 
@@ -442,7 +437,6 @@ public class MainForm : Form {
 
     // ----------------------------------------------------------------- queue
 
-    /// <summary>The full "set var=value" batch ModMii reads back.</summary>
     public string MakeQueue() {
         var builder = new StringBuilder();
 
@@ -472,7 +466,6 @@ public class MainForm : Form {
                 _tabs.SelectedIndex = page - 1;
             }
 
-            // A "*" marks a queued item; the spin settings are stored as bare keys instead.
             IEnumerable<string> queued = vars
                 .Where(pair => pair.Value == "*" || pair.Key is "No-Spin" or "Spin" or "Fast-Spin")
                 .Select(pair => pair.Key);

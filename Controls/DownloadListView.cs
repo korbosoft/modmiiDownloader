@@ -1,25 +1,32 @@
-using ModMiiDownloader.Resources;
-
 namespace ModMiiDownloader.Controls;
+
+using ModMiiDownloader.Resources;
 
 public sealed class DownloadEntryEventArgs(DownloadEntry entry, ListViewItem item) : EventArgs {
     public DownloadEntry Entry { get; } = entry;
     public ListViewItem Item { get; } = item;
 }
 
-/// <summary>
-/// A list that selects the way Qt's MultiSelection mode did: a plain click toggles one row
-/// and leaves the rest alone, no modifier keys involved. Rows are owner-drawn to keep the
-/// icon column, alternating stripes, greyed-out entries and underlined links.
-/// </summary>
 public class DownloadListView : ListView {
+    private const int WmMouseMove = 0x0200;
     private const int WmLButtonDown = 0x0201;
+    private const int WmLButtonUp = 0x0202;
     private const int WmLButtonDblClk = 0x0203;
+    private const int WmCaptureChanged = 0x0215;
 
     private static readonly Color LinkColor = SystemColors.HotTrack;
     private static readonly Color VisitedLinkColor = Color.FromArgb(128, 0, 128);
 
     private bool _suppressSelectionGuard;
+
+    private int _anchorIndex = -1;
+    private int _pressedIndex = -1;
+    private int _dragLastIndex = -1;
+    private bool _dragging;
+    private bool _dragMoved;
+    private bool _dragSelects;
+
+    private readonly System.Windows.Forms.Timer _edgeScroll = new() { Interval = 60 };
 
     public DownloadListView() {
         View = View.Details;
@@ -33,8 +40,10 @@ public class DownloadListView : ListView {
         BorderStyle = BorderStyle.FixedSingle;
         Columns.Add(new ColumnHeader { Text = "", Width = 200 });
 
-        // The image list only exists to give every row a consistent height.
+        // only exists to give every row a consistent height
         SmallImageList = new ImageList { ImageSize = new Size(1, Icons.Scale(16) + 6) };
+
+        _edgeScroll.Tick += (_, _) => ScrollWhileDragging();
     }
 
     public event EventHandler<DownloadEntryEventArgs>? EntryClicked;
@@ -78,7 +87,6 @@ public class DownloadListView : ListView {
         foreach (ListViewItem item in Items) item.Selected = false;
     }
 
-    /// <summary>Selects everything unless everything selectable already is, then clears instead.</summary>
     public void ToggleAll() {
         bool select = Items.Cast<ListViewItem>()
             .Any(item => !((DownloadEntry)item.Tag!).Disabled && !item.Selected);
@@ -98,7 +106,6 @@ public class DownloadListView : ListView {
     }
 
     protected override void OnItemSelectionChanged(ListViewItemSelectionChangedEventArgs e) {
-        // Disabled entries are not selectable, including via keyboard or rubber band.
         if (e.IsSelected && !_suppressSelectionGuard && e.Item?.Tag is DownloadEntry { Disabled: true }) {
             _suppressSelectionGuard = true;
             e.Item.Selected = false;
@@ -117,13 +124,67 @@ public class DownloadListView : ListView {
 
                     Focus();
                     var entry = (DownloadEntry)hit.Item.Tag!;
-                    if (entry.Disabled) return;
+                    int index = hit.Item.Index;
+                    _pressedIndex = index;
+
+                    if (entry.Disabled) {
+                        _dragMoved = false;
+                        return;
+                    }
+
+                    if ((ModifierKeys & Keys.Shift) != 0 && _anchorIndex >= 0 && _anchorIndex < Items.Count) {
+                        ApplyRange(_anchorIndex, index, Items[_anchorIndex].Selected);
+                        hit.Item.Focused = true;
+                        return;
+                    }
 
                     hit.Item.Selected = !hit.Item.Selected;
                     hit.Item.Focused = true;
-                    EntryClicked?.Invoke(this, new DownloadEntryEventArgs(entry, hit.Item));
+
+                    _anchorIndex = index;
+                    _dragLastIndex = index;
+                    _dragSelects = hit.Item.Selected;
+                    _dragging = true;
+                    _dragMoved = false;
+                    Capture = true;
                     return;
                 }
+
+            case WmMouseMove: {
+                    if (!_dragging) break;
+
+                    Point point = PointFromMessage(m);
+                    if (point.Y < 0 || point.Y >= ClientSize.Height) {
+                        _edgeScroll.Start();
+                        return;
+                    }
+
+                    _edgeScroll.Stop();
+                    ListViewHitTestInfo hit = HitTest(point);
+                    if (hit.Item is not null) ExtendDragTo(hit.Item.Index);
+                    return;
+                }
+
+            case WmLButtonUp: {
+                    bool wasDragging = _dragging;
+                    int pressed = _pressedIndex;
+                    _pressedIndex = -1;
+
+                    if (wasDragging) EndDrag();
+
+                    if (!_dragMoved && pressed >= 0 && pressed < Items.Count) {
+                        ListViewItem item = Items[pressed];
+                        EntryClicked?.Invoke(this, new DownloadEntryEventArgs((DownloadEntry)item.Tag!, item));
+                        return;
+                    }
+
+                    if (!wasDragging) break;
+                    return;
+                }
+
+            case WmCaptureChanged:
+                EndDrag();
+                break;
 
             case WmLButtonDblClk: {
                     ListViewHitTestInfo hit = HitTest(PointFromMessage(m));
@@ -138,6 +199,52 @@ public class DownloadListView : ListView {
         }
 
         base.WndProc(ref m);
+    }
+
+    private void ExtendDragTo(int index) {
+        if (index < 0 || index == _dragLastIndex) return;
+
+        ApplyRange(_dragLastIndex, index, _dragSelects);
+        _dragLastIndex = index;
+        _dragMoved = true;
+    }
+
+    private void ApplyRange(int from, int to, bool selected) {
+        int start = Math.Min(from, to);
+        int end = Math.Max(from, to);
+
+        BeginUpdate();
+        for (int i = start; i <= end; i++) {
+            if (i < 0 || i >= Items.Count) continue;
+            if (((DownloadEntry)Items[i].Tag!).Disabled) continue;
+
+            Items[i].Selected = selected;
+        }
+
+        EndUpdate();
+    }
+
+    private void ScrollWhileDragging() {
+        if (!_dragging) {
+            _edgeScroll.Stop();
+            return;
+        }
+
+        Point point = PointToClient(MousePosition);
+        int next = point.Y < 0 ? _dragLastIndex - 1
+            : point.Y >= ClientSize.Height ? _dragLastIndex + 1
+            : -1;
+
+        if (next < 0 || next >= Items.Count) return;
+
+        Items[next].EnsureVisible();
+        ExtendDragTo(next);
+    }
+
+    private void EndDrag() {
+        _dragging = false;
+        _edgeScroll.Stop();
+        if (Capture) Capture = false;
     }
 
     private static Point PointFromMessage(Message m) {
@@ -164,7 +271,7 @@ public class DownloadListView : ListView {
 
         int iconSize = Icons.Scale(16);
         Bitmap icon = Icons.Get(entry.IconKey, 16);
-        int iconTop = bounds.Top + (bounds.Height - iconSize) / 2;
+        int iconTop = bounds.Top + ((bounds.Height - iconSize) / 2);
         graphics.DrawImage(icon, new Rectangle(bounds.Left + 2, iconTop, iconSize, iconSize));
 
         Color color = entry.Disabled
@@ -198,15 +305,14 @@ public class DownloadListView : ListView {
         _underlinedFont = null;
     }
 
-    /// <summary>Qt's alternating base colour, approximated by nudging the window colour.</summary>
     private static Color AlternateRowColor {
         get {
             Color window = SystemColors.Window;
             Color control = SystemColors.Control;
             return Color.FromArgb(
-                (window.R * 12 + control.R * 4) / 16,
-                (window.G * 12 + control.G * 4) / 16,
-                (window.B * 12 + control.B * 4) / 16);
+                ((window.R * 12) + (control.R * 4)) / 16,
+                ((window.G * 12) + (control.G * 4)) / 16,
+                ((window.B * 12) + (control.B * 4)) / 16);
         }
     }
 
@@ -214,6 +320,7 @@ public class DownloadListView : ListView {
         if (disposing) {
             _underlinedFont?.Dispose();
             SmallImageList?.Dispose();
+            _edgeScroll.Dispose();
         }
 
         base.Dispose(disposing);

@@ -9,11 +9,11 @@ public static class QueueVars {
             int split = line.IndexOf('=');
             if (split < 0) continue;
 
-            string key = line[..split];
-            string rest = line[(split + 1)..];
+            string key = line.Substring(0, split);
+            string rest = line.Substring(split + 1);
             // NOTE: "a=b=c" keeps only "b"
             int next = rest.IndexOf('=');
-            vars[key] = next < 0 ? rest : rest[..next];
+            vars[key] = next < 0 ? rest : rest.Substring(0, next);
         }
 
         return vars;

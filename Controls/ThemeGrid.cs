@@ -2,15 +2,9 @@ using ModMiiDownloader.Model;
 
 namespace ModMiiDownloader.Controls;
 
-/// <summary>
-/// System menu themes: one row per menu version/region, one column per theme variant.
-/// The columns come from downloader.json's "themes" list; each theme gets a CSM column and,
-/// except for the stock one, a WAD column. Header and row buttons toggle a whole column or row.
-/// </summary>
 public class ThemeGrid : Panel {
     private const string ThemesUrl = "https://modmii.github.io/WiiThemes.html";
 
-    /// <summary>The stock theme is stored as "O_<row>" rather than under its own name.</summary>
     private const string StockTheme = "Original";
 
     private static readonly (string Caption, string Key, bool HasWads)[] Rows =
@@ -102,7 +96,6 @@ public class ThemeGrid : Panel {
     }
 
     private sealed record Column(string Theme, bool IsWad) {
-        /// <summary>"DarkWii_Red" reads as "Red" in the header; the stock theme keeps its name.</summary>
         public string Caption {
             get {
                 string name = Theme == StockTheme ? Theme : Theme.Split('_').Last();
@@ -116,10 +109,6 @@ public class ThemeGrid : Panel {
             return IsWad ? $"{Prefix}{row}_W" : $"{Prefix}{row}";
         }
 
-        /// <summary>
-        /// Matches this column only: a CSM name ends right after the row key, a WAD name ends
-        /// in "_W". Kept identical to the regexes themeWidgets.py used.
-        /// </summary>
         public string TogglePattern => IsWad
             ? $@"{Prefix}\d\d._W"
             : Theme == StockTheme
