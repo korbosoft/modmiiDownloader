@@ -5,10 +5,11 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: windows-latest  # Required for full .NET Framework
+    runs-on: windows-latest
 
     steps:
     - name: Checkout Code
@@ -25,3 +26,23 @@ jobs:
 
     - name: Build Solution
       run: msbuild ModMiiDownloader.slnx /p:Configuration=Release /p:Platform="Any CPU"
+
+    - name: Stage and Zip Release Files
+      shell: powershell
+      run: |
+        New-Item -ItemType Directory -Force -Path release_stage
+
+        Copy-Item "bin\Release\ModMiiDownloader.exe" -Destination "release_stage\"
+        Copy-Item "downloader.json" -Destination "release_stage\"
+
+        Compress-Archive -Path "release_stage\*" -DestinationPath "ModMiiDownloader.zip" -Force
+
+    - name: Create Release
+      uses: ncipollo/release-action@v1.21.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: "ModMiiDownloader.zip"
+        allowUpdates: true
+        omitBodyDuringUpdate: true
+        replacesArtifacts: true
+        tag: "main"
