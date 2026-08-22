@@ -60,8 +60,9 @@ public class D2xCheckGrid : SectionBox {
         Size wii = _wiiGrid.PreferredSize;
         Size vWii = _vWiiGrid.PreferredSize;
 
+        // Room for the scrollbar the host shows when the box is short.
         return new Size(
-            Math.Max(wii.Width, vWii.Width) + Padding.Horizontal + 20,
+            Math.Max(wii.Width, vWii.Width) + Padding.Horizontal + 20 + SystemInformation.VerticalScrollBarWidth,
             Math.Max(wii.Height, vWii.Height) + Padding.Vertical + _wiiToggle.Height + 46);
     }
 

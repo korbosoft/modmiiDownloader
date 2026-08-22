@@ -373,30 +373,47 @@ public class MainForm : Form {
     }
 
     private static MarkdownLabel NewWarning(string markdown, bool italic) {
+        Font font = UiFont(italic ? FontStyle.Bold | FontStyle.Italic : FontStyle.Bold);
+
         var label = new MarkdownLabel {
             Dock = DockStyle.Fill,
             AutoSize = false,
             Margin = new Padding(4, 2, 4, 2),
-            MinimumSize = new Size(0, 34),
-            Font = UiFont(italic ? FontStyle.Bold | FontStyle.Italic : FontStyle.Bold),
+            MinimumSize = new Size(0, TextRows(font, 3)),
+            Font = font,
             Markdown = markdown
         };
         return label;
+    }
+
+    /// <summary>
+    /// Height for a given number of text lines. These labels sit in autosized rows that take
+    /// their minimum height, so the room has to be reserved up front — a wider UI font, like
+    /// the one Wine falls back to, wraps onto more lines and the last one gets cut off.
+    /// </summary>
+    private static int TextRows(Font font, int rows) {
+        return (font.Height * rows) + 6;
     }
 
     private static Font UiFont(FontStyle style) {
         return new Font(SystemFonts.MessageBoxFont ?? DefaultFont, style);
     }
 
-    private static Label NewInfo(string text) {
+    /// <summary>
+    /// The cIOS notes. A plain Label cannot both wrap and grow, so these use the same label
+    /// the warnings do — none of the note text contains markdown markers.
+    /// </summary>
+    private static MarkdownLabel NewInfo(string text) {
+        Font font = UiFont(FontStyle.Bold);
+
         return new() {
-            Text = text,
             Dock = DockStyle.Fill,
             TextAlign = ContentAlignment.MiddleCenter,
-            Font = UiFont(FontStyle.Bold),
+            Font = font,
             Margin = new Padding(6, 2, 6, 2),
             AutoSize = false,
-            MinimumSize = new Size(0, 34),
+            MinimumSize = new Size(0, TextRows(font, 4)),
+            Markdown = text,
         };
     }
 

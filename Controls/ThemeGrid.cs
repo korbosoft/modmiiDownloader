@@ -53,7 +53,7 @@ public class ThemeGrid : Panel {
         for (int row = 0; row < Rows.Length; row++) {
             (string? caption, string? key, bool hasWads) = Rows[row];
 
-            Button rowButton = HeaderButton(caption);
+            Button rowButton = RowButton(caption);
             rowButton.Name = $"s{key}";
             rowButton.Click += (_, _) => CheckBoxTools.ToggleMatching(this, key);
             table.Controls.Add(rowButton, 0, row + 1);
@@ -71,8 +71,16 @@ public class ThemeGrid : Panel {
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / _columns.Count));
 
         table.RowStyles.Clear();
-        for (int i = 0; i <= Rows.Length; i++)
-            table.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / (Rows.Length + 1)));
+
+        // The header captions are two lines ("Original" / "APP"), so that row gets a double
+        // share — a taller UI font clipped the second line at an equal one. Every row stays
+        // percent-based so the grid still fills its box; an autosized row leaves a gap.
+        const int headerShare = 2;
+        float unit = 100f / (Rows.Length + headerShare);
+
+        table.RowStyles.Add(new RowStyle(SizeType.Percent, unit * headerShare));
+        for (int i = 0; i < Rows.Length; i++)
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, unit));
 
         Controls.Add(table);
     }
@@ -116,7 +124,21 @@ public class ThemeGrid : Panel {
                 : $@"{Prefix}...?$";
     }
 
+    /// <summary>Column caption. Autosized, because its two lines size the header row.</summary>
     private static Button HeaderButton(string caption) {
+        return new() {
+            Text = caption,
+            Dock = DockStyle.Fill,
+            FlatStyle = FlatStyle.System,
+            Margin = new Padding(1),
+            TextAlign = ContentAlignment.MiddleCenter,
+            AutoSize = true,
+            AutoSizeMode = AutoSizeMode.GrowAndShrink,
+        };
+    }
+
+    /// <summary>Row label. Fills its share of the grid rather than shrinking to the text.</summary>
+    private static Button RowButton(string caption) {
         return new() {
             Text = caption,
             Dock = DockStyle.Fill,

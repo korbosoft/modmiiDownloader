@@ -55,8 +55,11 @@ public class WaninCheckGrid : SectionBox {
         if (_table is null) return base.GetPreferredSize(proposedSize);
 
         Size grid = _table.PreferredSize;
+
+        // Room for the scrollbar the host shows when the box is short, so it never squeezes
+        // the rightmost column instead.
         return new Size(
-            grid.Width + Padding.Horizontal + 6,
+            grid.Width + Padding.Horizontal + 6 + SystemInformation.VerticalScrollBarWidth,
             grid.Height + Padding.Vertical + _toggle.Height + 8);
     }
 

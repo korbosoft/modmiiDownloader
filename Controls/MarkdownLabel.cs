@@ -53,6 +53,23 @@ public class MarkdownLabel : Label {
         }
     }
 
+    /// <summary>
+    /// The height this text actually needs once wrapped at the given width. Without this the
+    /// label reports a fixed height, and a wider UI font — Wine's, for instance — wraps to
+    /// more lines than fit and the last one is cut off.
+    /// </summary>
+    public override Size GetPreferredSize(Size proposedSize) {
+        int width = proposedSize.Width;
+        if (width is <= 0 or int.MaxValue) width = Width;
+        if (width <= 0 || _runs.Count == 0) return base.GetPreferredSize(proposedSize);
+
+        using Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);
+        List<Line> lines = Wrap(graphics, width - Padding.Horizontal);
+        int height = lines.Sum(line => line.Height) + Padding.Vertical;
+
+        return new Size(width, Math.Max(height, MinimumSize.Height));
+    }
+
     private List<Line> Wrap(Graphics graphics, int maxWidth) {
         var lines = new List<Line>();
         var current = new Line();
