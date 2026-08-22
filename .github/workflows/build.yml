@@ -32,8 +32,8 @@ jobs:
       run: |
         New-Item -ItemType Directory -Force -Path release_stage
 
-        Copy-Item "bin\Release\ModMiiDownloader.exe" -Destination "release_stage\"
-        Copy-Item "downloader.json" -Destination "release_stage\"
+        Copy-Item "bin\Release\net48\ModMiiDownloader.exe" -Destination "release_stage\"
+        Copy-Item "bin\Release\net48\downloader.json" -Destination "release_stage\"
 
         Compress-Archive -Path "release_stage\*" -DestinationPath "ModMiiDownloader.zip" -Force
 
